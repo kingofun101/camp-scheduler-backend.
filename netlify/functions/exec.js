@@ -15,6 +15,21 @@ const { getStore } = require("@netlify/blobs");
 
 const API_TOKEN = process.env.API_TOKEN || "";
 
+// Netlify Blobs is supposed to auto-configure itself inside a function handler,
+// but this fails in production for a lot of accounts/sites (a known, long-running
+// Netlify issue — see github.com/netlify/blobs/issues/175 and multiple threads on
+// answers.netlify.com). The documented workaround is to pass siteID + token
+// explicitly. If BLOBS_SITE_ID and BLOBS_TOKEN are set as environment variables,
+// use them; otherwise fall back to automatic (in case it works fine for this site).
+function store(name) {
+  const siteID = process.env.BLOBS_SITE_ID;
+  const token = process.env.BLOBS_TOKEN;
+  if (siteID && token) {
+    return getStore({ name, siteID, token });
+  }
+  return getStore(name);
+}
+
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
@@ -61,9 +76,9 @@ exports.handler = async (event, context) => {
     return respond({ ok: false, error: "Invalid or missing token" }, 401);
   }
 
-  const settingsStore = getStore("camp-scheduler-settings");
-  const scheduleStore = getStore("camp-scheduler-schedules");
-  const printerStore = getStore("camp-scheduler-printer");
+  const settingsStore = store("camp-scheduler-settings");
+  const scheduleStore = store("camp-scheduler-schedules");
+  const printerStore = store("camp-scheduler-printer");
 
   try {
     switch (action) {

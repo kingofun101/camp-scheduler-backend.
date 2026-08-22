@@ -1,2 +1,8 @@
 [build]
   functions = "netlify/functions"
+
+[[redirects]]
+  from = "/exec"
+  to = "/.netlify/functions/exec"
+  status = 200
+  force = true

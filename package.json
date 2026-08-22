@@ -1,12 +1,8 @@
 {
   "name": "camp-scheduler-netlify-backend",
   "version": "1.0.0",
-  "description": "Netlify Functions + Netlify Blobs sync backend for the Camp Scheduler",
-  "type": "module",
+  "description": "Netlify Functions (classic) + Netlify Blobs sync backend for the Camp Scheduler",
   "dependencies": {
     "@netlify/blobs": "^8.1.0"
-  },
-  "devDependencies": {
-    "netlify-cli": "^17.0.0"
   }
 }

@@ -1,0 +1,6497 @@
+{
+  "divisions": {
+    "Gilad": {
+      "slots": [
+        {
+          "slot_id": "Gilad:Monday:3",
+          "day": "Monday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bankshot Bball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mad Science",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Magic",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Play Ball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Strategic Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Theater",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Xfit",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Monday:6",
+          "day": "Monday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arena Sports",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Magic",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Shabbat,Camera,Action",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tennis Baseball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Teva Nature",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Monday:7",
+          "day": "Monday",
+          "period": "7",
+          "options": [
+            {
+              "base": "Arena Sports",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bankshot Bball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Magic",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Shabbat,Camera,Action",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Tuesday:2",
+          "day": "Tuesday",
+          "period": "2",
+          "options": [
+            {
+              "base": "Acting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Basketball",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "Bucket Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jamnastics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Robotics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Set Production",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ultimate Frisbee",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Tuesday:3",
+          "day": "Tuesday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Flag Football",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Israel Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Tuesday:6",
+          "day": "Tuesday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bucket Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Camp Chronicles",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Perform Dance",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Robotics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Singing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Sports Club",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Strategic Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Team Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Things That Go",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Tuesday:7",
+          "day": "Tuesday",
+          "period": "7",
+          "options": [
+            {
+              "base": "Acting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bucket Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Camp Chronicles",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Kickball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Robotics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Zumba",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Wednesday:2",
+          "day": "Wednesday",
+          "period": "2",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Basketball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Chess",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Hip Hop",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Hockey",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Kickball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Krav Maga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Set Production",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Wednesday:3",
+          "day": "Wednesday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bankshot Bball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Chess",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Sports League",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Wednesday:6",
+          "day": "Wednesday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Acting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arena Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Book Club",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cheerleading",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Basketball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Krav Maga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Play Ball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Things That Go",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Wednesday:7",
+          "day": "Wednesday",
+          "period": "7",
+          "options": [
+            {
+              "base": "Arena Sports",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Flag Football",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jamnastics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Strategic Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Teva Nature",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Thursday:2",
+          "day": "Thursday",
+          "period": "2",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Basketball",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "European Handball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Improvisation",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Kickball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Things That Go",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Thursday:3",
+          "day": "Thursday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arena Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lacrosse",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mad Science",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tailgate Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ultimate Frisbee",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Thursday:6",
+          "day": "Thursday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arena Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bankshot Bball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Basketball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Improvisation",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Robotics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Sports Club",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tailgate Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Team Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Thursday:7",
+          "day": "Thursday",
+          "period": "7",
+          "options": [
+            {
+              "base": "Acting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Basketball",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "European Handball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Robotics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tailgate Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Friday:3",
+          "day": "Friday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Israel Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Team Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Teva Nature",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Friday:6",
+          "day": "Friday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "Jamnastics",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "Tennis Baseball",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 5,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Gilad:Friday:7",
+          "day": "Friday",
+          "period": "7",
+          "options": [
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Hockey",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Improvisation",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Play Ball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Teva Nature",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        }
+      ],
+      "swim_alt_eligible": false
+    },
+    "Tavor": {
+      "slots": [
+        {
+          "slot_id": "Tavor:Monday:3",
+          "day": "Monday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bankshot Bball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mad Science",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Magic",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Play Ball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Strategic Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Theater",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Xfit",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Monday:6",
+          "day": "Monday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arena Sports",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Basketball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Magic",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Shabbat,Camera,Action",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tennis Baseball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Teva Nature",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Monday:7",
+          "day": "Monday",
+          "period": "7",
+          "options": [
+            {
+              "base": "Arena Sports",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bankshot Bball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Magic",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Shabbat,Camera,Action",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Tuesday:1",
+          "day": "Tuesday",
+          "period": "1",
+          "options": [
+            {
+              "base": "Basketball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bucket Golf",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Set Production",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tennis Baseball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Volleyball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Wheel Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Tuesday:3",
+          "day": "Tuesday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Flag Football",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Israel Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Wheel Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Tuesday:6",
+          "day": "Tuesday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bucket Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Camp Chronicles",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Collage & Mixed Media",
+              "grade_lo": 7,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Master Chef",
+              "grade_lo": 7,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Perform Dance",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Robotics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Singing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Sports Club",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Strategic Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Team Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Things That Go",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Wheel Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Tuesday:7",
+          "day": "Tuesday",
+          "period": "7",
+          "options": [
+            {
+              "base": "Acting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Advanced Wheel",
+              "grade_lo": 7,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bucket Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Camp Chronicles",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Kickball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Robotics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Shoresh Buddies",
+              "grade_lo": 7,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Zumba",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Wednesday:1",
+          "day": "Wednesday",
+          "period": "1",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Basketball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Book Club",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Chess",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "European Handball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Improvisation",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Kickball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Krav Maga",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Set Production",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Volleyball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Wednesday:3",
+          "day": "Wednesday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bankshot Bball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Chess",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Sports League",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Wednesday:6",
+          "day": "Wednesday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Acting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Advanced Art",
+              "grade_lo": 7,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arena Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cheerleading",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Basketball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Krav Maga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Play Ball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Things That Go",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Wednesday:7",
+          "day": "Wednesday",
+          "period": "7",
+          "options": [
+            {
+              "base": "Arena Sports",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Flag Football",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jamnastics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Shoresh Buddies",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Strategic Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Teva Nature",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Thursday:1",
+          "day": "Thursday",
+          "period": "1",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Basketball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Flag Football",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Hockey",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jamnastics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tailgate Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Volleyball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Wheel Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Thursday:3",
+          "day": "Thursday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arena Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lacrosse",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mad Science",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tailgate Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Things That Go",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ultimate Frisbee",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Wheel Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Thursday:6",
+          "day": "Thursday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arena Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bankshot Bball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Basketball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Improvisation",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Master Chef",
+              "grade_lo": 7,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Robotics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Sports Club",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tailgate Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Team Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Wheel Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Thursday:7",
+          "day": "Thursday",
+          "period": "7",
+          "options": [
+            {
+              "base": "Acting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "European Handball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Robotics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Shoresh Buddies",
+              "grade_lo": 7,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tailgate Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Friday:1",
+          "day": "Friday",
+          "period": "1",
+          "options": [
+            {
+              "base": "Basketball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Collage & Mixed Media",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Hockey",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Improvisation",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Soccer",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tennis Baseball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Friday:3",
+          "day": "Friday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Israel Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Team Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Teva Nature",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Tavor:Friday:7",
+          "day": "Friday",
+          "period": "7",
+          "options": [
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Hockey",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Improvisation",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Play Ball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Shoresh Buddies",
+              "grade_lo": 7,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Teva Nature",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        }
+      ],
+      "swim_alt_eligible": true,
+      "swim_period": {
+        "Monday": "2",
+        "Tuesday": "2",
+        "Wednesday": "2",
+        "Thursday": "2",
+        "Friday": "2"
+      },
+      "swim_alt_menu": {
+        "Monday": [
+          "Bankshot Basketball",
+          "Ceramics",
+          "Climbing Boulder",
+          "Digi Photo",
+          "Magic",
+          "Paddleboarding",
+          "3D Printing",
+          "Volleyball"
+        ],
+        "Tuesday": [
+          "Acting",
+          "Archery",
+          "Arts & Crafts",
+          "Bucket Golf",
+          "Cartooning",
+          "Coding",
+          "Court Time",
+          "Fishing",
+          "Games",
+          "High Ropes",
+          "Jamnastics",
+          "Lake Inflatables",
+          "Newcombe",
+          "Paddleboarding",
+          "Robotics",
+          "Set Production",
+          "Ultimate Frisbee",
+          "Wheel Ceramics"
+        ],
+        "Wednesday": [
+          "Archery",
+          "Ceramics",
+          "Chess",
+          "Climbing Boulder",
+          "Digi Photo",
+          "Gaga",
+          "Games",
+          "High Ropes",
+          "Hip Hop",
+          "Hockey",
+          "Kickball",
+          "Krav Maga",
+          "Lake Inflatables",
+          "Mosaic Art",
+          "9 Square in the Air",
+          "Paddleboarding",
+          "Project of Week",
+          "3D Printing",
+          "Set Production",
+          "Top Chef"
+        ],
+        "Thursday": [
+          "Archery",
+          "ART-rageous",
+          "Boating",
+          "Coding",
+          "Court Time",
+          "Digi Photo",
+          "Drawing",
+          "European Handball",
+          "Games",
+          "Improvisation",
+          "Kickball",
+          "Lake Inflatables",
+          "Mosaic Art",
+          "Project of Week",
+          "Soccer",
+          "Top Chef",
+          "Things That Go",
+          "Water Tag",
+          "Wheel Ceramics"
+        ],
+        "Friday": [
+          "Acting",
+          "Ceramics",
+          "Climbing Boulder",
+          "Collage & Mixed Media",
+          "Court Time",
+          "Gaga",
+          "Paddleboarding",
+          "Robotics",
+          "3D Printing",
+          "Top Chef",
+          "Water Tag"
+        ]
+      }
+    },
+    "Arad": {
+      "slots": [
+        {
+          "slot_id": "Arad:Monday:1",
+          "day": "Monday",
+          "period": "1",
+          "options": [
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "European Handball",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Jamnastics",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Magic",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Monday:3",
+          "day": "Monday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bankshot Bball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mad Science",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Magic",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Play Ball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Strategic Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Theater",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Xfit",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Monday:6",
+          "day": "Monday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arena Sports",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Basketball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Camp Chronicles",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Magic",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Shabbat,Camera,Action",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tennis Baseball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Teva Nature",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Tuesday:1",
+          "day": "Tuesday",
+          "period": "1",
+          "options": [
+            {
+              "base": "Basketball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bucket Golf",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Set Production",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tennis Baseball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Volleyball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Wheel Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Tuesday:3",
+          "day": "Tuesday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Flag Football",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Israel Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Things That Go",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Wheel Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Tuesday:4",
+          "day": "Tuesday",
+          "period": "4",
+          "options": [
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Kickball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Tuesday:6",
+          "day": "Tuesday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arts & Crafts",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bucket Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cartooning",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jewelry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Perform Dance",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Robotics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Singing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Sports Club",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Strategic Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Team Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Wheel Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Wednesday:1",
+          "day": "Wednesday",
+          "period": "1",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Basketball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Book Club",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Chess",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "European Handball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Improvisation",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Kickball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Krav Maga",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Set Production",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Volleyball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Wednesday:3",
+          "day": "Wednesday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bankshot Bball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Chess",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Collage & Mixed Media",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Sports League",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Wednesday:4",
+          "day": "Wednesday",
+          "period": "4",
+          "options": [
+            {
+              "base": "ART-rageous",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Flag Football",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Wednesday:6",
+          "day": "Wednesday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Acting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arena Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Book Club",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Cheerleading",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Basketball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Krav Maga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Painting",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Play Ball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Thursday:1",
+          "day": "Thursday",
+          "period": "1",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Basketball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Flag Football",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Hockey",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Jamnastics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tailgate Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Volleyball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Wheel Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Thursday:3",
+          "day": "Thursday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Advanced Art",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arena Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lacrosse",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mad Science",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tailgate Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Things That Go",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ultimate Frisbee",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Wheel Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Thursday:4",
+          "day": "Thursday",
+          "period": "4",
+          "options": [
+            {
+              "base": "Arena Sports",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Newcombe",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Robotics",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Tailgate Games",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Zumba",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Thursday:6",
+          "day": "Thursday",
+          "period": "6",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Arena Soccer",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Bankshot Bball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Basketball",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Improvisation",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Lake Inflatables",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Robotics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Sports Club",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tailgate Games",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Team Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "3D Printing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Wheel Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Friday:1",
+          "day": "Friday",
+          "period": "1",
+          "options": [
+            {
+              "base": "Basketball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Collage & Mixed Media",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Games",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Hockey",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Improvisation",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Paddleboarding",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Soccer",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Tennis Baseball",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 6,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Friday:3",
+          "day": "Friday",
+          "period": "3",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Boating",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Ceramics",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Circuitry",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Climbing Boulder",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Coding",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Court Time",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Digi Photo",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Drawing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Fishing",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Girls Gaga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "F"
+            },
+            {
+              "base": "High Ropes",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Israel Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mini Golf",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Mosaic Art",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Team Adventure",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Teva Nature",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Things That Go",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Top Chef",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Water Tag",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Yoga",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            }
+          ]
+        },
+        {
+          "slot_id": "Arad:Friday:4",
+          "day": "Friday",
+          "period": "4",
+          "options": [
+            {
+              "base": "Archery",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "ART-rageous",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Gaga",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "9 Square in the Air",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Play Ball",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            },
+            {
+              "base": "Project of Week",
+              "grade_lo": 5,
+              "grade_hi": 8,
+              "gender": "MF"
+            },
+            {
+              "base": "Strategic Games",
+              "grade_lo": 6,
+              "grade_hi": 6,
+              "gender": "MF"
+            }
+          ]
+        }
+      ],
+      "swim_alt_eligible": true,
+      "swim_period": {
+        "Monday": "2",
+        "Tuesday": "2",
+        "Wednesday": "2",
+        "Thursday": "2",
+        "Friday": "2"
+      },
+      "swim_alt_menu": {
+        "Monday": [
+          "Bankshot Basketball",
+          "Ceramics",
+          "Climbing Boulder",
+          "Digi Photo",
+          "Magic",
+          "Paddleboarding",
+          "3D Printing",
+          "Volleyball"
+        ],
+        "Tuesday": [
+          "Acting",
+          "Archery",
+          "Arts & Crafts",
+          "Bucket Golf",
+          "Cartooning",
+          "Coding",
+          "Court Time",
+          "Fishing",
+          "Games",
+          "High Ropes",
+          "Jamnastics",
+          "Lake Inflatables",
+          "Newcombe",
+          "Paddleboarding",
+          "Robotics",
+          "Set Production",
+          "Ultimate Frisbee",
+          "Wheel Ceramics"
+        ],
+        "Wednesday": [
+          "Archery",
+          "Ceramics",
+          "Chess",
+          "Climbing Boulder",
+          "Digi Photo",
+          "Gaga",
+          "Games",
+          "High Ropes",
+          "Hip Hop",
+          "Hockey",
+          "Kickball",
+          "Krav Maga",
+          "Lake Inflatables",
+          "Mosaic Art",
+          "9 Square in the Air",
+          "Paddleboarding",
+          "Project of Week",
+          "3D Printing",
+          "Set Production",
+          "Top Chef"
+        ],
+        "Thursday": [
+          "Archery",
+          "ART-rageous",
+          "Boating",
+          "Coding",
+          "Court Time",
+          "Digi Photo",
+          "Drawing",
+          "European Handball",
+          "Games",
+          "Improvisation",
+          "Kickball",
+          "Lake Inflatables",
+          "Mosaic Art",
+          "Project of Week",
+          "Soccer",
+          "Top Chef",
+          "Things That Go",
+          "Water Tag",
+          "Wheel Ceramics"
+        ],
+        "Friday": [
+          "Acting",
+          "Ceramics",
+          "Climbing Boulder",
+          "Collage & Mixed Media",
+          "Court Time",
+          "Gaga",
+          "Paddleboarding",
+          "Robotics",
+          "3D Printing",
+          "Top Chef",
+          "Water Tag"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,3397 @@
+[
+  {
+    "day": "Monday",
+    "period": "1",
+    "base": "3D Printing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "1",
+    "base": "Arts & Crafts",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "1",
+    "base": "Cartooning",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "1",
+    "base": "Climbing Boulder",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Monday",
+    "period": "1",
+    "base": "Digi Photo",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Monday",
+    "period": "1",
+    "base": "European Handball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "1",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "1",
+    "base": "Jamnastics",
+    "cap_min": 3,
+    "cap_max": 12
+  },
+  {
+    "day": "Monday",
+    "period": "1",
+    "base": "Magic",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "1",
+    "base": "Newcombe",
+    "cap_min": 3,
+    "cap_max": 25
+  },
+  {
+    "day": "Monday",
+    "period": "1",
+    "base": "Paddleboarding",
+    "cap_min": 3,
+    "cap_max": 8
+  },
+  {
+    "day": "Monday",
+    "period": "1",
+    "base": "Painting",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "3D Printing",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "9 Square in the Air",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Archery",
+    "cap_min": 3,
+    "cap_max": 18
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Arts & Crafts",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Bankshot Bball",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Cartooning",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Ceramics",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Circuitry",
+    "cap_min": 3,
+    "cap_max": 12
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Digi Photo",
+    "cap_min": 3,
+    "cap_max": 14
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Fishing",
+    "cap_min": 3,
+    "cap_max": 24
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Girls Gaga",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "High Ropes",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Jewelry",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Mad Science",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Magic",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Paddleboarding",
+    "cap_min": 3,
+    "cap_max": 8
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Painting",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Play Ball",
+    "cap_min": 3,
+    "cap_max": 25
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Soccer",
+    "cap_min": 3,
+    "cap_max": 25
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Strategic Games",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Theater",
+    "cap_min": 3,
+    "cap_max": 50
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Top Chef",
+    "cap_min": 3,
+    "cap_max": 14
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Water Tag",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "3",
+    "base": "Xfit",
+    "cap_min": 3,
+    "cap_max": 10
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "3D Printing",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "9 Square in the Air",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Archery",
+    "cap_min": 3,
+    "cap_max": 18
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Arena Sports",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Arts & Crafts",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Basketball",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Camp Chronicles",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Cartooning",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Ceramics",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Circuitry",
+    "cap_min": 3,
+    "cap_max": 12
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Climbing Boulder",
+    "cap_min": 3,
+    "cap_max": 10
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Coding",
+    "cap_min": 3,
+    "cap_max": 10
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Court Time",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Digi Photo",
+    "cap_min": 3,
+    "cap_max": 14
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Fishing",
+    "cap_min": 3,
+    "cap_max": 24
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Gaga",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "High Ropes",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Jewelry",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Lake Inflatables",
+    "cap_min": 3,
+    "cap_max": 35
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Magic",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Mini Golf",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Paddleboarding",
+    "cap_min": 3,
+    "cap_max": 8
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Painting",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Shabbat,Camera,Action",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Tennis Baseball",
+    "cap_min": 3,
+    "cap_max": 25
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Teva Nature",
+    "cap_min": 3,
+    "cap_max": 25
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Top Chef",
+    "cap_min": 3,
+    "cap_max": 14
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Water Tag",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "6",
+    "base": "Yoga",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "3D Printing",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "9 Square in the Air",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Arena Sports",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Arts & Crafts",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Bankshot Bball",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Cartooning",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Ceramics",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Climbing Boulder",
+    "cap_min": 3,
+    "cap_max": 10
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Coding",
+    "cap_min": 3,
+    "cap_max": 10
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Gaga",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Games",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Jewelry",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Magic",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Newcombe",
+    "cap_min": 3,
+    "cap_max": 25
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Paddleboarding",
+    "cap_min": 3,
+    "cap_max": 8
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Painting",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Shabbat,Camera,Action",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Monday",
+    "period": "7",
+    "base": "Top Chef",
+    "cap_min": 3,
+    "cap_max": 14
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "3D Printing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "Basketball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "Bucket Golf",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "Cartooning",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "Court Time",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "Digi Photo",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "Jewelry",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "Paddleboarding",
+    "cap_min": 0,
+    "cap_max": 8
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "Set Production",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "Tennis Baseball",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "Top Chef",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "Volleyball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "1",
+    "base": "Wheel Ceramics",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Acting",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Archery",
+    "cap_min": 0,
+    "cap_max": 18
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Arts & Crafts",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Basketball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Bucket Golf",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Cartooning",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Coding",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Court Time",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Fishing",
+    "cap_min": 0,
+    "cap_max": 24
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Games",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Jamnastics",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Lake Inflatables",
+    "cap_min": 0,
+    "cap_max": 35
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Newcombe",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Paddleboarding",
+    "cap_min": 0,
+    "cap_max": 8
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Robotics",
+    "cap_min": 0,
+    "cap_max": 12
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Set Production",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "2",
+    "base": "Ultimate Frisbee",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Archery",
+    "cap_min": 3,
+    "cap_max": 18
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Arts & Crafts",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Boating",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Cartooning",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Coding",
+    "cap_min": 3,
+    "cap_max": 12
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Court Time",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Digi Photo",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Flag Football",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Games",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Girls Soccer",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Israel Adventure",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Jewelry",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Newcombe",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Painting",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Theater",
+    "cap_min": 0,
+    "cap_max": 50
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Things That Go",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Top Chef",
+    "cap_min": 3,
+    "cap_max": 14
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Water Tag",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "3",
+    "base": "Wheel Ceramics",
+    "cap_min": 3,
+    "cap_max": 10
+  },
+  {
+    "day": "Tuesday",
+    "period": "4",
+    "base": "Arts & Crafts",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "4",
+    "base": "Digi Photo",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Tuesday",
+    "period": "4",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "4",
+    "base": "Jewelry",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "4",
+    "base": "Kickball",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Tuesday",
+    "period": "4",
+    "base": "Newcombe",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Tuesday",
+    "period": "4",
+    "base": "Things That Go",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "4",
+    "base": "Top Chef",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Archery",
+    "cap_min": 0,
+    "cap_max": 18
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Arts & Crafts",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Boating",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Bucket Golf",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Camp Chronicles",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Cartooning",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Collage & Mixed Media",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Fishing",
+    "cap_min": 0,
+    "cap_max": 24
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Jewelry",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Lake Inflatables",
+    "cap_min": 0,
+    "cap_max": 35
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Master Chef",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Painting",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Perform Dance",
+    "cap_min": 0,
+    "cap_max": 50
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Robotics",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Singing",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Sports Club",
+    "cap_min": 0,
+    "cap_max": 75
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Strategic Games",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Team Adventure",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Things That Go",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Water Tag",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Wheel Ceramics",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Tuesday",
+    "period": "6",
+    "base": "Yoga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Acting",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Advanced Wheel",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Arts & Crafts",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Boating",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Bucket Golf",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Camp Chronicles",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Cartooning",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Collage & Mixed Media",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Jewelry",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Kickball",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Lake Inflatables",
+    "cap_min": 0,
+    "cap_max": 35
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Master Chef",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Mini Golf",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Newcombe",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Robotics",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Shoresh Buddies",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Things That Go",
+    "cap_min": 0,
+    "cap_max": 12
+  },
+  {
+    "day": "Tuesday",
+    "period": "7",
+    "base": "Zumba",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "9 Square in the Air",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "ART-rageous",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Archery",
+    "cap_min": 0,
+    "cap_max": 18
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Basketball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Book Club",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Ceramics",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Chess",
+    "cap_min": 0,
+    "cap_max": 16
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "European Handball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Improvisation",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Kickball",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Krav Maga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Mini Golf",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Paddleboarding",
+    "cap_min": 0,
+    "cap_max": 8
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Project of Week",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Set Production",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "1",
+    "base": "Volleyball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "3D Printing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "9 Square in the Air",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Archery",
+    "cap_min": 3,
+    "cap_max": 18
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Basketball",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Ceramics",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Chess",
+    "cap_min": 3,
+    "cap_max": 16
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Climbing Boulder",
+    "cap_min": 3,
+    "cap_max": 10
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Digi Photo",
+    "cap_min": 3,
+    "cap_max": 14
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Gaga",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Games",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "High Ropes",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Hip Hop",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Hockey",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Kickball",
+    "cap_min": 3,
+    "cap_max": 25
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Krav Maga",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Lake Inflatables",
+    "cap_min": 3,
+    "cap_max": 35
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Mosaic Art",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Paddleboarding",
+    "cap_min": 3,
+    "cap_max": 8
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Project of Week",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Set Production",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "2",
+    "base": "Top Chef",
+    "cap_min": 3,
+    "cap_max": 14
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "9 Square in the Air",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "ART-rageous",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Archery",
+    "cap_min": 0,
+    "cap_max": 18
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Bankshot Bball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Ceramics",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Chess",
+    "cap_min": 0,
+    "cap_max": 16
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Coding",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Collage & Mixed Media",
+    "cap_min": 0,
+    "cap_max": 12
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Mini Golf",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Mosaic Art",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Painting",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Project of Week",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Sports League",
+    "cap_min": 0,
+    "cap_max": 100
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Theater",
+    "cap_min": 0,
+    "cap_max": 50
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Top Chef",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Wednesday",
+    "period": "3",
+    "base": "Water Tag",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "4",
+    "base": "ART-rageous",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "4",
+    "base": "Boating",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "4",
+    "base": "Coding",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Wednesday",
+    "period": "4",
+    "base": "Collage & Mixed Media",
+    "cap_min": 0,
+    "cap_max": 12
+  },
+  {
+    "day": "Wednesday",
+    "period": "4",
+    "base": "Flag Football",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Wednesday",
+    "period": "4",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "4",
+    "base": "Mosaic Art",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "4",
+    "base": "Newcombe",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "9 Square in the Air",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "ART-rageous",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Acting",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Advanced Art",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Archery",
+    "cap_min": 0,
+    "cap_max": 18
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Arena Soccer",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Book Club",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Ceramics",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Cheerleading",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Circuitry",
+    "cap_min": 3,
+    "cap_max": 14
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Coding",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Digi Photo",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Fishing",
+    "cap_min": 0,
+    "cap_max": 24
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Girls Basketball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Krav Maga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Lake Inflatables",
+    "cap_min": 0,
+    "cap_max": 35
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Mini Golf",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Newcombe",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Paddleboarding",
+    "cap_min": 0,
+    "cap_max": 8
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Painting",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Play Ball",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Things That Go",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Water Tag",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "6",
+    "base": "Yoga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "9 Square in the Air",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "ART-rageous",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Advanced Art",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Arena Sports",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Climbing Boulder",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Coding",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Digi Photo",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Fishing",
+    "cap_min": 0,
+    "cap_max": 24
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Flag Football",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Jamnastics",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Lake Inflatables",
+    "cap_min": 0,
+    "cap_max": 35
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Newcombe",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Paddleboarding",
+    "cap_min": 0,
+    "cap_max": 8
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Painting",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Shoresh Buddies",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Strategic Games",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Teva Nature",
+    "cap_min": 3,
+    "cap_max": 18
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Things That Go",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Wednesday",
+    "period": "7",
+    "base": "Top Chef",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "ART-rageous",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Archery",
+    "cap_min": 0,
+    "cap_max": 18
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Basketball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Circuitry",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Digi Photo",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Flag Football",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Games",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Hockey",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Jamnastics",
+    "cap_min": 3,
+    "cap_max": 12
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Lake Inflatables",
+    "cap_min": 0,
+    "cap_max": 35
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Paddleboarding",
+    "cap_min": 0,
+    "cap_max": 8
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Project of Week",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Tailgate Games",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Top Chef",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Volleyball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "1",
+    "base": "Wheel Ceramics",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "ART-rageous",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Archery",
+    "cap_min": 0,
+    "cap_max": 18
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Basketball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Boating",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Coding",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Court Time",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Digi Photo",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Drawing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "European Handball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Games",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Improvisation",
+    "cap_min": 3,
+    "cap_max": 18
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Kickball",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Lake Inflatables",
+    "cap_min": 0,
+    "cap_max": 35
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Mosaic Art",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Project of Week",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Soccer",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Things That Go",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Top Chef",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Thursday",
+    "period": "2",
+    "base": "Water Tag",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "ART-rageous",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Advanced Art",
+    "cap_min": 3,
+    "cap_max": 12
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Archery",
+    "cap_min": 0,
+    "cap_max": 18
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Arena Soccer",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Circuitry",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Coding",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Court Time",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Digi Photo",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Drawing",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Girls Gaga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Lacrosse",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Mad Science",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Mini Golf",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Newcombe",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Paddleboarding",
+    "cap_min": 0,
+    "cap_max": 8
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Tailgate Games",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Theater",
+    "cap_min": 0,
+    "cap_max": 50
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Things That Go",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Top Chef",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Ultimate Frisbee",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Water Tag",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "3",
+    "base": "Wheel Ceramics",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Thursday",
+    "period": "4",
+    "base": "Advanced Art",
+    "cap_min": 3,
+    "cap_max": 12
+  },
+  {
+    "day": "Thursday",
+    "period": "4",
+    "base": "Arena Sports",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "4",
+    "base": "Climbing Boulder",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Thursday",
+    "period": "4",
+    "base": "Drawing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "4",
+    "base": "Newcombe",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Thursday",
+    "period": "4",
+    "base": "Paddleboarding",
+    "cap_min": 0,
+    "cap_max": 8
+  },
+  {
+    "day": "Thursday",
+    "period": "4",
+    "base": "Robotics",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "4",
+    "base": "Tailgate Games",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "4",
+    "base": "Zumba",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "3D Printing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "ART-rageous",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Archery",
+    "cap_min": 0,
+    "cap_max": 18
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Arena Soccer",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Bankshot Bball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Boating",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Coding",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Digi Photo",
+    "cap_min": 3,
+    "cap_max": 14
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Fishing",
+    "cap_min": 0,
+    "cap_max": 24
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Games",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Girls Basketball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Improvisation",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Lake Inflatables",
+    "cap_min": 0,
+    "cap_max": 35
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Master Chef",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Mosaic Art",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Perform Dance",
+    "cap_min": 0,
+    "cap_max": 50
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Project of Week",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Robotics",
+    "cap_min": 0,
+    "cap_max": 12
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Sports Club",
+    "cap_min": 0,
+    "cap_max": 75
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Tailgate Games",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Team Adventure",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Water Tag",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Wheel Ceramics",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Thursday",
+    "period": "6",
+    "base": "Yoga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Acting",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Advanced Wheel",
+    "cap_min": 0,
+    "cap_max": 8
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Basketball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Boating",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Climbing Boulder",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Coding",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Digi Photo",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Drawing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "European Handball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Master Chef",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Mini Golf",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Mosaic Art",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Newcombe",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Robotics",
+    "cap_min": 0,
+    "cap_max": 12
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Shoresh Buddies",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Thursday",
+    "period": "7",
+    "base": "Tailgate Games",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Basketball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Ceramics",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Climbing Boulder",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Collage & Mixed Media",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Drawing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Games",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Hockey",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Improvisation",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Mosaic Art",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Paddleboarding",
+    "cap_min": 0,
+    "cap_max": 8
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Project of Week",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Soccer",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Tennis Baseball",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Friday",
+    "period": "1",
+    "base": "Top Chef",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "9 Square in the Air",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "ART-rageous",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Archery",
+    "cap_min": 0,
+    "cap_max": 18
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Boating",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Ceramics",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Circuitry",
+    "cap_min": 0,
+    "cap_max": 12
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Climbing Boulder",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Coding",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Court Time",
+    "cap_min": 3,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Digi Photo",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Drawing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Fishing",
+    "cap_min": 0,
+    "cap_max": 24
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Girls Gaga",
+    "cap_min": 3,
+    "cap_max": 18
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Israel Adventure",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Mini Golf",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Mosaic Art",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Project of Week",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Sports League",
+    "cap_min": 0,
+    "cap_max": 100
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Team Adventure",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Teva Nature",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Theater",
+    "cap_min": 0,
+    "cap_max": 50
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Things That Go",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Top Chef",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Water Tag",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "3",
+    "base": "Yoga",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "4",
+    "base": "9 Square in the Air",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "4",
+    "base": "ART-rageous",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "4",
+    "base": "Archery",
+    "cap_min": 0,
+    "cap_max": 18
+  },
+  {
+    "day": "Friday",
+    "period": "4",
+    "base": "Coding",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Friday",
+    "period": "4",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "4",
+    "base": "Play Ball",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Friday",
+    "period": "4",
+    "base": "Project of Week",
+    "cap_min": 3,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "4",
+    "base": "Strategic Games",
+    "cap_min": 0,
+    "cap_max": 16
+  },
+  {
+    "day": "Friday",
+    "period": "4",
+    "base": "Things That Go",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "6",
+    "base": "3D Printing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "6",
+    "base": "9 Square in the Air",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "6",
+    "base": "Archery",
+    "cap_min": 0,
+    "cap_max": 18
+  },
+  {
+    "day": "Friday",
+    "period": "6",
+    "base": "Drawing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "6",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "6",
+    "base": "Jamnastics",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "6",
+    "base": "Lake Inflatables",
+    "cap_min": 0,
+    "cap_max": 35
+  },
+  {
+    "day": "Friday",
+    "period": "6",
+    "base": "Mosaic Art",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "6",
+    "base": "Paddleboarding",
+    "cap_min": 0,
+    "cap_max": 8
+  },
+  {
+    "day": "Friday",
+    "period": "6",
+    "base": "Project of Week",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "6",
+    "base": "Tennis Baseball",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "3D Printing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "ART-rageous",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Boating",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Climbing Boulder",
+    "cap_min": 0,
+    "cap_max": 10
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Digi Photo",
+    "cap_min": 0,
+    "cap_max": 14
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Drawing",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Fishing",
+    "cap_min": 0,
+    "cap_max": 24
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Gaga",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "High Ropes",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Hockey",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Improvisation",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Lake Inflatables",
+    "cap_min": 0,
+    "cap_max": 35
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Mosaic Art",
+    "cap_min": 0,
+    "cap_max": 15
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Newcombe",
+    "cap_min": 0,
+    "cap_max": 20
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Play Ball",
+    "cap_min": 0,
+    "cap_max": 25
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Shoresh Buddies",
+    "cap_min": 3,
+    "cap_max": 10
+  },
+  {
+    "day": "Friday",
+    "period": "7",
+    "base": "Teva Nature",
+    "cap_min": 0,
+    "cap_max": 20
+  }
+]

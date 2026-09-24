@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camp Aaron Scheduler — Staff Dashboard</title>
+<style>
+  :root {
+    --bg: #f7f5f0; --card: #ffffff; --ink: #1f2937; --muted: #6b7280;
+    --accent: #2563eb; --accent-ink: #ffffff; --border: #e5e7eb;
+    --danger: #dc2626; --danger-bg: #fef2f2; --ok: #059669; --ok-bg: #ecfdf5;
+    --warn: #b45309; --warn-bg: #fffbeb;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background: var(--bg); color: var(--ink); line-height: 1.4; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 20px 16px 80px; }
+  h1 { font-size: 1.3rem; margin: 0 0 4px; }
+  h2 { font-size: 1.05rem; margin: 0 0 12px; }
+  .sub { color: var(--muted); font-size: 0.88rem; margin-bottom: 18px; }
+  .tabs { display: flex; gap: 6px; margin-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .tab { padding: 9px 16px; cursor: pointer; border-radius: 8px 8px 0 0; font-size: 0.92rem; color: var(--muted); }
+  .tab.active { background: var(--card); color: var(--ink); font-weight: 600; border: 1px solid var(--border); border-bottom-color: var(--card); margin-bottom: -1px; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+  label { font-size: 0.85rem; color: var(--muted); display: block; margin-bottom: 4px; }
+  input[type=text], input[type=number], select, textarea {
+    padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); font-size: 0.92rem; width: 100%; }
+  textarea { font-family: ui-monospace, monospace; font-size: 0.82rem; min-height: 120px; }
+  .row { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 10px; }
+  .row > div { flex: 1; min-width: 140px; }
+  button { background: var(--accent); color: var(--accent-ink); border: none; border-radius: 8px;
+           padding: 9px 16px; font-size: 0.92rem; font-weight: 600; cursor: pointer; }
+  button.secondary { background: #eef2ff; color: var(--accent); }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; cursor: pointer; user-select: none; }
+  tr.under-min { background: var(--warn-bg); }
+  tr.over-cap { background: var(--danger-bg); }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+  .badge.warn { background: var(--warn-bg); color: var(--warn); }
+  .badge.danger { background: var(--danger-bg); color: var(--danger); }
+  .badge.ok { background: var(--ok-bg); color: var(--ok); }
+  .msg { border-radius: 10px; padding: 10px 14px; margin-bottom: 14px; font-size: 0.88rem; }
+  .msg.error { background: var(--danger-bg); color: var(--danger); }
+  .msg.ok { background: var(--ok-bg); color: var(--ok); }
+  .link-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+  .link-row code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.78rem; }
+  .muted { color: var(--muted); font-size: 0.82rem; }
+  .table-wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Camp Aaron Scheduler — Staff Dashboard</h1>
+  <div class="sub" id="camp-label"></div>
+  <div id="global-msg"></div>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="roster">Roster &amp; Links</div>
+    <div class="tab" data-tab="capacity">Capacity</div>
+    <div class="tab" data-tab="reassign">Reassign</div>
+  </div>
+
+  <div class="panel active" id="panel-roster">
+    <div class="card">
+      <h2>Roster</h2>
+      <div class="sub" id="roster-status">Loading…</div>
+      <details>
+        <summary style="cursor:pointer; font-size:0.9rem; margin-bottom:8px;">Upload / replace roster (CSV: camper_id,name,division,grade,gender)</summary>
+        <textarea id="roster-csv" placeholder="camper_id,name,division,grade,gender&#10;alice_smith,Alice Smith,Gilad,5,F"></textarea>
+        <div class="row" style="margin-top:8px">
+          <button id="upload-roster-btn">Upload roster</button>
+          <span class="muted">Replaces the entire roster for this camp.</span>
+        </div>
+      </details>
+    </div>
+    <div class="card">
+      <h2>Per-camper links</h2>
+      <div class="row">
+        <div><input type="text" id="link-filter" placeholder="Filter by name…"></div>
+        <div><button class="secondary" id="copy-all-btn">Copy all as CSV</button></div>
+      </div>
+      <div id="link-list"></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-capacity">
+    <div class="card">
+      <div class="row">
+        <div><label>Week</label><input type="text" id="capacity-week" value="1"></div>
+        <div><button id="load-capacity-btn">Load</button></div>
+        <div style="flex:2"><input type="text" id="capacity-filter" placeholder="Filter activity/day…"></div>
+      </div>
+      <div class="sub" id="capacity-summary"></div>
+      <div class="table-wrap">
+        <table id="capacity-table">
+          <thead><tr><th data-sort="day">Day</th><th data-sort="period">P</th><th data-sort="base">Activity</th>
+            <th data-sort="enrolled">Enrolled</th><th data-sort="cap_max">Cap</th><th data-sort="remaining">Remaining</th><th data-sort="cap_min">Min</th><th>Status</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-reassign">
+    <div class="card">
+      <div class="row">
+        <div><label>Week</label><input type="text" id="reassign-week" value="1"></div>
+        <div style="flex:2"><label>Camper</label><input type="text" id="camper-search" list="camper-datalist" placeholder="Start typing a name…"></div>
+        <div><button id="load-camper-btn">Load</button></div>
+      </div>
+      <datalist id="camper-datalist"></datalist>
+      <div id="reassign-body"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const params = new URLSearchParams(location.search);
+  const camp = params.get("camp") || "default";
+  const apiBase = params.get("api") || "https://camp-aaron-scheduler-backend.netlify.app/exec";
+  document.getElementById("camp-label").textContent = "Camp: " + camp;
+
+  let roster = [];
+  let preferences = [];
+  let slotsData = null;
+  let poolsData = [];
+  let schedule = {}; // week -> {sched, slotCnt}
+
+  function api(action, opts) {
+    opts = opts || {};
+    if (opts.method === "POST") {
+      return fetch(apiBase, { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.assign({ action, camp }, opts.body || {})) }).then((r) => r.json());
+    }
+    const qs = new URLSearchParams(Object.assign({ action, camp }, opts.query || {}));
+    return fetch(apiBase + "?" + qs.toString()).then((r) => r.json());
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+  function showMsg(elId, text, cls) {
+    document.getElementById(elId).innerHTML = '<div class="msg ' + cls + '">' + escapeHtml(text) + "</div>";
+  }
+
+  // ---- Tabs ----
+  document.querySelectorAll(".tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+      document.querySelectorAll(".panel").forEach((p) => p.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById("panel-" + tab.dataset.tab).classList.add("active");
+    });
+  });
+
+  // ---- Load base data ----
+  function reloadRosterAndPrefs() {
+    return Promise.all([api("loadRoster"), api("listPreferences")]).then(([r, p]) => {
+      roster = (r.ok && r.roster) || [];
+      preferences = (p.ok && p.submissions) || [];
+      renderRosterPanel();
+      renderCamperDatalist();
+    });
+  }
+
+  Promise.all([
+    fetch("slots.json").then((r) => r.json()),
+    fetch("pools.json").then((r) => r.json()),
+    reloadRosterAndPrefs(),
+  ]).then(([slots, pools]) => {
+    slotsData = slots;
+    poolsData = pools;
+  }).catch((err) => {
+    showMsg("global-msg", "Failed to load base data: " + err, "error");
+  });
+
+  // ---- Roster & Links panel ----
+  function renderRosterPanel() {
+    const submittedIds = new Set(preferences.map((p) => p.camper_id));
+    const n = roster.length;
+    const nSubmitted = roster.filter((c) => submittedIds.has(c.camper_id)).length;
+    document.getElementById("roster-status").textContent =
+      n === 0 ? "No roster uploaded yet for this camp." : n + " campers on roster, " + nSubmitted + " have submitted (" + (n ? Math.round(100 * nSubmitted / n) : 0) + "%).";
+    renderLinkList();
+  }
+
+  function formUrlFor(camperId) {
+    const origin = location.origin;
+    return origin + "/form.html?camp=" + encodeURIComponent(camp) + "&c=" + encodeURIComponent(camperId);
+  }
+
+  function renderLinkList() {
+    const filter = (document.getElementById("link-filter").value || "").toLowerCase();
+    const submittedIds = new Set(preferences.map((p) => p.camper_id));
+    const rows = roster
+      .filter((c) => c.name.toLowerCase().includes(filter))
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map((c) => {
+        const url = formUrlFor(c.camper_id);
+        const status = submittedIds.has(c.camper_id) ? '<span class="badge ok">submitted</span>' : '<span class="badge warn">pending</span>';
+        return (
+          '<div class="link-row"><div>' + escapeHtml(c.name) + " (" + escapeHtml(c.division) + ") " + status +
+          '<br><code>' + escapeHtml(url) + "</code></div>" +
+          '<button class="secondary copy-link-btn" data-url="' + escapeHtml(url) + '">Copy</button></div>'
+        );
+      });
+    document.getElementById("link-list").innerHTML = rows.join("") || '<div class="muted">No campers match.</div>';
+    document.querySelectorAll(".copy-link-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        navigator.clipboard.writeText(btn.dataset.url).then(() => {
+          btn.textContent = "Copied!";
+          setTimeout(() => { btn.textContent = "Copy"; }, 1200);
+        });
+      });
+    });
+  }
+  document.getElementById("link-filter").addEventListener("input", renderLinkList);
+
+  document.getElementById("copy-all-btn").addEventListener("click", () => {
+    const csv = ["camper_id,name,division,link"]
+      .concat(roster.map((c) => [c.camper_id, c.name, c.division, formUrlFor(c.camper_id)].map((v) => '"' + String(v).replace(/"/g, '""') + '"').join(",")))
+      .join("\n");
+    navigator.clipboard.writeText(csv).then(() => showMsg("global-msg", "Copied " + roster.length + " links as CSV.", "ok"));
+  });
+
+  document.getElementById("upload-roster-btn").addEventListener("click", () => {
+    const raw = document.getElementById("roster-csv").value.trim();
+    if (!raw) return;
+    const lines = raw.split("\n").map((l) => l.trim()).filter(Boolean);
+    const header = lines[0].split(",").map((h) => h.trim().toLowerCase());
+    const idx = (name) => header.indexOf(name);
+    const parsed = lines.slice(1).map((line) => {
+      const cols = line.split(",").map((c) => c.trim());
+      return {
+        camper_id: cols[idx("camper_id")],
+        name: cols[idx("name")],
+        division: cols[idx("division")],
+        grade: parseInt(cols[idx("grade")], 10),
+        gender: cols[idx("gender")] || "U",
+      };
+    }).filter((c) => c.camper_id && c.name && c.division);
+
+    if (!parsed.length) { showMsg("global-msg", "No valid rows found. Expected header: camper_id,name,division,grade,gender", "error"); return; }
+
+    api("saveRoster", { method: "POST", body: { data: JSON.stringify(parsed) } }).then((resp) => {
+      if (resp.ok) {
+        showMsg("global-msg", "Uploaded " + resp.count + " campers.", "ok");
+        document.getElementById("roster-csv").value = "";
+        reloadRosterAndPrefs();
+      } else {
+        showMsg("global-msg", "Upload failed: " + resp.error, "error");
+      }
+    });
+  });
+
+  // ---- Capacity panel ----
+  let capacityRows = [];
+  let sortKey = null, sortDir = 1;
+
+  document.getElementById("load-capacity-btn").addEventListener("click", loadCapacity);
+  document.getElementById("capacity-filter").addEventListener("input", renderCapacityTable);
+  document.querySelectorAll("#capacity-table th[data-sort]").forEach((th) => {
+    th.addEventListener("click", () => {
+      const key = th.dataset.sort;
+      sortDir = sortKey === key ? -sortDir : 1;
+      sortKey = key;
+      renderCapacityTable();
+    });
+  });
+
+  function loadCapacity() {
+    const week = document.getElementById("capacity-week").value.trim();
+    api("loadSchedule", { query: { week } }).then((resp) => {
+      if (!resp.ok || !resp.schedule) {
+        capacityRows = poolsData.map((p) => ({ ...p, enrolled: 0 }));
+        document.getElementById("capacity-summary").textContent = "No solved schedule found for week " + week + " yet — showing capacity with 0 enrolled.";
+      } else {
+        const slotCnt = JSON.parse(resp.slotCounts || "{}");
+        capacityRows = poolsData.map((p) => ({ ...p, enrolled: slotCnt[p.day + "|" + p.period + "|" + p.base] || 0 }));
+        const nUnder = capacityRows.filter((r) => r.enrolled > 0 && r.enrolled < r.cap_min).length;
+        const nOver = capacityRows.filter((r) => r.enrolled > r.cap_max).length;
+        document.getElementById("capacity-summary").textContent =
+          capacityRows.length + " activity/period slots — " + nUnder + " under minimum, " + nOver + " over capacity (should be 0).";
+      }
+      renderCapacityTable();
+    });
+  }
+
+  function renderCapacityTable() {
+    const filter = (document.getElementById("capacity-filter").value || "").toLowerCase();
+    let rows = capacityRows.filter((r) => !filter || r.base.toLowerCase().includes(filter) || r.day.toLowerCase().includes(filter));
+    rows = rows.map((r) => ({ ...r, remaining: r.cap_max - r.enrolled }));
+    if (sortKey) {
+      rows.sort((a, b) => {
+        const av = a[sortKey], bv = b[sortKey];
+        if (typeof av === "string") return av.localeCompare(bv) * sortDir;
+        return (av - bv) * sortDir;
+      });
+    }
+    const tbody = document.querySelector("#capacity-table tbody");
+    tbody.innerHTML = rows.map((r) => {
+      let cls = "", status = '<span class="badge ok">ok</span>';
+      if (r.enrolled > r.cap_max) { cls = "over-cap"; status = '<span class="badge danger">OVER CAP</span>'; }
+      else if (r.enrolled > 0 && r.enrolled < r.cap_min) { cls = "under-min"; status = '<span class="badge warn">under min</span>'; }
+      return (
+        '<tr class="' + cls + '"><td>' + r.day + "</td><td>" + r.period + "</td><td>" + escapeHtml(r.base) + "</td>" +
+        "<td>" + r.enrolled + "</td><td>" + r.cap_max + "</td><td>" + r.remaining + "</td><td>" + r.cap_min + "</td><td>" + status + "</td></tr>"
+      );
+    }).join("");
+  }
+
+  // ---- Reassign panel ----
+  function renderCamperDatalist() {
+    document.getElementById("camper-datalist").innerHTML = roster.map((c) => '<option value="' + escapeHtml(c.name) + '">').join("");
+  }
+
+  document.getElementById("load-camper-btn").addEventListener("click", loadCamperForReassign);
+
+  function loadCamperForReassign() {
+    const typed = document.getElementById("camper-search").value.trim();
+    const me = roster.find((c) => c.name.toLowerCase() === typed.toLowerCase());
+    const week = document.getElementById("reassign-week").value.trim();
+    const body = document.getElementById("reassign-body");
+    if (!me) { body.innerHTML = '<div class="msg error">No camper matches that name exactly. Pick one from the suggestions.</div>'; return; }
+
+    api("loadSchedule", { query: { week } }).then((resp) => {
+      if (!resp.ok || !resp.schedule) { body.innerHTML = '<div class="msg error">No solved schedule found for week ' + escapeHtml(week) + '.</div>'; return; }
+      const sched = JSON.parse(resp.schedule);
+      const slotCnt = JSON.parse(resp.slotCounts || "{}");
+      const mySched = sched[me.camper_id] || {};
+      const divSlots = slotsData.divisions[me.division].slots;
+
+      const rows = divSlots.map((slot) => {
+        const key = slot.day + ":" + slot.period;
+        const current = mySched[key];
+        const eligibleOpts = slot.options.filter((o) => {
+          if (o.grade_lo != null && me.grade < o.grade_lo) return false;
+          if (o.grade_hi != null && me.grade > o.grade_hi) return false;
+          if (o.gender !== "MF" && o.gender !== me.gender) return false;
+          return true;
+        });
+        const optionHtml = eligibleOpts.map((o) => {
+          const enrolled = slotCnt[slot.day + "|" + slot.period + "|" + o.base] || 0;
+          const pool = poolsData.find((p) => p.day === slot.day && p.period === slot.period && p.base === o.base);
+          const cap = pool ? pool.cap_max : "?";
+          const sel = current && current.base === o.base ? " selected" : "";
+          return '<option value="' + escapeHtml(o.base) + '"' + sel + ">" + escapeHtml(o.base) + " (" + enrolled + "/" + cap + ")</option>";
+        }).join("");
+        const flaggedNote = current && !current.base ? ' <span class="badge warn">was flagged</span>' : "";
+        return (
+          '<div class="row" data-reassign-slot="' + slot.day + '|' + slot.period + '"><div style="flex:0 0 140px">' + slot.day + " P" + slot.period + flaggedNote + "</div>" +
+          '<div><select class="reassign-select" data-day="' + slot.day + '" data-period="' + slot.period + '">' +
+          '<option value="">-- unassigned / flagged --</option>' + optionHtml + "</select></div></div>"
+        );
+      }).join("");
+
+      body.innerHTML =
+        '<h2 style="margin-top:16px">' + escapeHtml(me.name) + " · " + escapeHtml(me.division) + " · Grade " + escapeHtml(me.grade) + "</h2>" +
+        '<div class="muted" style="margin-bottom:10px">Choosing a new activity here only checks remaining capacity and grade/gender eligibility — it does NOT re-check the repeat-activity limit, friend links, or same-schedule pairing. Use judgment.</div>' +
+        rows +
+        '<div class="row" style="margin-top:14px"><button id="save-reassign-btn">Save changes</button><span id="reassign-msg"></span></div>';
+
+      document.getElementById("save-reassign-btn").addEventListener("click", () => saveReassign(me, week, sched, slotCnt));
+    });
+  }
+
+  function saveReassign(me, week, sched, slotCnt) {
+    const selects = document.querySelectorAll(".reassign-select");
+    const mySched = sched[me.camper_id] || {};
+    let capacityError = null;
+
+    selects.forEach((sel) => {
+      const day = sel.dataset.day, period = sel.dataset.period, key = day + ":" + period;
+      const newBase = sel.value || null;
+      const oldEntry = mySched[key];
+      const oldBase = oldEntry ? oldEntry.base : null;
+      if (newBase === oldBase) return;
+
+      if (newBase) {
+        const pool = poolsData.find((p) => p.day === day && p.period === period && p.base === newBase);
+        const countKey = day + "|" + period + "|" + newBase;
+        const enrolled = slotCnt[countKey] || 0;
+        if (pool && enrolled >= pool.cap_max) {
+          capacityError = newBase + " at " + day + " P" + period + " is already full (" + enrolled + "/" + pool.cap_max + ").";
+          return;
+        }
+        slotCnt[countKey] = enrolled + 1;
+      }
+      if (oldBase) {
+        const oldKey = day + "|" + period + "|" + oldBase;
+        slotCnt[oldKey] = Math.max(0, (slotCnt[oldKey] || 0) - 1);
+      }
+      mySched[key] = { day, period, base: newBase, rank: newBase ? (oldEntry && oldEntry.rank) || null : null };
+    });
+
+    const msgEl = document.getElementById("reassign-msg");
+    if (capacityError) { msgEl.innerHTML = ' <span style="color:var(--danger)">' + escapeHtml(capacityError) + "</span>"; return; }
+
+    sched[me.camper_id] = mySched;
+    api("saveSchedule", { method: "POST", body: { week, data: JSON.stringify({ sched, slotCnt }) } }).then((resp) => {
+      msgEl.innerHTML = resp.ok ? ' <span style="color:var(--ok)">Saved.</span>' : ' <span style="color:var(--danger)">Save failed: ' + escapeHtml(resp.error) + "</span>";
+    });
+  }
+})();
+</script>
+</body>
+</html>

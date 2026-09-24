@@ -79,9 +79,63 @@ exports.handler = async (event, context) => {
   const settingsStore = store("camp-scheduler-settings");
   const scheduleStore = store("camp-scheduler-schedules");
   const printerStore = store("camp-scheduler-printer");
+  const rosterStore = store("camp-scheduler-roster");
+  const preferencesStore = store("camp-scheduler-preferences");
 
   try {
     switch (action) {
+      // Roster: the pre-loaded camper list (camper_id, name, division,
+      // grade, gender) staff imports from registration before intake opens.
+      // The intake form looks a camper up by id from this to know their
+      // division/grade/gender (and to render a friend-search autocomplete)
+      // without the family having to retype anything. One roster per camp;
+      // re-saving replaces it wholesale.
+      case "loadRoster": {
+        const raw = await rosterStore.get(camp);
+        return respond({ ok: true, roster: raw ? JSON.parse(raw) : [] });
+      }
+      case "saveRoster": {
+        if (typeof params.data !== "string") return respond({ ok: false, error: "missing data" });
+        let campers;
+        try { campers = JSON.parse(params.data); } catch (e) { return respond({ ok: false, error: "bad JSON" }); }
+        if (!Array.isArray(campers)) return respond({ ok: false, error: "roster must be a JSON array" });
+        await rosterStore.set(camp, JSON.stringify(campers));
+        return respond({ ok: true, count: campers.length });
+      }
+
+      // Preferences: one document per camper's intake-form submission —
+      // top-3-per-period rankings, friend/same-schedule requests, swim-alt
+      // opt-in. Keyed by camper_id so a resubmission (family corrects a
+      // mistake) overwrites cleanly rather than piling up.
+      case "loadPreferences": {
+        const camperId = String(params.camper_id || "");
+        if (!camperId) return respond({ ok: false, error: "missing camper_id" });
+        const raw = await preferencesStore.get(`${camp}:${camperId}`);
+        return respond({ ok: true, submission: raw ? JSON.parse(raw) : null });
+      }
+      case "savePreferences": {
+        const camperId = String(params.camper_id || "");
+        if (!camperId) return respond({ ok: false, error: "missing camper_id" });
+        if (typeof params.data !== "string") return respond({ ok: false, error: "missing data" });
+        let submission;
+        try { submission = JSON.parse(params.data); } catch (e) { return respond({ ok: false, error: "bad JSON" }); }
+        submission.camper_id = camperId;
+        submission.submittedAt = nowISO();
+        await preferencesStore.set(`${camp}:${camperId}`, JSON.stringify(submission));
+        return respond({ ok: true });
+      }
+      // Every submitted preference doc for a camp, for the solver to pull
+      // directly (2026-09-24: "lands in a shared store the solver reads
+      // immediately" — see core.py / netlify_data.py in camp_scheduler).
+      case "listPreferences": {
+        const prefix = `${camp}:`;
+        const { blobs } = await preferencesStore.list({ prefix });
+        const submissions = await Promise.all(blobs.map(async (b) => {
+          const raw = await preferencesStore.get(b.key);
+          return raw ? JSON.parse(raw) : null;
+        }));
+        return respond({ ok: true, submissions: submissions.filter(Boolean) });
+      }
       case "loadSettings": {
         const data = await settingsStore.get(camp);
         return respond({ ok: true, settings: data ?? null });

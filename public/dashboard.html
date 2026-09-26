@@ -62,6 +62,7 @@
     <div class="tab active" data-tab="roster">Roster &amp; Links</div>
     <div class="tab" data-tab="capacity">Capacity</div>
     <div class="tab" data-tab="reassign">Reassign</div>
+    <div class="tab" data-tab="friends">Friends</div>
   </div>
 
   <div class="panel active" id="panel-roster">
@@ -102,6 +103,25 @@
           <tbody></tbody>
         </table>
       </div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-friends">
+    <div class="card">
+      <div class="row">
+        <div><label>Week</label><input type="text" id="friends-week" value="1"></div>
+        <div><button id="load-friends-btn">Load</button></div>
+        <div style="flex:2"><input type="text" id="friends-filter" placeholder="Filter by camper name…"></div>
+        <div style="flex:0 0 auto"><label style="display:flex;gap:6px;align-items:center;margin:0"><input type="checkbox" id="friends-oneway" style="width:auto"> include one-way requests</label></div>
+      </div>
+      <div class="sub" id="friends-summary">Pairs are only acted on by the solver when <b>mutual</b> (both named each other). "Together" = same activity in the same period. Click a row for the period-by-period view.</div>
+      <div class="table-wrap">
+        <table id="friends-table">
+          <thead><tr><th>Type</th><th>Camper</th><th>Friend</th><th>Together</th><th>Both placed</th><th>Not together</th><th>Status</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="friends-detail"></div>
     </div>
   </div>
 
@@ -344,6 +364,118 @@
         "<td>" + r.enrolled + "</td><td>" + r.cap_max + "</td><td>" + r.remaining + "</td><td>" + r.cap_min + "</td><td>" + status + "</td></tr>"
       );
     }).join("");
+  }
+
+  // ---- Friends panel ----
+  const DAY_ORDER = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  let friendsSched = {};
+
+  document.getElementById("load-friends-btn").addEventListener("click", loadFriends);
+  document.getElementById("friends-filter").addEventListener("input", renderFriendsTable);
+  document.getElementById("friends-oneway").addEventListener("change", renderFriendsTable);
+
+  function loadFriends() {
+    const week = document.getElementById("friends-week").value.trim();
+    document.getElementById("friends-summary").textContent = "Loading…";
+    api("loadSchedule", { query: { week } }).then((resp) => {
+      friendsSched = resp.ok && resp.schedule ? JSON.parse(resp.schedule) : {};
+      renderFriendsTable();
+    });
+  }
+
+  function periodKeySort(a, b) {
+    const [da, pa] = a.split(":"), [db, pb] = b.split(":");
+    return DAY_ORDER.indexOf(da) - DAY_ORDER.indexOf(db) || parseInt(pa, 10) - parseInt(pb, 10);
+  }
+
+  // One row per pair. Mutual pairs are what the solver acts on; one-way
+  // requests are shown (optionally) so staff can see who asked and wasn't
+  // reciprocated.
+  function buildFriendPairs(week) {
+    const byId = Object.fromEntries(roster.map((c) => [c.camper_id, c]));
+    const subs = Object.fromEntries(preferences.map((p) => [p.camper_id, p]));
+    const attends = (id) => byId[id] && (!(byId[id].weeks && byId[id].weeks.length) || byId[id].weeks.includes(week));
+    const pairs = [], seen = new Set();
+    Object.values(subs).forEach((sub) => {
+      const a = sub.camper_id;
+      if (!attends(a)) return;
+      const add = (b, type) => {
+        if (!b || b === a || !attends(b)) return;
+        const bSub = subs[b] || {};
+        const mutual = type === "same"
+          ? bSub.same_schedule_request === a
+          : (bSub.friend_requests || []).includes(a);
+        const key = type + ":" + [a, b].sort().join("|");
+        if (mutual) { if (seen.has(key)) return; seen.add(key); }
+        pairs.push({ type, a, b, mutual });
+      };
+      (sub.friend_requests || []).forEach((b) => add(b, "friend"));
+      add(sub.same_schedule_request, "same");
+    });
+    return pairs;
+  }
+
+  function comparePair(pair) {
+    const sa = friendsSched[pair.a] || {}, sb = friendsSched[pair.b] || {};
+    const keys = [...new Set([...Object.keys(sa), ...Object.keys(sb)])].sort(periodKeySort);
+    const rows = keys.map((k) => {
+      const x = sa[k] && sa[k].base, y = sb[k] && sb[k].base;
+      return { key: k, x, y, together: !!x && x === y, bothPlaced: !!x && !!y, bothFlagged: !x && !y && sa[k] && sb[k] };
+    });
+    return {
+      rows,
+      together: rows.filter((r) => r.together).length,
+      bothPlaced: rows.filter((r) => r.bothPlaced).length,
+      notTogether: rows.filter((r) => r.bothPlaced && !r.together).length,
+    };
+  }
+
+  function renderFriendsTable() {
+    const week = parseInt(document.getElementById("friends-week").value, 10);
+    const filter = (document.getElementById("friends-filter").value || "").toLowerCase();
+    const oneWay = document.getElementById("friends-oneway").checked;
+    const nameOf = (id) => (roster.find((c) => c.camper_id === id) || {}).name || id;
+    const hasSchedule = Object.keys(friendsSched).length > 0;
+    let pairs = buildFriendPairs(week).filter((p) => oneWay || p.mutual);
+    pairs = pairs.filter((p) => !filter || nameOf(p.a).toLowerCase().includes(filter) || nameOf(p.b).toLowerCase().includes(filter));
+    const rows = pairs.map((p) => ({ p, c: comparePair(p) }));
+    rows.sort((x, y) => (y.p.mutual - x.p.mutual) || (x.c.together - y.c.together));
+
+    const nMutual = rows.filter((r) => r.p.mutual).length;
+    document.getElementById("friends-summary").innerHTML =
+      "Week " + week + ": " + nMutual + " mutual pair" + (nMutual === 1 ? "" : "s") +
+      (hasSchedule ? "" : " — <b>no solved schedule for this week yet</b>") +
+      ". Sorted with the least-together pairs first. \"Together\" = same activity, same period.";
+
+    document.querySelector("#friends-table tbody").innerHTML = rows.map(({ p, c }, i) => {
+      let status;
+      if (!p.mutual) status = '<span class="badge warn">one-way, not acted on</span>';
+      else if (p.type === "same" && c.notTogether > 0) status = '<span class="badge danger">MISMATCH (should be 0)</span>';
+      else if (c.together === 0) status = '<span class="badge warn">never together</span>';
+      else status = '<span class="badge ok">ok</span>';
+      return (
+        '<tr class="friend-row" data-i="' + i + '" style="cursor:pointer"><td>' + (p.type === "same" ? "Same schedule" : "Friend") + "</td><td>" +
+        escapeHtml(nameOf(p.a)) + "</td><td>" + escapeHtml(nameOf(p.b)) + "</td><td>" + c.together +
+        "</td><td>" + c.bothPlaced + "</td><td>" + c.notTogether + "</td><td>" + status + "</td></tr>"
+      );
+    }).join("");
+
+    document.querySelectorAll(".friend-row").forEach((tr) => {
+      tr.addEventListener("click", () => showFriendDetail(rows[parseInt(tr.dataset.i, 10)], nameOf));
+    });
+    document.getElementById("friends-detail").innerHTML = "";
+  }
+
+  function showFriendDetail(row, nameOf) {
+    const { p, c } = row;
+    const body = c.rows.map((r) => {
+      const cls = r.together ? "background:var(--ok-bg)" : "";
+      const cell = (v) => (v ? escapeHtml(v) : '<span class="badge warn">flagged</span>');
+      return '<tr style="' + cls + '"><td>' + r.key.replace(":", " P") + "</td><td>" + cell(r.x) + "</td><td>" + cell(r.y) + "</td><td>" + (r.together ? "✓ together" : "") + "</td></tr>";
+    }).join("");
+    document.getElementById("friends-detail").innerHTML =
+      '<h2 style="margin-top:18px">' + escapeHtml(nameOf(p.a)) + " &amp; " + escapeHtml(nameOf(p.b)) + " — " + c.together + " period" + (c.together === 1 ? "" : "s") + " together</h2>" +
+      '<div class="table-wrap"><table><thead><tr><th>Period</th><th>' + escapeHtml(nameOf(p.a)) + "</th><th>" + escapeHtml(nameOf(p.b)) + "</th><th></th></tr></thead><tbody>" + body + "</tbody></table></div>";
   }
 
   // ---- Reassign panel ----

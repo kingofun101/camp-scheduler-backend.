@@ -49,6 +49,7 @@
   const params = new URLSearchParams(location.search);
   const camp = params.get("camp") || "default";
   const camperId = params.get("c");
+  const camperKey = params.get("k") || "";
   const apiBase = params.get("api") || "https://camp-aaron-scheduler-backend.netlify.app/exec";
 
   const app = document.getElementById("app");
@@ -72,26 +73,22 @@
     return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
 
-  if (!camperId) {
+  if (!camperId || !camperKey) {
     render('<div class="msg error">This link is missing a camper id. Please use the personal link sent to your family, or contact camp staff.</div>');
     return;
   }
 
   Promise.all([
     fetch("slots.json").then((r) => r.json()),
-    api("loadRoster"),
-    api("loadPreferences", { query: { camper_id: camperId } }),
-  ]).then(([slotsData, rosterResp, prefsResp]) => {
-    if (!rosterResp.ok) {
-      render('<div class="msg error">Could not load the camp roster. Please try again shortly.</div>');
+    api("formInit", { query: { camper_id: camperId, key: camperKey } }),
+  ]).then(([slotsData, init]) => {
+    if (!init.ok) {
+      render('<div class="msg error">This link isn\'t valid. Please use the personal link sent to your family, or contact camp staff.</div>');
       return;
     }
-    const roster = rosterResp.roster || [];
-    const me = roster.find((c) => c.camper_id === camperId);
-    if (!me) {
-      render('<div class="msg error">We couldn\'t find that camper. Please use the personal link sent to your family, or contact camp staff.</div>');
-      return;
-    }
+    const me = init.camper;
+    const roster = init.roster || [];
+    const prefsResp = { ok: true, submission: init.submission };
 
     const division = me.division;
     const divData = slotsData.divisions[division];
@@ -267,6 +264,7 @@
         method: "POST",
         body: {
           camper_id: camperId,
+          key: camperKey,
           data: JSON.stringify({
             preferences: preferences,
             friend_requests: friend_requests,

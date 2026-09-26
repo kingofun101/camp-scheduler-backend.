@@ -131,14 +131,36 @@
   let poolsData = [];
   let schedule = {}; // week -> {sched, slotCnt}
 
+  // Staff token: asked for once per browser, kept in localStorage, sent as a
+  // Bearer header (never in the URL). A 401 clears it and asks again.
+  function adminToken() {
+    let t = "";
+    try { t = localStorage.getItem("camp_admin_token") || ""; } catch (e) {}
+    if (!t) {
+      t = (prompt("Staff access token:") || "").trim();
+      if (t) { try { localStorage.setItem("camp_admin_token", t); } catch (e) {} }
+    }
+    return t;
+  }
   function api(action, opts) {
     opts = opts || {};
+    const headers = { Authorization: "Bearer " + adminToken() };
+    let req;
     if (opts.method === "POST") {
-      return fetch(apiBase, { method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.assign({ action, camp }, opts.body || {})) }).then((r) => r.json());
+      headers["Content-Type"] = "application/json";
+      req = fetch(apiBase, { method: "POST", headers,
+        body: JSON.stringify(Object.assign({ action, camp }, opts.body || {})) });
+    } else {
+      const qs = new URLSearchParams(Object.assign({ action, camp }, opts.query || {}));
+      req = fetch(apiBase + "?" + qs.toString(), { headers });
     }
-    const qs = new URLSearchParams(Object.assign({ action, camp }, opts.query || {}));
-    return fetch(apiBase + "?" + qs.toString()).then((r) => r.json());
+    return req.then((r) => {
+      if (r.status === 401) {
+        try { localStorage.removeItem("camp_admin_token"); } catch (e) {}
+        showMsg("global-msg", "Access token rejected — reload the page and enter it again.", "error");
+      }
+      return r.json();
+    });
   }
 
   function escapeHtml(s) {
@@ -191,9 +213,14 @@
     renderLinkList();
   }
 
+  function keyFor(camperId) {
+    const c = roster.find((r) => r.camper_id === camperId);
+    return (c && c.key) || "";
+  }
+
   function formUrlFor(camperId) {
     const origin = location.origin;
-    return origin + "/form.html?camp=" + encodeURIComponent(camp) + "&c=" + encodeURIComponent(camperId);
+    return origin + "/form.html?camp=" + encodeURIComponent(camp) + "&c=" + encodeURIComponent(camperId) + "&k=" + encodeURIComponent(keyFor(camperId));
   }
 
   function renderLinkList() {

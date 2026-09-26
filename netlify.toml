@@ -2,8 +2,3 @@
   functions = "netlify/functions"
   publish = "public"
 
-[[redirects]]
-  from = "/exec"
-  to = "/.netlify/functions/exec"
-  status = 200
-  force = true

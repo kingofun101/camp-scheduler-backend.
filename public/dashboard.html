@@ -109,6 +109,34 @@
   dialog h2 { font-size: 1.15rem; }
   .help { background: var(--brand-soft); border-radius: 10px; padding: 10px 14px; font-size: .84rem; margin: 10px 0 12px; }
   .help code { background: #fff; padding: 1px 6px; border-radius: 5px; }
+
+  /* Campers tab: schedule grid + needs-help list */
+  .flagchip { display: inline-block; background: var(--danger-bg); color: var(--danger); border-radius: 6px; padding: 1px 7px; font-size: .75rem; font-weight: 600; margin: 1px 3px 1px 0; white-space: nowrap; }
+  table.sched { table-layout: fixed; }
+  table.sched th, table.sched td { padding: 8px 8px; font-size: .84rem; vertical-align: top; border-right: 1px solid var(--border); }
+  table.sched th { cursor: default; text-align: center; position: static; }
+  table.sched th:first-child, table.sched td:first-child { width: 64px; text-align: center; color: var(--muted); font-weight: 700; }
+  table.sched td.flag { background: var(--danger-bg); color: var(--danger); }
+  table.sched td.fixed { background: #f1f3f7; color: var(--muted); font-size: .78rem; }
+  table.sched td.blank { color: #b8c0cc; text-align: center; }
+  .rk { display: block; font-size: .68rem; font-weight: 700; color: var(--brand); margin-top: 2px; }
+  .rk.moved { color: var(--warn); }
+  .ask { margin: 6px 0 0; padding-left: 18px; font-size: .84rem; }
+  .ask li.open { color: var(--ok); font-weight: 600; }
+  .ask li.full { color: var(--muted); }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: .78rem; color: var(--muted); margin: 8px 0 12px; }
+  .legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; background: #fff; border: 1px solid var(--border); }
+  .legend .l-flag::before { background: var(--danger-bg); border-color: var(--danger); }
+  .legend .l-fixed::before { background: #f1f3f7; }
+  #camper-dialog { width: min(1000px, 96vw); max-height: 92vh; overflow: auto; }
+  tr.click { cursor: pointer; }
+  @media print {
+    #app, #login, #upload-dialog { display: none !important; }
+    body { background: #fff; }
+    #camper-dialog { position: static; width: auto; max-height: none; box-shadow: none; padding: 0; }
+    .no-print { display: none !important; }
+    table.sched td.flag { border: 2px solid #c0362c; }
+  }
 </style>
 </head>
 <body>
@@ -136,6 +164,7 @@
     </div>
     <nav class="nav">
       <div class="tab active" data-tab="roster">Roster &amp; Links</div>
+      <div class="tab" data-tab="campers">Campers</div>
       <div class="tab" data-tab="capacity">Capacity</div>
       <div class="tab" data-tab="friends">Friends</div>
       <div class="tab" data-tab="reassign">Reassign</div>
@@ -198,6 +227,36 @@
     </div>
   </dialog>
 
+  <div class="panel" id="panel-campers">
+    <div class="stats" id="campers-stats" hidden>
+      <div class="stat"><div class="num" id="cs-help">–</div><div class="lbl">Campers who need help</div></div>
+      <div class="stat"><div class="num" id="cs-periods">–</div><div class="lbl">Unfilled periods</div></div>
+      <div class="stat"><div class="num" id="cs-total">–</div><div class="lbl">Campers attending this week</div></div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div style="flex:0 0 130px"><label>Week</label><select id="campers-week"></select></div>
+        <div style="flex:0 0 auto"><button id="load-campers-btn">Load</button></div>
+        <div style="flex:2"><label>Search</label><input type="text" id="campers-search" placeholder="Camper name…"></div>
+        <div style="flex:0 0 150px"><label>Division</label><select id="campers-division"><option value="">All divisions</option></select></div>
+      </div>
+      <div class="toolbar">
+        <div class="seg" id="campers-seg">
+          <button data-mode="help" class="on">Needs help</button>
+          <button data-mode="all">Everyone</button>
+        </div>
+        <button class="secondary small" id="campers-csv-btn">Download needs-help list (CSV)</button>
+        <span class="muted" id="campers-count"></span>
+      </div>
+      <div class="table-wrap">
+        <table id="campers-table">
+          <thead><tr><th>Camper</th><th>Division</th><th>Unfilled</th><th>Periods that need help</th><th>Got 1st choice</th></tr></thead>
+          <tbody><tr><td colspan="5" class="empty">Pick a week and press Load.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
   <div class="panel" id="panel-capacity">
     <div class="card">
       <div class="row">
@@ -250,6 +309,21 @@
   </main>
 </div>
 
+<dialog id="camper-dialog">
+  <div class="row" style="margin-bottom:6px">
+    <div style="flex:1"><h2 id="cd-title" style="margin:0"></h2><div class="muted" id="cd-sub"></div></div>
+    <div class="no-print" style="flex:0 0 auto;display:flex;gap:8px">
+      <button class="secondary small" id="cd-fix-btn">Fix in Reassign</button>
+      <button class="secondary small" id="cd-print-btn">Print</button>
+      <button class="small" id="cd-close-btn">Close</button>
+    </div>
+  </div>
+  <div class="legend"><span class="l-flag">Needs help</span><span class="l-fixed">Fixed activity</span><span>1st / 2nd / 3rd = which choice they got</span></div>
+  <table class="sched" id="cd-grid"></table>
+  <div id="cd-help"></div>
+  <div id="cd-friends"></div>
+</dialog>
+
 <script>
 (function () {
   const params = new URLSearchParams(location.search);
@@ -262,7 +336,7 @@
   let slotsData = null;
   let poolsData = [];
 
-  ["capacity-week", "friends-week", "reassign-week"].forEach((id) => {
+  ["campers-week", "capacity-week", "friends-week", "reassign-week"].forEach((id) => {
     document.getElementById(id).innerHTML = [1, 2, 3, 4, 5, 6, 7, 8].map((w) => '<option value="' + w + '">Week ' + w + "</option>").join("");
   });
 
@@ -523,6 +597,224 @@
     });
   });
 
+  // ---- Campers panel: who needs help + readable schedules ----
+  let weekCache = {};
+  const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  let campersMode = "help";
+  let campersRows = [];
+  let campersWeek = null;
+
+  function loadWeekData(week) {
+    if (weekCache[week]) return Promise.resolve(weekCache[week]);
+    return api("loadSchedule", { query: { week } }).then((resp) => {
+      if (!resp.ok) return null;
+      const d = { solved: !!resp.schedule, sched: resp.schedule ? JSON.parse(resp.schedule) : {}, slotCnt: resp.slotCounts ? JSON.parse(resp.slotCounts) : {} };
+      weekCache[week] = d;
+      return d;
+    });
+  }
+  function attendsWeek(c, week) { return !(c.weeks && c.weeks.length) || c.weeks.includes(week); }
+  function subOf(id) { return preferences.find((p) => p.camper_id === id) || {}; }
+  function prefsAt(c, day, period) {
+    const prefs = subOf(c.camper_id).preferences || {};
+    return prefs[c.division + ":" + day + ":" + period + ":swimalt"] || prefs[c.division + ":" + day + ":" + period] || [];
+  }
+  function samePairNote(c, week) {
+    const me = subOf(c.camper_id);
+    const pid = me.same_schedule_request;
+    if (!pid || subOf(pid).same_schedule_request !== c.camper_id) return "";
+    const partner = roster.find((x) => x.camper_id === pid);
+    if (!partner || !attendsWeek(partner, week)) return "";
+    return '<div class="msg" style="margin:10px 0 0;background:var(--warn-bg);color:var(--warn)"><b>Same-schedule pair with ' + escapeHtml(partner.name) +
+      ".</b> Their schedules must match, so fixing one means fixing both — change the same period for each of them.</div>";
+  }
+  function seatsLeft(week, day, period, base) {
+    const pool = poolsData.find((x) => x.day === day && x.period === period && x.base === base);
+    if (!pool) return null; // unconstrained (e.g. Swim Alternative)
+    const enrolled = (weekCache[week] && weekCache[week].slotCnt[day + "|" + period + "|" + base]) || 0;
+    return Math.max(0, pool.cap_max - enrolled);
+  }
+  const short = (k) => k.replace(/^(\w{3})\w*:/, "$1 P");
+  const ordinal = (r) => ({ 1: "1st", 2: "2nd", 3: "3rd" }[r] || "");
+
+  document.getElementById("load-campers-btn").addEventListener("click", loadCampers);
+  document.getElementById("campers-search").addEventListener("input", renderCampers);
+  document.getElementById("campers-division").addEventListener("change", renderCampers);
+  document.getElementById("campers-seg").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-mode]");
+    if (!b) return;
+    campersMode = b.dataset.mode;
+    document.querySelectorAll("#campers-seg button").forEach((x) => x.classList.toggle("on", x === b));
+    renderCampers();
+  });
+
+  function loadCampers() {
+    const week = parseInt(document.getElementById("campers-week").value, 10);
+    weekCache = {};
+    document.querySelector("#campers-table tbody").innerHTML = '<tr><td colspan="5" class="empty">Loading…</td></tr>';
+    loadWeekData(week).then((d) => {
+      if (!d) return;
+      campersWeek = week;
+      const divs = [...new Set(roster.map((c) => c.division))].sort();
+      const sel = document.getElementById("campers-division");
+      const cur = sel.value;
+      sel.innerHTML = '<option value="">All divisions</option>' + divs.map((x) => '<option>' + escapeHtml(x) + "</option>").join("");
+      sel.value = cur;
+
+      campersRows = roster.filter((c) => attendsWeek(c, week)).map((c) => {
+        const mine = d.sched[c.camper_id];
+        const entries = mine ? Object.entries(mine) : [];
+        const flagged = entries.filter(([, e]) => !e.base).map(([k]) => k);
+        const placed = entries.filter(([, e]) => e.base);
+        return {
+          c,
+          noSchedule: !mine,
+          flagged,
+          firstPct: placed.length ? Math.round((100 * placed.filter(([, e]) => e.rank === 1).length) / placed.length) : null,
+        };
+      });
+      document.getElementById("campers-stats").hidden = false;
+      renderCampers();
+    });
+  }
+
+  function needsHelp(r) { return r.noSchedule || r.flagged.length > 0; }
+
+  function renderCampers() {
+    const d = weekCache[campersWeek];
+    const tbody = document.querySelector("#campers-table tbody");
+    if (!d) return;
+    if (!d.solved) { tbody.innerHTML = '<tr><td colspan="5" class="empty">No solved schedule for week ' + campersWeek + " yet.</td></tr>"; return; }
+    const q = (document.getElementById("campers-search").value || "").toLowerCase();
+    const div = document.getElementById("campers-division").value;
+    const help = campersRows.filter(needsHelp);
+    document.getElementById("cs-help").textContent = help.length;
+    document.getElementById("cs-periods").textContent = help.reduce((n, r) => n + (r.noSchedule ? 0 : r.flagged.length), 0);
+    document.getElementById("cs-total").textContent = campersRows.length;
+
+    let rows = campersRows
+      .filter((r) => campersMode === "all" || needsHelp(r))
+      .filter((r) => !q || r.c.name.toLowerCase().includes(q))
+      .filter((r) => !div || r.c.division === div);
+    rows.sort((a, b) => (b.noSchedule - a.noSchedule) || (b.flagged.length - a.flagged.length) || a.c.name.localeCompare(b.c.name));
+    document.getElementById("campers-count").textContent = rows.length + " camper" + (rows.length === 1 ? "" : "s");
+    if (!rows.length) {
+      tbody.innerHTML = '<tr><td colspan="5" class="empty">' + (campersMode === "help" ? "No campers need help with these filters." : "No campers match.") + "</td></tr>";
+      return;
+    }
+    tbody.innerHTML = rows.slice(0, 300).map((r, i) =>
+      '<tr class="click" data-id="' + escapeHtml(r.c.camper_id) + '"><td class="name">' + escapeHtml(r.c.name) + "</td><td>" + escapeHtml(r.c.division) + "</td><td>" +
+      (r.noSchedule ? '<span class="badge danger">No schedule</span>' : r.flagged.length ? '<span class="badge danger">' + r.flagged.length + "</span>" : '<span class="badge ok">0</span>') +
+      "</td><td>" + r.flagged.map((k) => '<span class="flagchip">' + short(k) + "</span>").join("") + "</td><td>" + (r.firstPct == null ? "–" : r.firstPct + "%") + "</td></tr>"
+    ).join("") + (rows.length > 300 ? '<tr><td colspan="5" class="empty">Showing the first 300 — narrow with search or division.</td></tr>' : "");
+  }
+
+  document.getElementById("campers-table").addEventListener("click", (e) => {
+    const tr = e.target.closest("tr[data-id]");
+    if (tr) showCamperSchedule(tr.dataset.id, campersWeek);
+  });
+
+  document.getElementById("campers-csv-btn").addEventListener("click", () => {
+    if (campersWeek == null) return;
+    const lines = ["camper,division,week,unfilled_period,requested_1,requested_2,requested_3"];
+    campersRows.filter(needsHelp).forEach((r) => {
+      if (r.noSchedule) { lines.push([r.c.name, r.c.division, campersWeek, "NO SCHEDULE", "", "", ""].map(csvCell).join(",")); return; }
+      r.flagged.forEach((k) => {
+        const [day, period] = k.split(":");
+        const ask = prefsAt(r.c, day, period);
+        lines.push([r.c.name, r.c.division, campersWeek, short(k), ask[0] || "", ask[1] || "", ask[2] || ""].map(csvCell).join(","));
+      });
+    });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
+    a.download = "camp-" + camp + "-week" + campersWeek + "-needs-help.csv";
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+
+  // ---- One camper's schedule (grid), used by the Campers tab ----
+  const camperDlg = document.getElementById("camper-dialog");
+  let dlgCamper = null, dlgWeek = null;
+
+  function showCamperSchedule(camperId, week) {
+    const c = roster.find((x) => x.camper_id === camperId);
+    const d = weekCache[week];
+    if (!c || !d) return;
+    dlgCamper = c; dlgWeek = week;
+    const sched = d.sched[camperId] || {};
+    const fixed = (slotsData.divisions[c.division] || {}).fixed || {};
+    const periods = [1, 2, 3, 4, 5, 6, 7];
+
+    document.getElementById("cd-title").textContent = c.name;
+    document.getElementById("cd-sub").textContent = c.division + " · Grade " + c.grade + " · Week " + week + (subOf(camperId).swim_alt ? " · Swim Alternative" : "");
+
+    let html = "<thead><tr><th></th>" + DAYS.map((x) => "<th>" + x + "</th>").join("") + "</tr></thead><tbody>";
+    periods.forEach((p) => {
+      html += "<tr><td>P" + p + "</td>";
+      DAYS.forEach((day) => {
+        const e = sched[day + ":" + p];
+        if (e && !e.base) html += '<td class="flag"><b>Needs help</b></td>';
+        else if (e) {
+          const tag = e.backfilled ? '<span class="rk moved">moved to open period</span>' : e.rank ? '<span class="rk">' + ordinal(e.rank) + " choice</span>" : "";
+          html += "<td>" + escapeHtml(e.base) + tag + "</td>";
+        } else if ((fixed[day] || {})[p]) html += '<td class="fixed">' + escapeHtml(fixed[day][p]) + "</td>";
+        else html += '<td class="blank">–</td>';
+      });
+      html += "</tr>";
+    });
+    document.getElementById("cd-grid").innerHTML = html + "</tbody>";
+
+    const flagged = Object.entries(sched).filter(([, e]) => !e.base).map(([k]) => k)
+      .sort((a, b) => DAYS.indexOf(a.split(":")[0]) - DAYS.indexOf(b.split(":")[0]) || parseInt(a.split(":")[1], 10) - parseInt(b.split(":")[1], 10));
+    let helpHtml = "";
+    if (!d.sched[camperId]) {
+      helpHtml = '<div class="msg error" style="margin-top:14px"><b>No schedule for this week.</b> This camper has no solved schedule — they may not have submitted their selections, or were added after the last solve.</div>';
+    } else if (flagged.length) {
+      helpHtml = '<h2 style="margin:18px 0 4px">Needs help (' + flagged.length + ")</h2><div class=\"muted\">None of the choices they asked for could be given. Usual reasons: the activity was full, they'd already used it this week, or they're tied to a same-schedule partner whose choices didn't overlap. Seats shown are open <i>right now</i>; use <b>Fix in Reassign</b> to place them.</div>" + samePairNote(c, week) +
+        flagged.map((k) => {
+          const [day, period] = k.split(":");
+          const ask = prefsAt(c, day, period);
+          const items = ask.length ? ask.map((base) => {
+            const left = seatsLeft(week, day, period, base);
+            const cls = left === null || left > 0 ? "open" : "full";
+            return '<li class="' + cls + '">' + escapeHtml(base) + (left === null ? " (no limit)" : left > 0 ? " — " + left + " seat" + (left === 1 ? "" : "s") + " open now" : " — full") + "</li>";
+          }).join("") : '<li class="full">Nothing valid was ranked for this period.</li>';
+          return "<div style=\"margin-top:10px\"><b>" + day + " P" + period + '</b><ol class="ask">' + items + "</ol></div>";
+        }).join("");
+    } else {
+      helpHtml = '<div class="msg ok" style="margin-top:14px">Schedule is complete — nothing needs attention.</div>';
+    }
+    document.getElementById("cd-help").innerHTML = helpHtml;
+
+    // Friends: mutual requests + how many periods they share this week.
+    const me = subOf(camperId);
+    const friends = [];
+    (me.friend_requests || []).forEach((fid) => { if ((subOf(fid).friend_requests || []).includes(camperId)) friends.push({ fid, type: "Friend" }); });
+    if (me.same_schedule_request && subOf(me.same_schedule_request).same_schedule_request === camperId) friends.push({ fid: me.same_schedule_request, type: "Same schedule" });
+    document.getElementById("cd-friends").innerHTML = friends.length
+      ? '<h2 style="margin:18px 0 6px">Friends</h2>' + friends.map(({ fid, type }) => {
+          const f = roster.find((x) => x.camper_id === fid);
+          if (!f) return "";
+          if (!attendsWeek(f, week)) return "<div>" + escapeHtml(f.name) + " <span class=\"muted\">(" + type + ") — not attending this week</span></div>";
+          const fs = d.sched[fid] || {};
+          const together = Object.keys(sched).filter((k) => sched[k].base && fs[k] && fs[k].base === sched[k].base).length;
+          return "<div>" + escapeHtml(f.name) + ' <span class="muted">(' + type + ") — together in " + together + " period" + (together === 1 ? "" : "s") + "</span></div>";
+        }).join("")
+      : "";
+    camperDlg.showModal();
+  }
+
+  document.getElementById("cd-close-btn").addEventListener("click", () => camperDlg.close());
+  document.getElementById("cd-print-btn").addEventListener("click", () => window.print());
+  document.getElementById("cd-fix-btn").addEventListener("click", () => {
+    if (!dlgCamper) return;
+    camperDlg.close();
+    document.querySelector('[data-tab="reassign"]').click();
+    document.getElementById("reassign-week").value = String(dlgWeek);
+    document.getElementById("camper-search").value = dlgCamper.name;
+    loadCamperForReassign();
+  });
+
   // ---- Capacity panel ----
   let capacityRows = [];
   let sortKey = null, sortDir = 1;
@@ -780,6 +1072,7 @@
 
     sched[me.camper_id] = mySched;
     api("saveSchedule", { method: "POST", body: { week, data: JSON.stringify({ sched, slotCnt }) } }).then((resp) => {
+      if (resp.ok) weekCache = {};
       msgEl.innerHTML = resp.ok ? ' <span style="color:var(--ok)">Saved.</span>' : ' <span style="color:var(--danger)">Save failed: ' + escapeHtml(resp.error) + "</span>";
     });
   }

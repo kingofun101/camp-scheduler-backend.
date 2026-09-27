@@ -2157,7 +2157,36 @@
           ]
         }
       ],
-      "swim_alt_eligible": false
+      "swim_alt_eligible": false,
+      "fixed": {
+        "Monday": {
+          "1": "Instructional Swim",
+          "2": "Bunk Unity",
+          "4": "Free Swim",
+          "5": "Lunch"
+        },
+        "Tuesday": {
+          "1": "Instructional Swim",
+          "4": "Free Swim",
+          "5": "Lunch"
+        },
+        "Wednesday": {
+          "1": "Instructional Swim",
+          "4": "Free Swim",
+          "5": "Lunch"
+        },
+        "Thursday": {
+          "1": "Instructional Swim",
+          "4": "Free Swim",
+          "5": "Lunch"
+        },
+        "Friday": {
+          "1": "Instructional Swim",
+          "2": "Shabbat",
+          "4": "Free Swim",
+          "5": "Lunch"
+        }
+      }
     },
     "Tavor": {
       "slots": [
@@ -4359,6 +4388,35 @@
         }
       ],
       "swim_alt_eligible": true,
+      "fixed": {
+        "Monday": {
+          "1": "Bunk Unity",
+          "2": "Instructional Swim",
+          "4": "Lunch",
+          "5": "Free Swim"
+        },
+        "Tuesday": {
+          "2": "Instructional Swim",
+          "4": "Lunch",
+          "5": "Free Swim"
+        },
+        "Wednesday": {
+          "2": "Instructional Swim",
+          "4": "Lunch",
+          "5": "Free Swim"
+        },
+        "Thursday": {
+          "2": "Instructional Swim",
+          "4": "Lunch",
+          "5": "Free Swim"
+        },
+        "Friday": {
+          "2": "Instructional Swim",
+          "4": "Lunch",
+          "5": "Free Swim",
+          "6": "Shabbat"
+        }
+      },
       "swim_period": {
         "Monday": "2",
         "Tuesday": "2",
@@ -6397,6 +6455,35 @@
         }
       ],
       "swim_alt_eligible": true,
+      "fixed": {
+        "Monday": {
+          "2": "Instructional Swim",
+          "4": "Bunk Unity",
+          "5": "Lunch",
+          "7": "Free Swim"
+        },
+        "Tuesday": {
+          "2": "Instructional Swim",
+          "5": "Lunch",
+          "7": "Free Swim"
+        },
+        "Wednesday": {
+          "2": "Instructional Swim",
+          "5": "Lunch",
+          "7": "Free Swim"
+        },
+        "Thursday": {
+          "2": "Instructional Swim",
+          "5": "Lunch",
+          "7": "Free Swim"
+        },
+        "Friday": {
+          "2": "Instructional Swim",
+          "5": "Lunch",
+          "6": "Shabbat",
+          "7": "Free Swim"
+        }
+      },
       "swim_period": {
         "Monday": "2",
         "Tuesday": "2",

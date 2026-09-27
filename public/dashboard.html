@@ -3,97 +3,207 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Camp Aaron Scheduler — Staff Dashboard</title>
+<title>Camp Aaron Scheduler</title>
 <style>
   :root {
-    --bg: #f7f5f0; --card: #ffffff; --ink: #1f2937; --muted: #6b7280;
-    --accent: #2563eb; --accent-ink: #ffffff; --border: #e5e7eb;
-    --danger: #dc2626; --danger-bg: #fef2f2; --ok: #059669; --ok-bg: #ecfdf5;
-    --warn: #b45309; --warn-bg: #fffbeb;
+    --bg: #f4f6f9; --card: #ffffff; --ink: #14213d; --muted: #667085;
+    --brand: #1d4e89; --brand-dark: #12355f; --brand-soft: #e8f0fb;
+    --accent: #1d4e89; --accent-ink: #ffffff; --border: #e4e8ee;
+    --danger: #c0362c; --danger-bg: #fdecea; --ok: #157347; --ok-bg: #e6f4ec;
+    --warn: #a15c07; --warn-bg: #fff4e0; --shadow: 0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.08);
   }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-         background: var(--bg); color: var(--ink); line-height: 1.4; }
-  .wrap { max-width: 980px; margin: 0 auto; padding: 20px 16px 80px; }
-  h1 { font-size: 1.3rem; margin: 0 0 4px; }
-  h2 { font-size: 1.05rem; margin: 0 0 12px; }
-  .sub { color: var(--muted); font-size: 0.88rem; margin-bottom: 18px; }
-  .tabs { display: flex; gap: 6px; margin-bottom: 18px; border-bottom: 1px solid var(--border); }
-  .tab { padding: 9px 16px; cursor: pointer; border-radius: 8px 8px 0 0; font-size: 0.92rem; color: var(--muted); }
-  .tab.active { background: var(--card); color: var(--ink); font-weight: 600; border: 1px solid var(--border); border-bottom-color: var(--card); margin-bottom: -1px; }
+  [hidden] { display: none !important; }
+  body { margin: 0; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background: var(--bg); color: var(--ink); line-height: 1.45; -webkit-font-smoothing: antialiased; }
+  h1 { font-size: 1.15rem; margin: 0; font-weight: 700; }
+  h2 { font-size: 1rem; margin: 0 0 12px; font-weight: 700; }
+  .muted { color: var(--muted); font-size: 0.84rem; }
+  .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 14px; }
+
+  /* Sign-in */
+  .login { min-height: 100vh; display: grid; place-items: center; padding: 20px;
+           background: linear-gradient(160deg, var(--brand-dark), var(--brand)); }
+  .login-card { background: var(--card); border-radius: 16px; padding: 32px; width: 100%; max-width: 380px; box-shadow: 0 10px 40px rgba(0,0,0,.25); }
+  .login-card h1 { font-size: 1.4rem; margin: 14px 0 4px; }
+  .login-card p { margin: 0 0 18px; color: var(--muted); font-size: .92rem; }
+  .logo { width: 44px; height: 44px; border-radius: 12px; background: var(--brand); color: #fff; display: grid; place-items: center; font-weight: 800; letter-spacing: .5px; }
+
+  /* Header + nav */
+  .top { background: linear-gradient(135deg, var(--brand-dark), var(--brand)); color: #fff; }
+  .top-inner { max-width: 1080px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; gap: 14px; }
+  .top .logo { background: rgba(255,255,255,.18); width: 38px; height: 38px; font-size: .9rem; }
+  .top .grow { flex: 1; }
+  .pill { background: rgba(255,255,255,.16); border-radius: 999px; padding: 3px 12px; font-size: .8rem; }
+  .top button.ghost { background: transparent; border: 1px solid rgba(255,255,255,.4); color: #fff; padding: 6px 12px; font-size: .82rem; }
+  .nav { max-width: 1080px; margin: 0 auto; padding: 0 20px; display: flex; gap: 4px; }
+  .tab { padding: 11px 16px; cursor: pointer; font-size: .92rem; color: rgba(255,255,255,.75); border-bottom: 3px solid transparent; font-weight: 500; }
+  .tab:hover { color: #fff; }
+  .tab.active { color: #fff; border-bottom-color: #fff; font-weight: 600; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 22px 20px 80px; }
+
   .panel { display: none; }
   .panel.active { display: block; }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 14px; }
-  label { font-size: 0.85rem; color: var(--muted); display: block; margin-bottom: 4px; }
-  input[type=text], input[type=number], select, textarea {
-    padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); font-size: 0.92rem; width: 100%; }
-  textarea { font-family: ui-monospace, monospace; font-size: 0.82rem; min-height: 120px; }
-  .row { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 10px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; margin-bottom: 16px; box-shadow: var(--shadow); }
+
+  /* Stat cards */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-bottom: 16px; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow); }
+  .stat .num { font-size: 2rem; font-weight: 800; line-height: 1.1; }
+  .stat .lbl { color: var(--muted); font-size: .84rem; margin-top: 2px; }
+  .stat.wide { grid-column: span 2; }
+  @media (max-width: 640px) { .stat.wide { grid-column: span 1; } }
+  .bar { height: 10px; border-radius: 999px; background: #e9edf3; overflow: hidden; margin: 10px 0 8px; }
+  .bar > span { display: block; height: 100%; background: linear-gradient(90deg, #2e8b57, #35a76b); border-radius: 999px; transition: width .4s; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { background: var(--brand-soft); color: var(--brand-dark); border-radius: 999px; padding: 3px 11px; font-size: .8rem; font-weight: 600; }
+  .weeks { display: flex; align-items: flex-end; gap: 8px; height: 74px; margin-top: 10px; }
+  .weeks .w { flex: 1; text-align: center; font-size: .72rem; color: var(--muted); }
+  .weeks .w i { display: block; background: var(--brand); border-radius: 5px 5px 0 0; opacity: .85; margin-bottom: 3px; min-height: 3px; }
+  .weeks .w b { display: block; color: var(--ink); font-weight: 700; font-size: .78rem; }
+
+  /* Controls */
+  label { font-size: 0.8rem; color: var(--muted); display: block; margin-bottom: 4px; font-weight: 600; }
+  input[type=text], input[type=password], input[type=number], select, textarea {
+    padding: 9px 12px; border-radius: 9px; border: 1px solid #cfd6e0; font-size: 0.92rem; width: 100%; background: #fff; color: var(--ink); font-family: inherit; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--brand-soft); border-color: var(--brand); }
+  textarea { font-family: ui-monospace, monospace; font-size: 0.82rem; min-height: 130px; }
+  .row { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 12px; }
   .row > div { flex: 1; min-width: 140px; }
-  button { background: var(--accent); color: var(--accent-ink); border: none; border-radius: 8px;
-           padding: 9px 16px; font-size: 0.92rem; font-weight: 600; cursor: pointer; }
-  button.secondary { background: #eef2ff; color: var(--accent); }
+  button { background: var(--brand); color: var(--accent-ink); border: none; border-radius: 9px;
+           padding: 9px 16px; font-size: 0.9rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+  button:hover { background: var(--brand-dark); }
+  button.secondary { background: var(--brand-soft); color: var(--brand-dark); }
+  button.secondary:hover { background: #d7e5f8; }
+  button.small { padding: 5px 11px; font-size: .8rem; }
   button:disabled { opacity: 0.5; cursor: not-allowed; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
-  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--border); }
-  th { color: var(--muted); font-weight: 600; cursor: pointer; user-select: none; }
-  tr.under-min { background: var(--warn-bg); }
-  tr.over-cap { background: var(--danger-bg); }
-  .badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+  .seg { display: inline-flex; background: #eef1f6; border-radius: 10px; padding: 3px; gap: 2px; }
+  .seg button { background: transparent; color: var(--muted); padding: 6px 14px; font-size: .84rem; }
+  .seg button:hover { background: rgba(255,255,255,.6); }
+  .seg button.on { background: #fff; color: var(--ink); box-shadow: var(--shadow); }
+  .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+  .toolbar .grow { flex: 1; min-width: 200px; }
+  .toolbar select { width: auto; }
+
+  /* Tables */
+  .table-wrap { overflow: auto; max-height: 68vh; border: 1px solid var(--border); border-radius: 10px; }
+  table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.88rem; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  th { position: sticky; top: 0; background: #f8fafc; color: var(--muted); font-weight: 700; font-size: .76rem; text-transform: uppercase; letter-spacing: .04em; cursor: pointer; user-select: none; z-index: 1; }
+  tbody tr:hover td { background: #fafbfd; }
+  tr.under-min td { background: var(--warn-bg); }
+  tr.over-cap td { background: var(--danger-bg); }
+  td.actions { text-align: right; white-space: nowrap; }
+  .name { font-weight: 600; }
+  .badge { display: inline-block; white-space: nowrap; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 700; }
   .badge.warn { background: var(--warn-bg); color: var(--warn); }
   .badge.danger { background: var(--danger-bg); color: var(--danger); }
   .badge.ok { background: var(--ok-bg); color: var(--ok); }
-  .msg { border-radius: 10px; padding: 10px 14px; margin-bottom: 14px; font-size: 0.88rem; }
+  .msg { border-radius: 10px; padding: 10px 14px; margin-bottom: 14px; font-size: 0.9rem; }
   .msg.error { background: var(--danger-bg); color: var(--danger); }
   .msg.ok { background: var(--ok-bg); color: var(--ok); }
-  .link-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
-  .link-row code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.78rem; }
-  .muted { color: var(--muted); font-size: 0.82rem; }
-  .table-wrap { overflow-x: auto; }
+  #global-msg { max-width: 1080px; margin: 14px auto 0; padding: 0 20px; }
+  .empty { text-align: center; padding: 34px 10px; color: var(--muted); }
+  dialog { border: none; border-radius: 16px; padding: 24px; width: min(640px, 92vw); box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+  dialog::backdrop { background: rgba(16,24,40,.5); }
+  dialog h2 { font-size: 1.15rem; }
+  .help { background: var(--brand-soft); border-radius: 10px; padding: 10px 14px; font-size: .84rem; margin: 10px 0 12px; }
+  .help code { background: #fff; padding: 1px 6px; border-radius: 5px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>Camp Aaron Scheduler — Staff Dashboard</h1>
-  <div class="sub" id="camp-label"></div>
+
+<div class="login" id="login" hidden>
+  <form class="login-card" id="login-form">
+    <div class="logo">CA</div>
+    <h1>Camp Aaron Scheduler</h1>
+    <p>Staff sign-in. Ask the program director for the staff access code.</p>
+    <div id="login-error"></div>
+    <label for="login-token">Access code</label>
+    <input type="password" id="login-token" autocomplete="current-password" autofocus>
+    <button type="submit" style="width:100%;margin-top:14px;padding:11px">Sign in</button>
+  </form>
+</div>
+
+<div id="app" hidden>
+  <header class="top">
+    <div class="top-inner">
+      <div class="logo">CA</div>
+      <h1>Camp Aaron Scheduler</h1>
+      <span class="pill" id="camp-label"></span>
+      <span class="grow"></span>
+      <button class="ghost" id="signout-btn">Sign out</button>
+    </div>
+    <nav class="nav">
+      <div class="tab active" data-tab="roster">Roster &amp; Links</div>
+      <div class="tab" data-tab="capacity">Capacity</div>
+      <div class="tab" data-tab="friends">Friends</div>
+      <div class="tab" data-tab="reassign">Reassign</div>
+    </nav>
+  </header>
   <div id="global-msg"></div>
 
-  <div class="tabs">
-    <div class="tab active" data-tab="roster">Roster &amp; Links</div>
-    <div class="tab" data-tab="capacity">Capacity</div>
-    <div class="tab" data-tab="reassign">Reassign</div>
-    <div class="tab" data-tab="friends">Friends</div>
-  </div>
+  <main class="wrap">
 
   <div class="panel active" id="panel-roster">
-    <div class="card">
-      <h2>Roster</h2>
-      <div class="sub" id="roster-status">Loading…</div>
-      <details>
-        <summary style="cursor:pointer; font-size:0.9rem; margin-bottom:8px;">Upload / replace roster (CSV: camper_id,name,division,grade,gender[,weeks])</summary>
-        <textarea id="roster-csv" placeholder="camper_id,name,division,grade,gender&#10;alice_smith,Alice Smith,Gilad,5,F"></textarea>
-        <div class="row" style="margin-top:8px">
-          <button id="upload-roster-btn">Upload roster</button>
-          <span class="muted">Replaces the entire roster for this camp.</span>
-        </div>
-      </details>
-    </div>
-    <div class="card">
-      <h2>Per-camper links</h2>
-      <div class="row">
-        <div><input type="text" id="link-filter" placeholder="Filter by name…"></div>
-        <div><button class="secondary" id="copy-all-btn">Copy all as CSV</button></div>
+    <div class="stats">
+      <div class="stat"><div class="num" id="stat-total">–</div><div class="lbl">Campers on roster</div></div>
+      <div class="stat"><div class="num" id="stat-submitted">–</div><div class="lbl">Submitted selections</div></div>
+      <div class="stat"><div class="num" id="stat-pending">–</div><div class="lbl">Still waiting on</div></div>
+      <div class="stat wide">
+        <div class="lbl" style="margin:0"><b id="stat-pct">–</b> complete</div>
+        <div class="bar"><span id="stat-bar" style="width:0"></span></div>
+        <div class="chips" id="stat-divisions"></div>
       </div>
-      <div id="link-list"></div>
+      <div class="stat wide">
+        <div class="lbl" style="margin:0">Campers attending each week</div>
+        <div class="weeks" id="stat-weeks"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="toolbar">
+        <div class="grow"><input type="text" id="link-filter" placeholder="Search campers by name…"></div>
+        <div class="seg" id="status-seg">
+          <button data-status="all" class="on">All</button>
+          <button data-status="pending">Pending</button>
+          <button data-status="submitted">Submitted</button>
+        </div>
+        <select id="division-filter"><option value="">All divisions</option></select>
+      </div>
+      <div class="toolbar">
+        <button class="secondary small" id="copy-pending-btn">Copy pending links</button>
+        <button class="secondary small" id="download-csv-btn">Download all links (CSV)</button>
+        <button class="secondary small" id="open-upload-btn">Upload / replace roster</button>
+        <span class="muted" id="roster-count"></span>
+      </div>
+      <div class="table-wrap">
+        <table id="roster-table">
+          <thead><tr><th>Camper</th><th>Division</th><th>Grade</th><th>Status</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
   </div>
+
+  <dialog id="upload-dialog">
+    <h2>Upload roster</h2>
+    <div class="help">Choose a CSV file, or paste rows below. Columns: <code>camper_id,name,division,grade,gender</code> and optionally <code>weeks</code> (like <code>1;2;3</code>).
+      Uploading <b>replaces the whole roster</b>. Campers already on it keep their existing links.</div>
+    <input type="file" id="roster-file" accept=".csv,text/csv">
+    <textarea id="roster-csv" style="margin-top:10px" placeholder="camper_id,name,division,grade,gender,weeks&#10;alice_smith,Alice Smith,Gilad,5,F,1;2;3"></textarea>
+    <div class="row" style="margin:14px 0 0;justify-content:flex-end">
+      <div style="flex:0 0 auto"><button class="secondary" id="cancel-upload-btn">Cancel</button></div>
+      <div style="flex:0 0 auto"><button id="upload-roster-btn">Upload roster</button></div>
+    </div>
+  </dialog>
 
   <div class="panel" id="panel-capacity">
     <div class="card">
       <div class="row">
-        <div><label>Week</label><input type="text" id="capacity-week" value="1"></div>
-        <div><button id="load-capacity-btn">Load</button></div>
-        <div style="flex:2"><input type="text" id="capacity-filter" placeholder="Filter activity/day…"></div>
+        <div style="flex:0 0 130px"><label>Week</label><select id="capacity-week"></select></div>
+        <div style="flex:0 0 auto"><button id="load-capacity-btn">Load</button></div>
+        <div style="flex:2"><label>Filter</label><input type="text" id="capacity-filter" placeholder="Activity or day…"></div>
       </div>
       <div class="sub" id="capacity-summary"></div>
       <div class="table-wrap">
@@ -109,10 +219,10 @@
   <div class="panel" id="panel-friends">
     <div class="card">
       <div class="row">
-        <div><label>Week</label><input type="text" id="friends-week" value="1"></div>
-        <div><button id="load-friends-btn">Load</button></div>
-        <div style="flex:2"><input type="text" id="friends-filter" placeholder="Filter by camper name…"></div>
-        <div style="flex:0 0 auto"><label style="display:flex;gap:6px;align-items:center;margin:0"><input type="checkbox" id="friends-oneway" style="width:auto"> include one-way requests</label></div>
+        <div style="flex:0 0 130px"><label>Week</label><select id="friends-week"></select></div>
+        <div style="flex:0 0 auto"><button id="load-friends-btn">Load</button></div>
+        <div style="flex:2"><label>Filter</label><input type="text" id="friends-filter" placeholder="Camper name…"></div>
+        <div style="flex:0 0 auto"><label style="display:flex;gap:6px;align-items:center;margin:0 0 10px"><input type="checkbox" id="friends-oneway" style="width:auto"> include one-way requests</label></div>
       </div>
       <div class="sub" id="friends-summary">Pairs are only acted on by the solver when <b>mutual</b> (both named each other). "Together" = same activity in the same period. Click a row for the period-by-period view.</div>
       <div class="table-wrap">
@@ -128,14 +238,16 @@
   <div class="panel" id="panel-reassign">
     <div class="card">
       <div class="row">
-        <div><label>Week</label><input type="text" id="reassign-week" value="1"></div>
+        <div style="flex:0 0 130px"><label>Week</label><select id="reassign-week"></select></div>
         <div style="flex:2"><label>Camper</label><input type="text" id="camper-search" list="camper-datalist" placeholder="Start typing a name…"></div>
-        <div><button id="load-camper-btn">Load</button></div>
+        <div style="flex:0 0 auto"><button id="load-camper-btn">Load</button></div>
       </div>
       <datalist id="camper-datalist"></datalist>
       <div id="reassign-body"></div>
     </div>
   </div>
+
+  </main>
 </div>
 
 <script>
@@ -143,28 +255,43 @@
   const params = new URLSearchParams(location.search);
   const camp = params.get("camp") || "default";
   const apiBase = params.get("api") || "https://camp-aaron-scheduler-backend.netlify.app/exec";
-  document.getElementById("camp-label").textContent = "Camp: " + camp;
+  document.getElementById("camp-label").textContent = camp;
 
   let roster = [];
   let preferences = [];
   let slotsData = null;
   let poolsData = [];
-  let schedule = {}; // week -> {sched, slotCnt}
 
-  // Staff token: asked for once per browser, kept in localStorage, sent as a
-  // Bearer header (never in the URL). A 401 clears it and asks again.
-  function adminToken() {
-    let t = "";
-    try { t = localStorage.getItem("camp_admin_token") || ""; } catch (e) {}
-    if (!t) {
-      t = (prompt("Staff access token:") || "").trim();
-      if (t) { try { localStorage.setItem("camp_admin_token", t); } catch (e) {} }
-    }
-    return t;
+  ["capacity-week", "friends-week", "reassign-week"].forEach((id) => {
+    document.getElementById(id).innerHTML = [1, 2, 3, 4, 5, 6, 7, 8].map((w) => '<option value="' + w + '">Week ' + w + "</option>").join("");
+  });
+
+  // ---- Sign-in ----
+  // The staff token lives in localStorage and is sent as a Bearer header,
+  // never in a URL. A 401 signs the user out and asks again.
+  function getToken() { try { return localStorage.getItem("camp_admin_token") || ""; } catch (e) { return ""; } }
+  function showLogin(errorText) {
+    document.getElementById("app").hidden = true;
+    document.getElementById("login").hidden = false;
+    document.getElementById("login-error").innerHTML = errorText ? '<div class="msg error">' + escapeHtml(errorText) + "</div>" : "";
+    document.getElementById("login-token").focus();
   }
+  document.getElementById("login-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const t = document.getElementById("login-token").value.trim();
+    if (!t) return;
+    try { localStorage.setItem("camp_admin_token", t); } catch (err) {}
+    document.getElementById("login-token").value = "";
+    start();
+  });
+  document.getElementById("signout-btn").addEventListener("click", () => {
+    try { localStorage.removeItem("camp_admin_token"); } catch (e) {}
+    showLogin("");
+  });
+
   function api(action, opts) {
     opts = opts || {};
-    const headers = { Authorization: "Bearer " + adminToken() };
+    const headers = { Authorization: "Bearer " + getToken() };
     let req;
     if (opts.method === "POST") {
       headers["Content-Type"] = "application/json";
@@ -177,7 +304,8 @@
     return req.then((r) => {
       if (r.status === 401) {
         try { localStorage.removeItem("camp_admin_token"); } catch (e) {}
-        showMsg("global-msg", "Access token rejected — reload the page and enter it again.", "error");
+        showLogin("That access code wasn't accepted. Please try again.");
+        return { ok: false, unauthorized: true };
       }
       return r.json();
     });
@@ -186,8 +314,11 @@
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
+  let msgTimer;
   function showMsg(elId, text, cls) {
     document.getElementById(elId).innerHTML = '<div class="msg ' + cls + '">' + escapeHtml(text) + "</div>";
+    clearTimeout(msgTimer);
+    msgTimer = setTimeout(() => { document.getElementById(elId).innerHTML = ""; }, 5000);
   }
 
   // ---- Tabs ----
@@ -203,6 +334,7 @@
   // ---- Load base data ----
   function reloadRosterAndPrefs() {
     return Promise.all([api("loadRoster"), api("listPreferences")]).then(([r, p]) => {
+      if (r.unauthorized || p.unauthorized) return;
       roster = (r.ok && r.roster) || [];
       preferences = (p.ok && p.submissions) || [];
       renderRosterPanel();
@@ -210,77 +342,157 @@
     });
   }
 
-  Promise.all([
-    fetch("slots.json").then((r) => r.json()),
-    fetch("pools.json").then((r) => r.json()),
-    reloadRosterAndPrefs(),
-  ]).then(([slots, pools]) => {
-    slotsData = slots;
-    poolsData = pools;
-  }).catch((err) => {
-    showMsg("global-msg", "Failed to load base data: " + err, "error");
-  });
+  function start() {
+    if (!getToken()) { showLogin(""); return; }
+    document.getElementById("login").hidden = true;
+    document.getElementById("app").hidden = false;
+    Promise.all([
+      fetch("slots.json").then((r) => r.json()),
+      fetch("pools.json").then((r) => r.json()),
+      reloadRosterAndPrefs(),
+    ]).then(([slots, pools]) => {
+      slotsData = slots;
+      poolsData = pools;
+    }).catch((err) => {
+      showMsg("global-msg", "Failed to load data: " + err, "error");
+    });
+  }
 
   // ---- Roster & Links panel ----
-  function renderRosterPanel() {
-    const submittedIds = new Set(preferences.map((p) => p.camper_id));
-    const n = roster.length;
-    const nSubmitted = roster.filter((c) => submittedIds.has(c.camper_id)).length;
-    const perWeek = [1, 2, 3, 4, 5, 6, 7, 8].map((w) => "W" + w + ": " + roster.filter((c) => !(c.weeks && c.weeks.length) || c.weeks.includes(w)).length);
-    document.getElementById("roster-status").textContent =
-      n === 0 ? "No roster uploaded yet for this camp." :
-      n + " campers on roster, " + nSubmitted + " have submitted (" + (n ? Math.round(100 * nSubmitted / n) : 0) + "%). Attending per week — " + perWeek.join(", ") + ".";
-    renderLinkList();
-  }
+  let statusFilter = "all";
+  let showAllRows = false;
+  const ROW_LIMIT = 150;
 
   function keyFor(camperId) {
     const c = roster.find((r) => r.camper_id === camperId);
     return (c && c.key) || "";
   }
-
   function formUrlFor(camperId) {
-    const origin = location.origin;
-    return origin + "/form.html?camp=" + encodeURIComponent(camp) + "&c=" + encodeURIComponent(camperId) + "&k=" + encodeURIComponent(keyFor(camperId));
+    return location.origin + "/form.html?camp=" + encodeURIComponent(camp) + "&c=" + encodeURIComponent(camperId) + "&k=" + encodeURIComponent(keyFor(camperId));
+  }
+  function submittedSet() { return new Set(preferences.map((p) => p.camper_id)); }
+
+  function renderRosterPanel() {
+    const done = submittedSet();
+    const n = roster.length;
+    const nSub = roster.filter((c) => done.has(c.camper_id)).length;
+    const pct = n ? Math.round((100 * nSub) / n) : 0;
+    document.getElementById("stat-total").textContent = n;
+    document.getElementById("stat-submitted").textContent = nSub;
+    document.getElementById("stat-pending").textContent = n - nSub;
+    document.getElementById("stat-pct").textContent = pct + "%";
+    document.getElementById("stat-bar").style.width = pct + "%";
+
+    const divisions = [...new Set(roster.map((c) => c.division))].sort();
+    document.getElementById("stat-divisions").innerHTML = divisions.map((d) => {
+      const all = roster.filter((c) => c.division === d);
+      return '<span class="chip">' + escapeHtml(d) + " " + all.filter((c) => done.has(c.camper_id)).length + "/" + all.length + "</span>";
+    }).join("");
+    const sel = document.getElementById("division-filter");
+    const cur = sel.value;
+    sel.innerHTML = '<option value="">All divisions</option>' + divisions.map((d) => '<option value="' + escapeHtml(d) + '">' + escapeHtml(d) + "</option>").join("");
+    sel.value = cur;
+
+    const perWeek = [1, 2, 3, 4, 5, 6, 7, 8].map((w) => roster.filter((c) => !(c.weeks && c.weeks.length) || c.weeks.includes(w)).length);
+    const maxW = Math.max(1, ...perWeek);
+    document.getElementById("stat-weeks").innerHTML = perWeek.map((v, i) =>
+      '<div class="w"><b>' + v + '</b><i style="height:' + Math.round((52 * v) / maxW) + 'px"></i>W' + (i + 1) + "</div>").join("");
+
+    renderRosterTable();
   }
 
-  function renderLinkList() {
-    const filter = (document.getElementById("link-filter").value || "").toLowerCase();
-    const submittedIds = new Set(preferences.map((p) => p.camper_id));
-    const rows = roster
-      .filter((c) => c.name.toLowerCase().includes(filter))
-      .sort((a, b) => a.name.localeCompare(b.name))
-      .map((c) => {
-        const url = formUrlFor(c.camper_id);
-        const status = submittedIds.has(c.camper_id) ? '<span class="badge ok">submitted</span>' : '<span class="badge warn">pending</span>';
-        return (
-          '<div class="link-row"><div>' + escapeHtml(c.name) + " (" + escapeHtml(c.division) + ") " + status +
-          '<br><code>' + escapeHtml(url) + "</code></div>" +
-          '<button class="secondary copy-link-btn" data-url="' + escapeHtml(url) + '">Copy</button></div>'
-        );
-      });
-    document.getElementById("link-list").innerHTML = rows.join("") || '<div class="muted">No campers match.</div>';
-    document.querySelectorAll(".copy-link-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        navigator.clipboard.writeText(btn.dataset.url).then(() => {
-          btn.textContent = "Copied!";
-          setTimeout(() => { btn.textContent = "Copy"; }, 1200);
-        });
-      });
+  function renderRosterTable() {
+    const q = (document.getElementById("link-filter").value || "").toLowerCase();
+    const div = document.getElementById("division-filter").value;
+    const done = submittedSet();
+    const subAt = Object.fromEntries(preferences.map((p) => [p.camper_id, p.submittedAt]));
+    let rows = roster
+      .filter((c) => !q || c.name.toLowerCase().includes(q))
+      .filter((c) => !div || c.division === div)
+      .filter((c) => statusFilter === "all" || (statusFilter === "submitted") === done.has(c.camper_id))
+      .sort((a, b) => a.name.localeCompare(b.name));
+    const total = rows.length;
+    if (!showAllRows) rows = rows.slice(0, ROW_LIMIT);
+
+    document.getElementById("roster-count").textContent = total + " camper" + (total === 1 ? "" : "s") + (rows.length < total ? " (showing " + rows.length + ")" : "");
+    const tbody = document.querySelector("#roster-table tbody");
+    if (!roster.length) {
+      tbody.innerHTML = '<tr><td colspan="5" class="empty">No roster yet. Use <b>Upload / replace roster</b> to add your campers.</td></tr>';
+      return;
+    }
+    if (!total) { tbody.innerHTML = '<tr><td colspan="5" class="empty">No campers match those filters.</td></tr>'; return; }
+    tbody.innerHTML = rows.map((c) => {
+      const isDone = done.has(c.camper_id);
+      const when = subAt[c.camper_id] ? " · " + new Date(subAt[c.camper_id]).toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "";
+      return "<tr><td class=\"name\">" + escapeHtml(c.name) + "</td><td>" + escapeHtml(c.division) + "</td><td>" + escapeHtml(c.grade) + "</td><td>" +
+        (isDone ? '<span class="badge ok">Submitted' + when + "</span>" : '<span class="badge warn">Pending</span>') +
+        '</td><td class="actions"><button class="secondary small copy-link-btn" data-id="' + escapeHtml(c.camper_id) + '">Copy link</button> ' +
+        '<button class="secondary small open-link-btn" data-id="' + escapeHtml(c.camper_id) + '">Open</button></td></tr>';
+    }).join("") + (rows.length < total
+      ? '<tr><td colspan="5" class="empty"><button class="secondary small" id="show-all-btn">Show all ' + total + "</button></td></tr>" : "");
+    const showAll = document.getElementById("show-all-btn");
+    if (showAll) showAll.addEventListener("click", () => { showAllRows = true; renderRosterTable(); });
+  }
+
+  document.getElementById("roster-table").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-id]");
+    if (!btn) return;
+    const url = formUrlFor(btn.dataset.id);
+    if (btn.classList.contains("open-link-btn")) { window.open(url, "_blank", "noopener"); return; }
+    navigator.clipboard.writeText(url).then(() => {
+      const old = btn.textContent;
+      btn.textContent = "Copied ✓";
+      setTimeout(() => { btn.textContent = old; }, 1200);
     });
-  }
-  document.getElementById("link-filter").addEventListener("input", renderLinkList);
+  });
+  document.getElementById("link-filter").addEventListener("input", () => { showAllRows = false; renderRosterTable(); });
+  document.getElementById("division-filter").addEventListener("change", () => { showAllRows = false; renderRosterTable(); });
+  document.getElementById("status-seg").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-status]");
+    if (!b) return;
+    statusFilter = b.dataset.status;
+    document.querySelectorAll("#status-seg button").forEach((x) => x.classList.toggle("on", x === b));
+    showAllRows = false;
+    renderRosterTable();
+  });
 
-  document.getElementById("copy-all-btn").addEventListener("click", () => {
-    const csv = ["camper_id,name,division,link"]
-      .concat(roster.map((c) => [c.camper_id, c.name, c.division, formUrlFor(c.camper_id)].map((v) => '"' + String(v).replace(/"/g, '""') + '"').join(",")))
-      .join("\n");
-    navigator.clipboard.writeText(csv).then(() => showMsg("global-msg", "Copied " + roster.length + " links as CSV.", "ok"));
+  function csvCell(v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; }
+  function linksCsv(list) {
+    const done = submittedSet();
+    return ["name,division,grade,status,link"].concat(list.map((c) =>
+      [c.name, c.division, c.grade, done.has(c.camper_id) ? "submitted" : "pending", formUrlFor(c.camper_id)].map(csvCell).join(","))).join("\n");
+  }
+  document.getElementById("copy-pending-btn").addEventListener("click", () => {
+    const done = submittedSet();
+    const pending = roster.filter((c) => !done.has(c.camper_id));
+    navigator.clipboard.writeText(linksCsv(pending)).then(() =>
+      showMsg("global-msg", "Copied " + pending.length + " pending links. Paste them into a spreadsheet or mail merge.", "ok"));
+  });
+  document.getElementById("download-csv-btn").addEventListener("click", () => {
+    const blob = new Blob([linksCsv(roster)], { type: "text/csv" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "camp-" + camp + "-family-links.csv";
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+
+  // ---- Upload dialog ----
+  const dlg = document.getElementById("upload-dialog");
+  document.getElementById("open-upload-btn").addEventListener("click", () => dlg.showModal());
+  document.getElementById("cancel-upload-btn").addEventListener("click", () => dlg.close());
+  document.getElementById("roster-file").addEventListener("change", (e) => {
+    const f = e.target.files[0];
+    if (!f) return;
+    const reader = new FileReader();
+    reader.onload = () => { document.getElementById("roster-csv").value = reader.result; };
+    reader.readAsText(f);
   });
 
   document.getElementById("upload-roster-btn").addEventListener("click", () => {
     const raw = document.getElementById("roster-csv").value.trim();
     if (!raw) return;
-    const lines = raw.split("\n").map((l) => l.trim()).filter(Boolean);
+    const lines = raw.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
     const header = lines[0].split(",").map((h) => h.trim().toLowerCase());
     const idx = (name) => header.indexOf(name);
     const parsed = lines.slice(1).map((line) => {
@@ -297,14 +509,15 @@
       };
     }).filter((c) => c.camper_id && c.name && c.division);
 
-    if (!parsed.length) { showMsg("global-msg", "No valid rows found. Expected header: camper_id,name,division,grade,gender", "error"); return; }
+    if (!parsed.length) { showMsg("global-msg", "No valid rows found. Expected header: camper_id,name,division,grade,gender[,weeks]", "error"); return; }
 
     api("saveRoster", { method: "POST", body: { data: JSON.stringify(parsed) } }).then((resp) => {
       if (resp.ok) {
+        dlg.close();
         showMsg("global-msg", "Uploaded " + resp.count + " campers.", "ok");
         document.getElementById("roster-csv").value = "";
         reloadRosterAndPrefs();
-      } else {
+      } else if (!resp.unauthorized) {
         showMsg("global-msg", "Upload failed: " + resp.error, "error");
       }
     });
@@ -570,6 +783,7 @@
       msgEl.innerHTML = resp.ok ? ' <span style="color:var(--ok)">Saved.</span>' : ' <span style="color:var(--danger)">Save failed: ' + escapeHtml(resp.error) + "</span>";
     });
   }
+  start();
 })();
 </script>
 </body>

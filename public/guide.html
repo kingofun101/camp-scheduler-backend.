@@ -57,8 +57,8 @@
 
 <section id="quick">
   <h2>Quick start</h2>
-  <p>The program replaces first-come-first-served sign-up. Families rank up to <b>3 choices per period</b> on a personal web form. After the deadline, a solver assigns every camper to their best available choices without ever going over an activity's capacity. Anyone it can't place is flagged so <b>you</b> can finish their schedule by hand.</p>
-  <div class="note tip"><b>Your job in three lines:</b> (1) get the roster in and links out, (2) chase anyone who hasn't submitted, (3) after scheduling, work through the campers who need help.</div>
+  <p>The program replaces first-come-first-served sign-up. Families rank up to <b>3 choices per period</b> on one shared web form. After the deadline, a solver assigns every camper to their best available choices without ever going over an activity's capacity. Anyone it can't place is flagged so <b>you</b> can finish their schedule by hand.</p>
+  <div class="note tip"><b>Your job in three lines:</b> (1) get the roster in and the one family link out, (2) chase anyone who hasn't submitted, (3) after scheduling, work through the campers who need help.</div>
   <div class="note warn"><b>One thing the dashboard can't do:</b> run the scheduler itself. After the deadline, ask the program director to run it (the whole season takes about a minute). Everything before and after that step is in the dashboard.</div>
 </section>
 
@@ -76,20 +76,20 @@
   <h2>The season, step by step</h2>
 
   <h3>1. Before the form opens</h3>
-  <div class="step"><div class="n">1</div><div><b>Upload the roster.</b> Roster &amp; Links → <b>Upload / replace roster</b>. Use a CSV with the columns <code>camper_id,name,division,grade,gender</code> and, if campers attend only some weeks, <code>weeks</code> (like <code>1;2;5;8</code>).
+  <div class="step"><div class="n">1</div><div><b>Upload the roster.</b> Roster &amp; Links → <b>Upload / replace roster</b>. Use a CSV with the columns <code>camper_id,name,division,grade,gender,dob</code> (dob = birth date like <code>03/14/2015</code> — families use it to find their child) and, if campers attend only some weeks, <code>weeks</code> (like <code>1;2;5;8</code>).
     <ul><li><b>Divisions:</b> Gilad = 5th grade, Arad = 6th grade, Tavor = 7th–8th grade.</li>
     <li><b>gender</b> (M or F) matters — a few activities (Girls Gaga, Girls Basketball, Girls Soccer) are only offered to girls. Leave it blank only if you must.</li>
-    <li>Re-uploading is safe: campers already on the roster <b>keep their same link</b>, so links you already emailed keep working.</li></ul></div></div>
+    <li>Re-uploading is safe: birth dates you already loaded are kept if a new file leaves them blank.</li></ul></div></div>
   <div class="step"><div class="n">2</div><div><b>Try it yourself first.</b> Open the <a href="#practice">practice camp</a> and fill out a sample form so you know what parents will see.</div></div>
-  <div class="step"><div class="n">3</div><div><b>Send each family their link.</b> On Roster &amp; Links, <b>Download all links (CSV)</b> gives you name, division and link for every camper — use it for a mail merge. Or press <b>Copy link</b> beside one camper.</div></div>
+  <div class="step"><div class="n">3</div><div><b>Send families the one link.</b> At the top of Roster &amp; Links, press <b>Copy link</b> and put it in your email or newsletter — it's the same link for everyone. Set a <b>submission deadline</b> there too (or tick <b>pause form</b> to stop submissions). Personal per-camper links still exist in the table below as a backup, for a family that can't find their child.</div></div>
 
   <h3>2. While families are filling it in</h3>
   <div class="step"><div class="n">4</div><div><b>Watch the progress cards</b> at the top of Roster &amp; Links (submitted, still waiting, completion %, per division).</div></div>
-  <div class="step"><div class="n">5</div><div><b>Chase the stragglers.</b> Click the <b>Pending</b> filter to see who hasn't submitted, or <b>Copy pending links</b> for a ready-made reminder list.</div></div>
-  <div class="note tip">Families can reopen their link and change their answers any time until you run the scheduler, so a mistake is never a problem.</div>
+  <div class="step"><div class="n">5</div><div><b>Chase the stragglers.</b> Click the <b>Pending</b> filter to see who hasn't submitted; <b>Copy pending links</b> gives a reminder list with each family's personal link.</div></div>
+  <div class="note tip">Families can come back, enter the name and birth date again, and change their answers until the deadline. Earlier versions are kept, so a mistaken overwrite can be recovered.</div>
 
   <h3>3. After the deadline</h3>
-  <div class="step"><div class="n">6</div><div><b>Ask the program director to run the scheduler.</b> It solves each camp week separately, using only the campers attending that week.</div></div>
+  <div class="step"><div class="n">6</div><div><b>Ask the program director to run the scheduler.</b> Every camper gets <b>one schedule that is the same in every week they attend</b>. Seat limits are checked separately for each week, so a camper at weeks 1, 3, 5, 7 and another at weeks 2, 4, 6, 8 can share the same seats.</div></div>
 
   <h3>4. Reviewing the results</h3>
   <div class="step"><div class="n">7</div><div><b>Campers tab</b> — see who needs help and fix them (see <a href="#help">"Needs help"</a>).</div></div>
@@ -113,14 +113,14 @@
 
 <section id="form">
   <h2>What families see</h2>
-  <p>Each family gets a personal link (it contains a private key, so they can only ever see and change <b>their own</b> child's form). On a phone it looks like this:</p>
+  <p>Families open the shared link and type the camper's <b>first name, last name and birth date</b>; all three must match the roster (too many wrong tries locks them out for 15 minutes). They then see only their own child's form. On a phone it looks like this:</p>
   <ul>
     <li>A short <b>"How this works"</b> box that explains the rules below.</li>
     <li>A <b>Swim Alternative</b> checkbox for Arad and Tavor campers who want to skip instructional swim.</li>
     <li>One card per period, Monday to Friday. Each card has a required <b>1st choice</b> and optional <b>2nd</b> and <b>3rd</b> backups. The lists only show activities that camper is <b>eligible</b> for (grade and gender).</li>
     <li>A <b>Friends</b> section: up to two friend requests plus an optional "same schedule as" request. Families pick a name from a list of the campers in their child's division, so names can't be misspelled.</li>
     <li>A progress bar and <b>Submit</b> button pinned to the bottom. If something is missing or breaks a rule, the form says exactly what and highlights the period in red.</li>
-    <li>After submitting they see a thank-you page with their 1st choices, and can reopen the same link to make changes.</li>
+    <li>After submitting they see a thank-you page with their 1st choices, and can come back to the same page later to make changes.</li>
   </ul>
   <div class="note tip">Families often complete the form together with their friends so the choices match — that's exactly what gives the best chance of being scheduled together.</div>
 </section>

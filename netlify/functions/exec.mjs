@@ -23,7 +23,7 @@ import { getStore } from "@netlify/blobs";
 //    roster is saved and baked into their personal link). They can read and
 //    write only their own submission.
 const API_TOKEN = process.env.API_TOKEN || "";
-const PUBLIC_ACTIONS = new Set(["formInit", "savePreferences"]);
+const PUBLIC_ACTIONS = new Set(["formInit", "savePreferences", "formLookup", "formStatus"]);
 const MAX_SUBMISSION_BYTES = 200 * 1024;
 
 // Netlify Blobs auto-configures inside a current-format (v2) function, with
@@ -76,6 +76,33 @@ function getParams(event) {
 
 function nowISO() { return new Date().toISOString(); }
 
+// ---- single-link form helpers (2026-09-26) ----
+// One shared link for every family: they identify their camper by first name,
+// last name and birth date, which must all match the roster.
+const normName = (s) => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z]/g, "");
+// Accepts MM/DD/YYYY, M-D-YYYY, or YYYY-MM-DD; returns YYYY-MM-DD or "".
+function normDob(s) {
+  const t = String(s || "").trim();
+  let m = t.match(/^(\d{4})[-\/.](\d{1,2})[-\/.](\d{1,2})$/);
+  let y, mo, d;
+  if (m) { y = +m[1]; mo = +m[2]; d = +m[3]; }
+  else if ((m = t.match(/^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{2}|\d{4})$/))) { mo = +m[1]; d = +m[2]; y = +m[3]; if (y < 100) y += y > 30 ? 1900 : 2000; }
+  else return "";
+  if (mo < 1 || mo > 12 || d < 1 || d > 31) return "";
+  return `${y}-${String(mo).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+}
+async function formState(settingsStore, camp) {
+  const raw = await settingsStore.get(`${camp}:form`);
+  const st = raw ? JSON.parse(raw) : {};
+  const deadline = st.deadline || null;
+  const passed = deadline ? Date.now() > Date.parse(deadline) : false;
+  return { deadline, paused: !!st.paused, open: !st.paused && !passed, passed };
+}
+const clientIp = (event) => {
+  const h = event.headers || {};
+  return String(h["x-nf-client-connection-ip"] || (h["x-forwarded-for"] || "").split(",")[0] || "unknown").trim();
+};
+
 async function handler(event) {
   if (event.httpMethod === "OPTIONS") {
     return { statusCode: 204, headers: CORS_HEADERS, body: "" };
@@ -95,6 +122,7 @@ async function handler(event) {
   const printerStore = store("camp-scheduler-printer");
   const rosterStore = store("camp-scheduler-roster");
   const preferencesStore = store("camp-scheduler-preferences");
+  const throttleStore = store("camp-scheduler-throttle");
 
   try {
     switch (action) {
@@ -118,9 +146,53 @@ async function handler(event) {
         const prevRaw = await rosterStore.get(camp);
         const prevKeys = {};
         if (prevRaw) for (const c of JSON.parse(prevRaw)) if (c.key) prevKeys[c.camper_id] = c.key;
+        for (const c of campers) {
+          if (c.dob != null) c.dob = normDob(c.dob);  // stored as YYYY-MM-DD
+        }
+        const prevDob = {};
+        if (prevRaw) for (const c of JSON.parse(prevRaw)) if (c.dob) prevDob[c.camper_id] = c.dob;
+        for (const c of campers) if (!c.dob && prevDob[c.camper_id]) c.dob = prevDob[c.camper_id];
         for (const c of campers) c.key = prevKeys[c.camper_id] || crypto.randomBytes(12).toString("hex");
         await rosterStore.set(camp, JSON.stringify(campers));
         return respond({ ok: true, count: campers.length });
+      }
+
+      // Is the shared family form accepting submissions? (public)
+      case "formStatus": {
+        const st = await formState(settingsStore, camp);
+        return respond({ ok: true, open: st.open, deadline: st.deadline, paused: st.paused });
+      }
+      // Staff: set the submission deadline (ISO date-time or null) and/or pause.
+      case "saveFormSettings": {
+        const deadline = params.deadline ? new Date(params.deadline).toISOString() : null;
+        await settingsStore.set(`${camp}:form`, JSON.stringify({ deadline, paused: params.paused === true || params.paused === "true" }));
+        return respond({ ok: true, ...(await formState(settingsStore, camp)) });
+      }
+      case "loadFormSettings": {
+        return respond({ ok: true, ...(await formState(settingsStore, camp)) });
+      }
+
+      // Shared-link entry: first + last name + birth date must ALL match one
+      // camper; on success returns that camper's id + key so the form can use
+      // the normal formInit/savePreferences. Failures are throttled per IP and
+      // the message never reveals which field was wrong.
+      case "formLookup": {
+        const st = await formState(settingsStore, camp);
+        if (!st.open) return respond({ ok: false, closed: true, error: st.paused ? "Selections are not open right now." : "The deadline for selections has passed. Please contact camp staff." });
+        const tkey = `${camp}:${clientIp(event).replace(/[^0-9a-fA-F:.]/g, "_")}`;
+        const traw = await throttleStore.get(tkey);
+        let th = traw ? JSON.parse(traw) : { n: 0, t: Date.now() };
+        if (Date.now() - th.t > 15 * 60 * 1000) th = { n: 0, t: Date.now() };
+        if (th.n >= 12) return respond({ ok: false, error: "Too many attempts. Please wait 15 minutes and try again, or contact camp staff." }, 429);
+        const first = normName(params.first), last = normName(params.last), dob = normDob(params.dob);
+        const raw = await rosterStore.get(camp);
+        const roster = raw ? JSON.parse(raw) : [];
+        const hits = first && last && dob ? roster.filter((c) => c.dob && c.dob === dob && normName(c.name) === first + last) : [];
+        if (hits.length !== 1) {
+          th.n++; await throttleStore.set(tkey, JSON.stringify(th));
+          return respond({ ok: false, error: "We couldn't find that camper. Please check the spelling of the first and last name and the birth date (MM/DD/YYYY) exactly as on the registration. If it still doesn't work, contact camp staff." }, 404);
+        }
+        return respond({ ok: true, camper_id: hits[0].camper_id, key: hits[0].key });
       }
 
       // Family entry point: authenticated by camper_id + that camper's own
@@ -146,6 +218,10 @@ async function handler(event) {
       // Preferences: one document per camper's intake-form submission —
       // top-3-per-period rankings, friend/same-schedule requests, swim-alt
       // opt-in. Keyed by camper_id so a resubmission overwrites cleanly.
+      case "loadSubmissionHistory": {  // admin
+        const raw = await preferencesStore.get(`hist:${camp}:${String(params.camper_id || "")}`);
+        return respond({ ok: true, history: raw ? JSON.parse(raw) : [] });
+      }
       case "loadPreferences": {  // admin
         const camperId = String(params.camper_id || "");
         if (!camperId) return respond({ ok: false, error: "missing camper_id" });
@@ -160,6 +236,8 @@ async function handler(event) {
         const roster = raw ? JSON.parse(raw) : [];
         const me = roster.find((c) => c.camper_id === camperId);
         if (!me || !me.key || !safeEqual(key, me.key)) return respond({ ok: false, error: "Invalid link" }, 403);
+        const fst = await formState(settingsStore, camp);
+        if (!fst.open) return respond({ ok: false, closed: true, error: fst.paused ? "Selections are not open right now." : "The deadline for selections has passed. Please contact camp staff." });
         let input;
         try { input = JSON.parse(params.data); } catch (e) { return respond({ ok: false, error: "bad JSON" }); }
         // Store only the fields the solver reads, validated against the roster.
@@ -179,6 +257,16 @@ async function handler(event) {
           swim_alt: input.swim_alt === true,
           submittedAt: nowISO(),
         };
+        // Keep every earlier submission (newest last, max 10) so a wrong or
+        // malicious overwrite can be recovered by staff.
+        const prevRaw = await preferencesStore.get(`${camp}:${camperId}`);
+        if (prevRaw) {
+          const hkey = `hist:${camp}:${camperId}`;
+          const hraw = await preferencesStore.get(hkey);
+          const hist = hraw ? JSON.parse(hraw) : [];
+          hist.push(JSON.parse(prevRaw));
+          await preferencesStore.set(hkey, JSON.stringify(hist.slice(-10)));
+        }
         await preferencesStore.set(`${camp}:${camperId}`, JSON.stringify(submission));
         return respond({ ok: true });
       }
@@ -232,8 +320,8 @@ async function handler(event) {
         if (String(params.confirm || "") !== camp) return respond({ ok: false, error: "confirm must equal the camp name" }, 400);
         let n = 0;
         await rosterStore.delete(camp); n++;
-        for (const st of [preferencesStore, scheduleStore]) {
-          const { blobs } = await st.list({ prefix: `${camp}:` });
+        for (const [st, prefix] of [[preferencesStore, `${camp}:`], [preferencesStore, `hist:${camp}:`], [scheduleStore, `${camp}:`], [settingsStore, `${camp}:`], [throttleStore, `${camp}:`]]) {
+          const { blobs } = await st.list({ prefix });
           for (const b of blobs) { await st.delete(b.key); n++; }
         }
         return respond({ ok: true, deleted: n });

@@ -202,6 +202,22 @@
       </div>
     </div>
 
+    <div class="card" id="share-card">
+      <h2 style="margin:0 0 4px">The link to send every family</h2>
+      <div class="muted" style="margin-bottom:8px">One link for everyone. Parents type the camper's first name, last name and birth date (must match the roster). Nothing else is needed.</div>
+      <div class="row" style="align-items:flex-end">
+        <div style="flex:3"><label>Family link</label><input type="text" id="share-link" readonly></div>
+        <div style="flex:0 0 auto"><button id="copy-share-btn">Copy link</button></div>
+      </div>
+      <div class="row" style="align-items:flex-end;margin-top:6px">
+        <div style="flex:1.4"><label>Submission deadline (optional)</label><input type="datetime-local" id="form-deadline"></div>
+        <div style="flex:0 0 auto"><label style="display:flex;gap:6px;align-items:center;margin:0 0 10px"><input type="checkbox" id="form-paused" style="width:auto"> pause form</label></div>
+        <div style="flex:0 0 auto"><button class="secondary" id="save-form-settings-btn">Save</button></div>
+      </div>
+      <div class="muted" id="form-state"></div>
+      <div class="muted" id="dob-warning" style="color:var(--danger,#b42318)"></div>
+    </div>
+
     <div class="card">
       <div class="toolbar">
         <div class="grow"><input type="text" id="link-filter" placeholder="Search campers by name…"></div>
@@ -229,10 +245,10 @@
 
   <dialog id="upload-dialog">
     <h2>Upload roster</h2>
-    <div class="help">Choose a CSV file, or paste rows below. Columns: <code>camper_id,name,division,grade,gender</code> and optionally <code>weeks</code> (like <code>1;2;3</code>).
+    <div class="help">Choose a CSV file, or paste rows below. Columns: <code>camper_id,name,division,grade,gender</code> <code>dob</code> (birth date, like <code>03/14/2015</code>, needed for the shared family link) and optionally <code>weeks</code> (like <code>1;2;3</code>).
       Uploading <b>replaces the whole roster</b>. Campers already on it keep their existing links.</div>
     <input type="file" id="roster-file" accept=".csv,text/csv">
-    <textarea id="roster-csv" style="margin-top:10px" placeholder="camper_id,name,division,grade,gender,weeks&#10;alice_smith,Alice Smith,Gilad,5,F,1;2;3"></textarea>
+    <textarea id="roster-csv" style="margin-top:10px" placeholder="camper_id,name,division,grade,gender,dob,weeks&#10;alice_smith,Alice Smith,Gilad,5,F,03/14/2015,1;2;3"></textarea>
     <div class="row" style="margin:14px 0 0;justify-content:flex-end">
       <div style="flex:0 0 auto"><button class="secondary" id="cancel-upload-btn">Cancel</button></div>
       <div style="flex:0 0 auto"><button id="upload-roster-btn">Upload roster</button></div>
@@ -462,6 +478,7 @@
       roster = (r.ok && r.roster) || [];
       preferences = (p.ok && p.submissions) || [];
       renderRosterPanel();
+      loadFormSettings();
       renderCamperDatalist();
     });
   }
@@ -499,7 +516,31 @@
   }
   function submittedSet() { return new Set(preferences.map((p) => p.camper_id)); }
 
+  // ---- shared family link + deadline ----
+  function shareUrl() { return location.origin + "/form.html?camp=" + encodeURIComponent(camp); }
+  function loadFormSettings() {
+    document.getElementById("share-link").value = shareUrl();
+    api("loadFormSettings").then((r) => {
+      if (!r.ok) return;
+      const dl = document.getElementById("form-deadline");
+      if (r.deadline) { const d = new Date(r.deadline); dl.value = new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16); } else dl.value = "";
+      document.getElementById("form-paused").checked = !!r.paused;
+      document.getElementById("form-state").textContent = r.open ? "The form is OPEN." + (r.deadline ? " Closes " + new Date(r.deadline).toLocaleString() + "." : " No deadline set.") : (r.paused ? "The form is PAUSED — families can't submit." : "The deadline has passed — the form is CLOSED.");
+    });
+  }
+  document.getElementById("copy-share-btn").addEventListener("click", () => {
+    navigator.clipboard.writeText(shareUrl()).then(() => showMsg("global-msg", "Family link copied.", "ok"));
+  });
+  document.getElementById("save-form-settings-btn").addEventListener("click", () => {
+    const v = document.getElementById("form-deadline").value;
+    api("saveFormSettings", { method: "POST", body: { deadline: v ? new Date(v).toISOString() : "", paused: document.getElementById("form-paused").checked } }).then((r) => {
+      if (r.ok) { showMsg("global-msg", "Saved.", "ok"); loadFormSettings(); } else if (!r.unauthorized) showMsg("global-msg", "Save failed: " + r.error, "error");
+    });
+  });
+
   function renderRosterPanel() {
+    const noDob = roster.filter((c) => !c.dob).length;
+    document.getElementById("dob-warning").textContent = noDob ? noDob + " of " + roster.length + " campers have no birth date on the roster, so they can't find themselves on the shared link. Re-upload the roster with a dob column (or use their personal links below)." : "";
     const done = submittedSet();
     const n = roster.length;
     const nSub = roster.filter((c) => done.has(c.camper_id)).length;
@@ -630,6 +671,7 @@
         division: cols[idx("division")],
         grade: parseInt(cols[idx("grade")], 10),
         gender: cols[idx("gender")] || "U",
+        dob: idx("dob") >= 0 ? cols[idx("dob")] : "",
         weeks: idx("weeks") >= 0 && cols[idx("weeks")]
           ? cols[idx("weeks")].split(/[;| ]+/).map((w) => parseInt(w, 10)).filter((w) => w >= 1 && w <= 8)
           : [],

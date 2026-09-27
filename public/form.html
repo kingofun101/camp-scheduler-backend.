@@ -91,8 +91,8 @@
 (function () {
   const params = new URLSearchParams(location.search);
   const camp = params.get("camp") || "default";
-  const camperId = params.get("c");
-  const camperKey = params.get("k") || "";
+  let camperId = params.get("c");
+  let camperKey = params.get("k") || "";
   const apiBase = params.get("api") || "https://camp-aaron-scheduler-backend.netlify.app/exec";
   const app = document.getElementById("app");
   const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -109,9 +109,37 @@
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const fail = (msg) => { app.innerHTML = '<div class="msg error">' + msg + "</div>"; };
 
-  if (!camperId || !camperKey) { fail("This link is missing information. Please use the personal link sent to your family, or contact camp staff."); return; }
+  // Shared link (no personal id/key in the address): the family identifies the
+  // camper by first name, last name and birth date, checked on the server.
+  if (!camperId || !camperKey) {
+    api("formStatus").then((st) => {
+      if (st && st.ok && !st.open) { fail(st.paused ? "Selections are not open right now. Please check back or contact camp staff." : "The deadline for selections has passed. Please contact camp staff."); return; }
+      const dl = st && st.deadline ? '<p class="muted" style="margin:0 0 10px">Please submit by <b>' + esc(new Date(st.deadline).toLocaleString([], { dateStyle: "long", timeStyle: "short" })) + "</b>.</p>" : "";
+      app.innerHTML = '<div class="card"><h3 style="margin-top:0">Find your camper</h3>' + dl +
+        '<p class="muted" style="margin-top:0">Enter the camper\'s name and birth date exactly as on the registration.</p>' +
+        '<div id="lookup-msg"></div>' +
+        '<label for="lk-first">Camper\'s first name</label><input type="text" id="lk-first" autocomplete="off">' +
+        '<label for="lk-last" style="margin-top:10px">Camper\'s last name</label><input type="text" id="lk-last" autocomplete="off">' +
+        '<label for="lk-dob" style="margin-top:10px">Birth date (MM/DD/YYYY)</label><input type="text" id="lk-dob" inputmode="numeric" placeholder="MM/DD/YYYY" autocomplete="off">' +
+        '<button id="lk-go" style="width:100%;margin-top:14px">Continue</button></div>';
+      const go = () => {
+        const btn = document.getElementById("lk-go"), msg = document.getElementById("lookup-msg");
+        const f = document.getElementById("lk-first").value.trim(), l = document.getElementById("lk-last").value.trim(), d = document.getElementById("lk-dob").value.trim();
+        if (!f || !l || !d) { msg.innerHTML = '<div class="msg error">Please fill in all three boxes.</div>'; return; }
+        btn.disabled = true; btn.textContent = "Checking…"; msg.innerHTML = "";
+        api("formLookup", { method: "POST", body: { first: f, last: l, dob: d } }).then((r) => {
+          if (r.ok) { camperId = r.camper_id; camperKey = r.key; app.innerHTML = '<div class="center">Loading…</div>'; start(); }
+          else { msg.innerHTML = '<div class="msg error">' + esc(r.error || "Something went wrong.") + "</div>"; btn.disabled = false; btn.textContent = "Continue"; }
+        }).catch(() => { msg.innerHTML = '<div class="msg error">Network problem — please try again.</div>'; btn.disabled = false; btn.textContent = "Continue"; });
+      };
+      document.getElementById("lk-go").addEventListener("click", go);
+      ["lk-first", "lk-last", "lk-dob"].forEach((id) => document.getElementById(id).addEventListener("keydown", (e) => { if (e.key === "Enter") go(); }));
+    }).catch(() => fail("Something went wrong loading the form. Please refresh, or contact camp staff."));
+    return;
+  }
+  start();
 
-  Promise.all([
+  function start() { Promise.all([
     fetch("slots.json").then((r) => r.json()),
     api("formInit", { query: { camper_id: camperId, key: camperKey } }),
   ]).then(([slotsData, init]) => {
@@ -320,14 +348,14 @@
         const cov = r.covered[cell(s)], p = (preferences[s.slot_id] || [])[0];
         return "<tr><td>" + short(s.day) + " P" + s.period + "</td><td>" + (cov ? "<i>" + esc(cov.base) + " (continued)</i>" : esc(p || "—")) + "</td></tr>";
       }).join("");
-      app.innerHTML = '<div class="msg ok"><b>Thank you — your selections are saved.</b><br>You can open this same link again any time before the deadline to review or change them.</div>' +
+      app.innerHTML = '<div class="msg ok"><b>Thank you — your selections are saved.</b><br>You can come back to this same page any time before the deadline, enter the camper\'s name and birth date again, and review or change them.</div>' +
         '<div class="card"><h3 style="margin-top:0">Your 1st choices</h3><table class="sum"><thead><tr><th>Period</th><th>1st choice</th></tr></thead><tbody>' + rows + "</tbody></table></div>" +
         '<button class="secondary" id="edit-btn" style="width:100%">Make changes</button>';
       document.getElementById("edit-btn").addEventListener("click", () => { build(); window.scrollTo(0, 0); });
     }
 
     build();
-  }).catch((err) => { fail("Something went wrong loading the form. Please refresh, or contact camp staff."); console.error(err); });
+  }).catch((err) => { fail("Something went wrong loading the form. Please refresh, or contact camp staff."); console.error(err); }); }
 })();
 </script>
 </body>

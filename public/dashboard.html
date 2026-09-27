@@ -130,6 +130,16 @@
   .legend .l-fixed::before { background: #f1f3f7; }
   #camper-dialog { width: min(1000px, 96vw); max-height: 92vh; overflow: auto; }
   tr.click { cursor: pointer; }
+  tr.closed td { background: #eef0f4; color: var(--muted); text-decoration: line-through; }
+  tr.closed td:last-child, tr.closed td.actions { text-decoration: none; }
+  .badge.gray { background: #e3e7ee; color: #475467; }
+  .badge.r1 { background: var(--ok-bg); color: var(--ok); }
+  .badge.r2 { background: var(--brand-soft); color: var(--brand-dark); }
+  .badge.r3 { background: var(--warn-bg); color: var(--warn); }
+  .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .campsel { background: rgba(255,255,255,.16); color: #fff; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 3px 10px; font-size: .8rem; width: auto; }
+  .campsel option { color: #14213d; }
+  #close-dialog { width: min(820px, 96vw); max-height: 92vh; overflow: auto; }
   @media print {
     #app, #login, #upload-dialog { display: none !important; }
     body { background: #fff; }
@@ -158,7 +168,7 @@
     <div class="top-inner">
       <div class="logo">CA</div>
       <h1>Camp Aaron Scheduler</h1>
-      <span class="pill" id="camp-label"></span>
+      <select class="campsel" id="camp-select" title="Switch camp"></select>
       <span class="grow"></span>
       <a class="pill" href="guide.html" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Team guide</a>
       <button class="ghost" id="signout-btn">Sign out</button>
@@ -167,6 +177,7 @@
       <div class="tab active" data-tab="roster">Roster &amp; Links</div>
       <div class="tab" data-tab="campers">Campers</div>
       <div class="tab" data-tab="capacity">Capacity</div>
+      <div class="tab" data-tab="audit">Audit</div>
       <div class="tab" data-tab="friends">Friends</div>
       <div class="tab" data-tab="reassign">Reassign</div>
     </nav>
@@ -264,13 +275,38 @@
         <div style="flex:0 0 130px"><label>Week</label><select id="capacity-week"></select></div>
         <div style="flex:0 0 auto"><button id="load-capacity-btn">Load</button></div>
         <div style="flex:2"><label>Filter</label><input type="text" id="capacity-filter" placeholder="Activity or day…"></div>
+        <div style="flex:0 0 auto"><label style="display:flex;gap:6px;align-items:center;margin:0 0 10px"><input type="checkbox" id="capacity-undermin" style="width:auto"> under minimum only</label></div>
       </div>
       <div class="sub" id="capacity-summary"></div>
       <div class="table-wrap">
         <table id="capacity-table">
           <thead><tr><th data-sort="day">Day</th><th data-sort="period">P</th><th data-sort="base">Activity</th>
-            <th data-sort="enrolled">Enrolled</th><th data-sort="cap_max">Cap</th><th data-sort="remaining">Remaining</th><th data-sort="cap_min">Min</th><th>Status</th></tr></thead>
+            <th data-sort="enrolled">Enrolled</th><th data-sort="cap_max">Cap</th><th data-sort="remaining">Remaining</th><th data-sort="cap_min">Min</th><th>Status</th><th></th></tr></thead>
           <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-audit">
+    <div class="split" id="audit-cards" hidden></div>
+    <div class="card">
+      <div class="row">
+        <div style="flex:0 0 130px"><label>Week</label><select id="audit-week"></select></div>
+        <div style="flex:0 0 auto"><button id="load-audit-btn">Load</button></div>
+        <div style="flex:2"><label>Search</label><input type="text" id="audit-search" placeholder="Camper name…"></div>
+        <div style="flex:0 0 150px"><label>Division</label><select id="audit-division"><option value="">All divisions</option></select></div>
+      </div>
+      <div class="toolbar">
+        <div class="seg" id="audit-seg"><button data-mode="miss" class="on">Missing a 1st choice</button><button data-mode="all">Everyone</button></div>
+        <button class="secondary small" id="audit-csv-btn">Download full audit (CSV)</button>
+        <span class="muted" id="audit-count"></span>
+      </div>
+      <div id="audit-divisions"></div>
+      <div class="table-wrap">
+        <table id="audit-table">
+          <thead><tr><th>Camper</th><th>Division</th><th>Periods</th><th>1st</th><th>2nd</th><th>3rd</th><th>Moved / staff</th><th>Unfilled</th><th>Got a request</th></tr></thead>
+          <tbody><tr><td colspan="9" class="empty">Pick a week and press Load.</td></tr></tbody>
         </table>
       </div>
     </div>
@@ -310,6 +346,16 @@
   </main>
 </div>
 
+<dialog id="close-dialog">
+  <h2 id="cl-title" style="margin:0 0 4px"></h2>
+  <div class="muted" id="cl-sub"></div>
+  <div id="cl-body" style="margin-top:12px"></div>
+  <div class="row" style="margin:14px 0 0;justify-content:flex-end">
+    <div style="flex:0 0 auto"><button class="secondary" id="cl-cancel">Cancel</button></div>
+    <div style="flex:0 0 auto"><button id="cl-apply">Close class and move campers</button></div>
+  </div>
+</dialog>
+
 <dialog id="camper-dialog">
   <div class="row" style="margin-bottom:6px">
     <div style="flex:1"><h2 id="cd-title" style="margin:0"></h2><div class="muted" id="cd-sub"></div></div>
@@ -321,6 +367,7 @@
   </div>
   <div class="legend"><span class="l-flag">Needs help</span><span class="l-fixed">Fixed activity</span><span>1st / 2nd / 3rd = which choice they got</span></div>
   <table class="sched" id="cd-grid"></table>
+  <div id="cd-audit"></div>
   <div id="cd-help"></div>
   <div id="cd-friends"></div>
 </dialog>
@@ -330,14 +377,16 @@
   const params = new URLSearchParams(location.search);
   const camp = params.get("camp") || "default";
   const apiBase = params.get("api") || "https://camp-aaron-scheduler-backend.netlify.app/exec";
-  document.getElementById("camp-label").textContent = camp;
+  const campSel = document.getElementById("camp-select");
+  campSel.innerHTML = '<option value="' + camp + '">' + camp + "</option>";
+  campSel.addEventListener("change", () => { location.href = "dashboard.html?camp=" + encodeURIComponent(campSel.value); });
 
   let roster = [];
   let preferences = [];
   let slotsData = null;
   let poolsData = [];
 
-  ["campers-week", "capacity-week", "friends-week", "reassign-week"].forEach((id) => {
+  ["campers-week", "audit-week", "capacity-week", "friends-week", "reassign-week"].forEach((id) => {
     document.getElementById(id).innerHTML = [1, 2, 3, 4, 5, 6, 7, 8].map((w) => '<option value="' + w + '">Week ' + w + "</option>").join("");
   });
 
@@ -421,6 +470,9 @@
     if (!getToken()) { showLogin(""); return; }
     document.getElementById("login").hidden = true;
     document.getElementById("app").hidden = false;
+    api("listCamps").then((r) => {
+      if (r.ok && r.camps) campSel.innerHTML = r.camps.map((c) => '<option value="' + c + '"' + (c === camp ? " selected" : "") + ">" + c + "</option>").join("");
+    });
     Promise.all([
       fetch("slots.json").then((r) => r.json()),
       fetch("pools.json").then((r) => r.json()),
@@ -598,6 +650,33 @@
     });
   });
 
+  // ---- Closed classes ----
+  // Staff can close a small class for one week. Closed = zero seats: the
+  // schedule blob records it, the scheduler honors it on a re-run, and every
+  // capacity check in this dashboard treats it as full.
+  let reassignClosed = new Set(), reassignClosedList = [];
+  const closedKey = (d, p, b) => d + "|" + String(p) + "|" + b;
+  const closedSetOf = (list) => new Set((list || []).map((c) => closedKey(c.day, c.period, c.base)));
+
+  // All the calendar cells a double-period / multi-day activity covers, given one of them.
+  function groupCells(day, period, base) {
+    const key = day + ":" + period;
+    for (const div of Object.keys(slotsData.divisions)) {
+      for (const sl of slotsData.divisions[div].slots) for (const o of sl.options) {
+        if (o.occupies && o.base === base && o.occupies.some(([d, p]) => d + ":" + p === key)) return o.occupies.map(([d, p]) => d + ":" + p);
+      }
+    }
+    return [key];
+  }
+
+  // What one kind of assignment means for the audit.
+  function classify(e) {
+    if (!e || !e.base) return "unfilled";
+    if (e.backfilled) return "moved";
+    if (e.rank === 1 || e.rank === 2 || e.rank === 3) return String(e.rank);
+    return e.manual ? "staff" : "other";
+  }
+
   // ---- Campers panel: who needs help + readable schedules ----
   let weekCache = {};
   const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -605,11 +684,11 @@
   let campersRows = [];
   let campersWeek = null;
 
-  function loadWeekData(week) {
-    if (weekCache[week]) return Promise.resolve(weekCache[week]);
+  function loadWeekData(week, fresh) {
+    if (!fresh && weekCache[week]) return Promise.resolve(weekCache[week]);
     return api("loadSchedule", { query: { week } }).then((resp) => {
       if (!resp.ok) return null;
-      const d = { solved: !!resp.schedule, sched: resp.schedule ? JSON.parse(resp.schedule) : {}, slotCnt: resp.slotCounts ? JSON.parse(resp.slotCounts) : {} };
+      const d = { solved: !!resp.schedule, sched: resp.schedule ? JSON.parse(resp.schedule) : {}, slotCnt: resp.slotCounts ? JSON.parse(resp.slotCounts) : {}, closed: resp.closed || [] };
       weekCache[week] = d;
       return d;
     });
@@ -632,6 +711,7 @@
   function seatsLeft(week, day, period, base) {
     const pool = poolsData.find((x) => x.day === day && x.period === period && x.base === base);
     if (!pool) return null; // unconstrained (e.g. Swim Alternative)
+    if (weekCache[week] && closedSetOf(weekCache[week].closed).has(closedKey(day, period, base))) return 0;
     const enrolled = (weekCache[week] && weekCache[week].slotCnt[day + "|" + period + "|" + base]) || 0;
     return Math.max(0, pool.cap_max - enrolled);
   }
@@ -756,7 +836,7 @@
         const e = sched[day + ":" + p];
         if (e && !e.base) html += '<td class="flag"><b>Needs help</b></td>';
         else if (e) {
-          const tag = e.manual ? '<span class="rk moved">assigned by staff</span>' : e.backfilled ? '<span class="rk moved">moved to open period</span>' : e.rank ? '<span class="rk">' + ordinal(e.rank) + " choice</span>" : "";
+          const tag = e.manual ? (e.rank ? '<span class="rk moved">' + ordinal(e.rank) + " choice · moved (class closed)</span>" : '<span class="rk moved">assigned by staff</span>') : e.backfilled ? '<span class="rk moved">moved to open period</span>' : e.rank ? '<span class="rk">' + ordinal(e.rank) + " choice</span>" : "";
           html += "<td>" + escapeHtml(e.base) + tag + "</td>";
         } else if ((fixed[day] || {})[p]) html += '<td class="fixed">' + escapeHtml(fixed[day][p]) + "</td>";
         else html += '<td class="blank">–</td>';
@@ -764,6 +844,7 @@
       html += "</tr>";
     });
     document.getElementById("cd-grid").innerHTML = html + "</tbody>";
+    document.getElementById("cd-audit").innerHTML = renderAuditTable(c, sched, week);
 
     const flagged = Object.entries(sched).filter(([, e]) => !e.base).map(([k]) => k)
       .sort((a, b) => DAYS.indexOf(a.split(":")[0]) - DAYS.indexOf(b.split(":")[0]) || parseInt(a.split(":")[1], 10) - parseInt(b.split(":")[1], 10));
@@ -831,28 +912,36 @@
     });
   });
 
+  let capacityWeek = null;
   function loadCapacity() {
     const week = document.getElementById("capacity-week").value.trim();
+    capacityWeek = parseInt(week, 10);
     api("loadSchedule", { query: { week } }).then((resp) => {
       if (!resp.ok || !resp.schedule) {
-        capacityRows = poolsData.map((p) => ({ ...p, enrolled: 0 }));
+        capacityRows = poolsData.map((p) => ({ ...p, enrolled: 0, closed: false }));
         document.getElementById("capacity-summary").textContent = "No solved schedule found for week " + week + " yet — showing capacity with 0 enrolled.";
       } else {
         const slotCnt = JSON.parse(resp.slotCounts || "{}");
-        capacityRows = poolsData.map((p) => ({ ...p, enrolled: slotCnt[p.day + "|" + p.period + "|" + p.base] || 0 }));
-        const nUnder = capacityRows.filter((r) => r.enrolled > 0 && r.enrolled < r.cap_min).length;
+        const shut = closedSetOf(resp.closed);
+        capacityRows = poolsData.map((p) => ({ ...p, enrolled: slotCnt[p.day + "|" + p.period + "|" + p.base] || 0, closed: shut.has(closedKey(p.day, p.period, p.base)) }));
+        const nUnder = capacityRows.filter((r) => !r.closed && r.enrolled > 0 && r.enrolled < r.cap_min).length;
         const nOver = capacityRows.filter((r) => r.enrolled > r.cap_max).length;
         document.getElementById("capacity-summary").textContent =
-          capacityRows.length + " activity/period slots — " + nUnder + " under minimum, " + nOver + " over capacity (should be 0).";
+          capacityRows.length + " activity/period slots — " + nUnder + " under minimum, " + nOver + " over capacity (should be 0)" +
+          (shut.size ? ", " + shut.size + " closed by staff" : "") + ".";
       }
       renderCapacityTable();
     });
   }
 
+  document.getElementById("capacity-undermin").addEventListener("change", renderCapacityTable);
+
   function renderCapacityTable() {
     const filter = (document.getElementById("capacity-filter").value || "").toLowerCase();
+    const onlyUnder = document.getElementById("capacity-undermin").checked;
     let rows = capacityRows.filter((r) => !filter || r.base.toLowerCase().includes(filter) || r.day.toLowerCase().includes(filter));
-    rows = rows.map((r) => ({ ...r, remaining: r.cap_max - r.enrolled }));
+    rows = rows.map((r) => ({ ...r, cap_eff: r.closed ? 0 : r.cap_max, remaining: (r.closed ? 0 : r.cap_max) - r.enrolled }));
+    if (onlyUnder) rows = rows.filter((r) => !r.closed && r.enrolled > 0 && r.enrolled < r.cap_min);
     if (sortKey) {
       rows.sort((a, b) => {
         const av = a[sortKey], bv = b[sortKey];
@@ -861,15 +950,277 @@
       });
     }
     const tbody = document.querySelector("#capacity-table tbody");
+    if (!rows.length) { tbody.innerHTML = '<tr><td colspan="9" class="empty">Nothing matches.</td></tr>'; return; }
     tbody.innerHTML = rows.map((r) => {
-      let cls = "", status = '<span class="badge ok">ok</span>';
-      if (r.enrolled > r.cap_max) { cls = "over-cap"; status = '<span class="badge danger">OVER CAP</span>'; }
-      else if (r.enrolled > 0 && r.enrolled < r.cap_min) { cls = "under-min"; status = '<span class="badge warn">under min</span>'; }
+      let cls = "", status = '<span class="badge ok">ok</span>', action = "";
+      const data = 'data-day="' + r.day + '" data-period="' + r.period + '" data-base="' + escapeHtml(r.base) + '"';
+      if (r.closed) { cls = "closed"; status = '<span class="badge gray">CLOSED</span>'; action = '<button class="secondary small" data-act="reopen" ' + data + ">Reopen</button>"; }
+      else {
+        if (r.enrolled > r.cap_max) { cls = "over-cap"; status = '<span class="badge danger">OVER CAP</span>'; }
+        else if (r.enrolled > 0 && r.enrolled < r.cap_min) { cls = "under-min"; status = '<span class="badge warn">under min</span>'; }
+        if (r.enrolled > 0) action = '<button class="secondary small" data-act="close" ' + data + ">Close class…</button>";
+      }
       return (
         '<tr class="' + cls + '"><td>' + r.day + "</td><td>" + r.period + "</td><td>" + escapeHtml(r.base) + "</td>" +
-        "<td>" + r.enrolled + "</td><td>" + r.cap_max + "</td><td>" + r.remaining + "</td><td>" + r.cap_min + "</td><td>" + status + "</td></tr>"
+        "<td>" + r.enrolled + "</td><td>" + r.cap_eff + "</td><td>" + r.remaining + "</td><td>" + r.cap_min + "</td><td>" + status + '</td><td class="actions">' + action + "</td></tr>"
       );
     }).join("");
+  }
+
+  document.querySelector("#capacity-table tbody").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-act]");
+    if (!b) return;
+    if (b.dataset.act === "close") startCloseClass(capacityWeek, b.dataset.day, b.dataset.period, b.dataset.base);
+    else reopenClass(capacityWeek, b.dataset.day, b.dataset.period, b.dataset.base);
+  });
+
+  // ---- Close a class and move its campers to their next choices ----
+  const closeDlg = document.getElementById("close-dialog");
+  let pendingClose = null;
+
+  function wouldViolate(c, mine, base) {
+    const rules = slotsData.rules || {};
+    const linked = new Set(allLinkedOptions(c).map((o) => o.base));
+    if (!linked.has(base)) {
+      const swimAlt = !!subOf(c.camper_id).swim_alt;
+      const limit = swimAlt && (rules.swim_alt_repeat3 || []).includes(base) ? 3 : (rules.repeat_twice || []).includes(base) ? 2 : 1;
+      if (Object.values(mine).filter((e) => e.base === base).length + 1 > limit) return true;
+    }
+    const has = new Set(Object.values(mine).filter((e) => e.base).map((e) => e.base));
+    return (rules.exclusive_pairs || []).some(([a, b]) => (base === a && has.has(b)) || (base === b && has.has(a)));
+  }
+
+  function planClose(week, day, period, base, d) {
+    const cells = groupCells(day, period, base);
+    const sched = JSON.parse(JSON.stringify(d.sched)), cnt = Object.assign({}, d.slotCnt);
+    const closedList = (d.closed || []).map((c) => ({ day: c.day, period: String(c.period), base: c.base }));
+    const closedSet = closedSetOf(closedList);
+    cells.forEach((k) => {
+      const [dd, pp] = k.split(":");
+      if (!closedSet.has(closedKey(dd, pp, base))) { closedSet.add(closedKey(dd, pp, base)); closedList.push({ day: dd, period: pp, base }); }
+    });
+    const capOf = (dd, pp, b) => (closedSet.has(closedKey(dd, pp, b)) ? 0 : rawCap(dd, pp, b));
+    const seatOk = (dd, pp, b, n) => { const cap = capOf(dd, pp, b); return cap == null || (cnt[dd + "|" + pp + "|" + b] || 0) + n <= cap; };
+    const flag = (k) => ({ day: k.split(":")[0], period: k.split(":")[1], base: null, rank: null, manual: true });
+    const isFree = (mine, k) => !mine[k] || !mine[k].base;
+    const partnerOf = (c) => {
+      const pid = subOf(c.camper_id).same_schedule_request;
+      if (!pid || subOf(pid).same_schedule_request !== c.camper_id) return null;
+      const p = roster.find((x) => x.camper_id === pid);
+      return p && attendsWeek(p, week) ? p : null;
+    };
+    const enrolled = roster.filter((c) => attendsWeek(c, week) && sched[c.camper_id] && cells.some((k) => sched[c.camper_id][k] && sched[c.camper_id][k].base === base));
+    const asks = (c, k) => prefsAt(c, k.split(":")[0], k.split(":")[1]).filter((b) => b !== base);
+    enrolled.sort((a, b) => cells.reduce((n, k) => n + asks(a, k).length, 0) - cells.reduce((n, k) => n + asks(b, k).length, 0)); // least flexible first
+
+    function tryPlace(group, k) {
+      const [dd, pp] = k.split(":");
+      const seen = new Set(), cands = [];
+      group.forEach((c) => asks(c, k).forEach((b, i) => { if (!seen.has(b)) { seen.add(b); cands.push({ base: b, owner: c, idx: i }); } }));
+      for (const cand of cands) {
+        const opts = group.map((c) => optionsForCell(c, dd, pp).find((o) => o.base === cand.base));
+        if (opts.some((o) => !o)) continue;
+        const cells2 = opts[0].occupies ? occKeys(opts[0]) : [k];
+        if (!group.every((c) => cells2.every((k2) => isFree(sched[c.camper_id], k2)) && !wouldViolate(c, sched[c.camper_id], cand.base))) continue;
+        if (!cells2.every((k2) => seatOk(k2.split(":")[0], k2.split(":")[1], cand.base, group.length))) continue;
+        group.forEach((c) => cells2.forEach((k2) => {
+          const [d2, p2] = k2.split(":"), ai = asks(c, k).indexOf(cand.base);
+          cnt[d2 + "|" + p2 + "|" + cand.base] = (cnt[d2 + "|" + p2 + "|" + cand.base] || 0) + 1;
+          sched[c.camper_id][k2] = { day: d2, period: p2, base: cand.base, rank: ai >= 0 && ai < 3 ? ai + 1 : null, manual: true, note: "class closed" };
+        }));
+        return true;
+      }
+      return false;
+    }
+
+    const rows = [], done = new Set();
+    enrolled.forEach((c) => {
+      if (done.has(c.camper_id)) return;
+      const partner = partnerOf(c);
+      const group = [c];
+      let blocked = "";
+      if (partner) { if (enrolled.includes(partner)) group.push(partner); else blocked = "Same-schedule pair with " + partner.name + ", who isn't in this class — place both by hand."; }
+      group.forEach((x) => done.add(x.camper_id));
+      const before = {};
+      group.forEach((x) => {
+        before[x.camper_id] = cells.filter((k) => sched[x.camper_id][k] && sched[x.camper_id][k].base === base);
+        before[x.camper_id].forEach((k) => {
+          const [dd, pp] = k.split(":");
+          cnt[dd + "|" + pp + "|" + base] = Math.max(0, (cnt[dd + "|" + pp + "|" + base] || 0) - 1);
+          sched[x.camper_id][k] = flag(k);
+        });
+      });
+      if (!blocked) cells.forEach((k) => { if (group.every((x) => before[x.camper_id].includes(k)) && group.every((x) => isFree(sched[x.camper_id], k))) tryPlace(group, k); });
+      group.forEach((x) => {
+        const moved = before[x.camper_id].map((k) => ({ k, to: sched[x.camper_id][k].base }));
+        rows.push({ c: x, moved, blocked, paired: group.length > 1 ? group.find((y) => y !== x) : null });
+      });
+    });
+    return { cells, sched, cnt, closedList, rows, enrolledCount: enrolled.length };
+  }
+
+  function startCloseClass(week, day, period, base) {
+    loadWeekData(week, true).then((d) => {
+      if (!d || !d.solved) return;
+      const plan = planClose(week, day, period, base, d);
+      pendingClose = { week, day, period, base, plan };
+      const moved = plan.rows.filter((r) => r.moved.every((m) => m.to)).length;
+      document.getElementById("cl-title").textContent = "Close " + base + " — " + plan.cells.map(short).join(", ");
+      document.getElementById("cl-sub").textContent = "Week " + week + " · " + plan.enrolledCount + " camper" + (plan.enrolledCount === 1 ? "" : "s") + " enrolled";
+      document.getElementById("cl-body").innerHTML =
+        '<div class="msg ' + (moved === plan.rows.length ? "ok" : "warn") + '" style="margin-bottom:10px"><b>' + moved + " of " + plan.rows.length + " campers can be moved to a choice they asked for.</b> " +
+        (plan.rows.length - moved ? (plan.rows.length - moved) + " will need help (their other choices are full, closed, already used, or a same-schedule pair). " : "") +
+        "Nobody is placed in something they didn't ask for. Closing takes effect for this week only, and a re-run of the scheduler keeps it closed.</div>" +
+        '<div class="table-wrap" style="max-height:44vh"><table><thead><tr><th>Camper</th><th>Division</th><th>Result</th></tr></thead><tbody>' +
+        plan.rows.map((r) => {
+          const ok = r.moved.every((m) => m.to);
+          const text = r.moved.map((m) => short(m.k) + ": " + (m.to ? "<b>" + escapeHtml(m.to) + "</b>" : "<i>needs help</i>")).join("; ");
+          return "<tr><td class=\"name\">" + escapeHtml(r.c.name) + "</td><td>" + escapeHtml(r.c.division) + "</td><td>" +
+            (ok ? '<span class="badge ok">Moved</span> ' : '<span class="badge warn">Needs help</span> ') + text +
+            (r.blocked ? '<div class="muted">' + escapeHtml(r.blocked) + "</div>" : r.paired && ok ? '<div class="muted">Moved together with ' + escapeHtml(r.paired.name) + " (same schedule)</div>" : "") + "</td></tr>";
+        }).join("") + "</tbody></table></div>";
+      closeDlg.showModal();
+    });
+  }
+  document.getElementById("cl-cancel").addEventListener("click", () => { pendingClose = null; closeDlg.close(); });
+  document.getElementById("cl-apply").addEventListener("click", () => {
+    if (!pendingClose) return;
+    const { week, plan } = pendingClose;
+    api("saveSchedule", { method: "POST", body: { week: String(week), data: JSON.stringify({ sched: plan.sched, slotCnt: plan.cnt, closed: plan.closedList }) } }).then((resp) => {
+      if (resp.ok) { closeDlg.close(); weekCache = {}; pendingClose = null; showMsg("global-msg", "Class closed and campers moved.", "ok"); loadCapacity(); }
+      else if (!resp.unauthorized) showMsg("global-msg", "Save failed: " + resp.error, "error");
+    });
+  });
+
+  function reopenClass(week, day, period, base) {
+    const cells = groupCells(day, period, base);
+    if (!confirm("Reopen " + base + " (" + cells.map(short).join(", ") + ")? Campers already moved stay where they are; the class just becomes available again.")) return;
+    loadWeekData(week, true).then((d) => {
+      const closed = (d.closed || []).filter((c) => !(c.base === base && cells.includes(c.day + ":" + c.period)));
+      api("saveSchedule", { method: "POST", body: { week: String(week), data: JSON.stringify({ sched: d.sched, slotCnt: d.slotCnt, closed }) } }).then((resp) => {
+        if (resp.ok) { weekCache = {}; showMsg("global-msg", "Class reopened.", "ok"); loadCapacity(); }
+      });
+    });
+  }
+
+  // ---- Audit: did campers get what they asked for? ----
+  let auditRows = [], auditWeek = null, auditMode = "miss";
+  document.getElementById("load-audit-btn").addEventListener("click", loadAudit);
+  document.getElementById("audit-search").addEventListener("input", renderAudit);
+  document.getElementById("audit-division").addEventListener("change", renderAudit);
+  document.getElementById("audit-seg").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-mode]");
+    if (!b) return;
+    auditMode = b.dataset.mode;
+    document.querySelectorAll("#audit-seg button").forEach((x) => x.classList.toggle("on", x === b));
+    renderAudit();
+  });
+
+  function tally(sched) {
+    const t = { "1": 0, "2": 0, "3": 0, moved: 0, staff: 0, other: 0, unfilled: 0, total: 0 };
+    Object.values(sched || {}).forEach((e) => { t[classify(e)]++; t.total++; });
+    return t;
+  }
+  const pct = (n, d) => (d ? Math.round((100 * n) / d) : 0);
+
+  function loadAudit() {
+    const week = parseInt(document.getElementById("audit-week").value, 10);
+    document.querySelector("#audit-table tbody").innerHTML = '<tr><td colspan="9" class="empty">Loading…</td></tr>';
+    loadWeekData(week, true).then((d) => {
+      if (!d) return;
+      auditWeek = week;
+      if (!d.solved) { document.querySelector("#audit-table tbody").innerHTML = '<tr><td colspan="9" class="empty">No solved schedule for week ' + week + " yet.</td></tr>"; return; }
+      const divs = [...new Set(roster.map((c) => c.division))].sort();
+      const sel = document.getElementById("audit-division"), cur = sel.value;
+      sel.innerHTML = '<option value="">All divisions</option>' + divs.map((x) => "<option>" + escapeHtml(x) + "</option>").join("");
+      sel.value = cur;
+      auditRows = roster.filter((c) => attendsWeek(c, week)).map((c) => ({ c, t: tally(d.sched[c.camper_id]), none: !d.sched[c.camper_id] }));
+      renderAuditSummary();
+      renderAudit();
+    });
+  }
+
+  function renderAuditSummary() {
+    const all = auditRows.filter((r) => !r.none), tot = { "1": 0, "2": 0, "3": 0, moved: 0, staff: 0, other: 0, unfilled: 0, total: 0 };
+    all.forEach((r) => Object.keys(tot).forEach((k) => (tot[k] += r.t[k])));
+    const got = tot["1"] + tot["2"] + tot["3"];
+    const perfect = all.filter((r) => r.t.total && r.t["1"] === r.t.total).length;
+    const cards = [
+      [pct(tot["1"], tot.total) + "%", "of periods got their 1st choice"],
+      [pct(tot["2"], tot.total) + "%", "got their 2nd choice"],
+      [pct(tot["3"], tot.total) + "%", "got their 3rd choice"],
+      [pct(got, tot.total) + "%", "got something they asked for"],
+      [pct(tot.moved + tot.staff + tot.other, tot.total) + "%", "moved / assigned by staff"],
+      [pct(tot.unfilled, tot.total) + "%", "unfilled (need help)"],
+      [perfect + " of " + all.length, "campers got every 1st choice"],
+    ];
+    const box = document.getElementById("audit-cards");
+    box.hidden = false;
+    box.innerHTML = cards.map(([n, l]) => '<div class="stat"><div class="num" style="font-size:1.6rem">' + n + '</div><div class="lbl">' + l + "</div></div>").join("");
+    const byDiv = {};
+    all.forEach((r) => { const t = (byDiv[r.c.division] = byDiv[r.c.division] || { n: 0, "1": 0, "2": 0, "3": 0, other: 0, unfilled: 0, total: 0 }); t.n++; t["1"] += r.t["1"]; t["2"] += r.t["2"]; t["3"] += r.t["3"]; t.other += r.t.moved + r.t.staff + r.t.other; t.unfilled += r.t.unfilled; t.total += r.t.total; });
+    document.getElementById("audit-divisions").innerHTML = '<div class="table-wrap" style="max-height:none;margin-bottom:14px"><table><thead><tr><th>Division</th><th>Campers</th><th>1st</th><th>2nd</th><th>3rd</th><th>Moved / staff</th><th>Unfilled</th></tr></thead><tbody>' +
+      Object.keys(byDiv).sort().map((dv) => { const t = byDiv[dv]; return "<tr><td class=\"name\">" + escapeHtml(dv) + "</td><td>" + t.n + "</td><td>" + pct(t["1"], t.total) + "%</td><td>" + pct(t["2"], t.total) + "%</td><td>" + pct(t["3"], t.total) + "%</td><td>" + pct(t.other, t.total) + "%</td><td>" + pct(t.unfilled, t.total) + "%</td></tr>"; }).join("") + "</tbody></table></div>";
+  }
+
+  function renderAudit() {
+    const tbody = document.querySelector("#audit-table tbody");
+    if (auditWeek == null) return;
+    const q = (document.getElementById("audit-search").value || "").toLowerCase(), div = document.getElementById("audit-division").value;
+    let rows = auditRows.filter((r) => !q || r.c.name.toLowerCase().includes(q)).filter((r) => !div || r.c.division === div)
+      .filter((r) => auditMode === "all" || r.none || r.t["1"] < r.t.total);
+    rows.sort((a, b) => (b.none - a.none) || (pct(a.t["1"], a.t.total) - pct(b.t["1"], b.t.total)) || a.c.name.localeCompare(b.c.name));
+    document.getElementById("audit-count").textContent = rows.length + " camper" + (rows.length === 1 ? "" : "s");
+    if (!rows.length) { tbody.innerHTML = '<tr><td colspan="9" class="empty">Everyone got every 1st choice with these filters.</td></tr>'; return; }
+    tbody.innerHTML = rows.slice(0, 300).map((r) => {
+      const t = r.t, got = t["1"] + t["2"] + t["3"];
+      return '<tr class="click" data-id="' + escapeHtml(r.c.camper_id) + '"><td class="name">' + escapeHtml(r.c.name) + "</td><td>" + escapeHtml(r.c.division) + "</td>" +
+        (r.none ? '<td colspan="7"><span class="badge danger">No schedule</span></td>' :
+          "<td>" + t.total + '</td><td><span class="badge r1">' + t["1"] + '</span></td><td><span class="badge r2">' + t["2"] + '</span></td><td><span class="badge r3">' + t["3"] + "</span></td><td>" +
+          (t.moved + t.staff + t.other) + "</td><td>" + (t.unfilled ? '<span class="badge danger">' + t.unfilled + "</span>" : "0") + "</td><td>" + pct(got, t.total) + "%</td>") + "</tr>";
+    }).join("") + (rows.length > 300 ? '<tr><td colspan="9" class="empty">Showing the first 300 — narrow with search or division.</td></tr>' : "");
+  }
+  document.getElementById("audit-table").addEventListener("click", (e) => {
+    const tr = e.target.closest("tr[data-id]");
+    if (tr) showCamperSchedule(tr.dataset.id, auditWeek);
+  });
+
+  document.getElementById("audit-csv-btn").addEventListener("click", () => {
+    if (auditWeek == null) return;
+    const d = weekCache[auditWeek];
+    const label = { "1": "1st choice", "2": "2nd choice", "3": "3rd choice", moved: "moved to open period", staff: "assigned by staff", other: "other", unfilled: "UNFILLED" };
+    const lines = ["camper,division,week,period,requested_1,requested_2,requested_3,received,result"];
+    auditRows.forEach((r) => {
+      const mine = d.sched[r.c.camper_id];
+      if (!mine) { lines.push([r.c.name, r.c.division, auditWeek, "", "", "", "", "", "NO SCHEDULE"].map(csvCell).join(",")); return; }
+      Object.keys(mine).sort((a, b) => DAYS.indexOf(a.split(":")[0]) - DAYS.indexOf(b.split(":")[0]) || parseInt(a.split(":")[1], 10) - parseInt(b.split(":")[1], 10)).forEach((k) => {
+        const e = mine[k], ask = prefsAt(r.c, k.split(":")[0], k.split(":")[1]);
+        lines.push([r.c.name, r.c.division, auditWeek, short(k), ask[0] || "", ask[1] || "", ask[2] || "", e.base || "", label[classify(e)]].map(csvCell).join(","));
+      });
+    });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
+    a.download = "camp-" + camp + "-week" + auditWeek + "-audit.csv";
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+
+  // Requested vs received, for one camper (shown in the schedule dialog).
+  function renderAuditTable(c, sched, week) {
+    const labels = { "1": ["1st", "r1"], "2": ["2nd", "r2"], "3": ["3rd", "r3"], moved: ["moved", "gray"], staff: ["staff", "gray"], other: ["other", "gray"], unfilled: ["needs help", "danger"] };
+    const keys = Object.keys(sched).sort((a, b) => DAYS.indexOf(a.split(":")[0]) - DAYS.indexOf(b.split(":")[0]) || parseInt(a.split(":")[1], 10) - parseInt(b.split(":")[1], 10));
+    if (!keys.length) return "";
+    const rows = keys.map((k) => {
+      const [day, period] = k.split(":"), e = sched[k];
+      const link = e.base ? linkedCovering(c, e.base, k) : null;
+      if (link && occKeys(link)[0] !== k) return "<tr><td>" + short(k) + '</td><td class="muted" colspan="2">Part of ' + escapeHtml(e.base) + " (from " + short(occKeys(link)[0]) + ")</td><td></td></tr>";
+      const ask = prefsAt(c, day, period), kind = classify(e), [txt, cls] = labels[kind];
+      const asked = ask.length ? ask.map((a, i) => (e.base === a ? "<b>" : "") + (i + 1) + ". " + escapeHtml(a) + (e.base === a ? "</b>" : "")).join("<br>") : '<span class="muted">nothing valid ranked</span>';
+      return "<tr><td>" + short(k) + "</td><td>" + asked + "</td><td>" + (e.base ? escapeHtml(e.base) : "<i>nothing</i>") + '</td><td><span class="badge ' + cls + '">' + txt + "</span></td></tr>";
+    }).join("");
+    const t = tally(sched);
+    return '<h2 style="margin:18px 0 4px">Requested vs received</h2><div class="muted" style="margin-bottom:6px">1st choice in ' + t["1"] + " of " + t.total + " periods; something they asked for in " + (t["1"] + t["2"] + t["3"]) + ".</div>" +
+      '<div class="table-wrap" style="max-height:none"><table><thead><tr><th>Period</th><th>They asked for</th><th>They got</th><th>Result</th></tr></thead><tbody>' + rows + "</tbody></table></div>";
   }
 
   // ---- Friends panel ----
@@ -1024,9 +1375,13 @@
     const slot = divInfo(c).slots.find((s) => s.day === day && s.period === period);
     return slot ? slot.options.filter((o) => eligibleFor(c, o)) : [];
   }
-  function poolCap(day, period, base) {
+  function rawCap(day, period, base) {
     const pool = poolsData.find((x) => x.day === day && x.period === period && x.base === base);
     return pool ? pool.cap_max : null; // null = unconstrained (Swim Alternative)
+  }
+  function poolCap(day, period, base) {
+    if (reassignClosed.has(closedKey(day, period, base))) return 0;
+    return rawCap(day, period, base);
   }
 
   document.getElementById("load-camper-btn").addEventListener("click", loadCamperForReassign);
@@ -1042,6 +1397,8 @@
       if (!resp.ok || !resp.schedule) { body.innerHTML = '<div class="msg error">No solved schedule found for week ' + escapeHtml(week) + ".</div>"; return; }
       const sched = JSON.parse(resp.schedule);
       const slotCnt = JSON.parse(resp.slotCounts || "{}");
+      reassignClosedList = resp.closed || [];
+      reassignClosed = closedSetOf(reassignClosedList);
       const mine = sched[me.camper_id] || {};
       const info = divInfo(me);
 
@@ -1071,8 +1428,9 @@
             if (cap != null) { const r = cap - (slotCnt[d2 + "|" + p2 + "|" + o.base] || 0); left = left == null ? r : Math.min(left, r); }
           });
           const suffix = o.occupies ? " — " + (o.occupies.length === 2 ? "double period" : o.occupies.length + " periods") : "";
-          const seats = left == null ? "" : " (" + left + " open)";
-          return '<option value="' + escapeHtml(o.base) + '"' + (cur && cur.base === o.base ? " selected" : "") + ">" + escapeHtml(o.base) + suffix + seats + "</option>";
+          const isClosed = cells2.some((k) => reassignClosed.has(closedKey(k.split(":")[0], k.split(":")[1], o.base)));
+          const seats = isClosed ? " (closed)" : left == null ? "" : " (" + left + " open)";
+          return '<option value="' + escapeHtml(o.base) + '"' + (isClosed && !(cur && cur.base === o.base) ? " disabled" : "") + (cur && cur.base === o.base ? " selected" : "") + ">" + escapeHtml(o.base) + suffix + seats + "</option>";
         }).join("");
         const asked = !(cur && cur.base) ? prefsAt(me, day, period) : [];
         const hint = asked.length ? '<div class="muted" style="margin-top:3px">Asked for: ' + asked.map(escapeHtml).join(", ") + "</div>" : "";

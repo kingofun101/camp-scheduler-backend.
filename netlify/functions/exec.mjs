@@ -207,9 +207,9 @@ async function handler(event) {
         const week = String(params.week);
         const key = `${camp}:${week}`;
         const raw = await scheduleStore.get(key);
-        if (!raw) return respond({ ok: true, schedule: null });
+        if (!raw) return respond({ ok: true, schedule: null, closed: [] });
         const parsed = JSON.parse(raw);
-        return respond({ ok: true, schedule: JSON.stringify(parsed.sched || {}), slotCounts: JSON.stringify(parsed.slotCnt || {}) });
+        return respond({ ok: true, schedule: JSON.stringify(parsed.sched || {}), slotCounts: JSON.stringify(parsed.slotCnt || {}), closed: parsed.closed || [] });
       }
       case "saveSchedule": {
         const week = String(params.week);
@@ -217,8 +217,31 @@ async function handler(event) {
         let parsed;
         try { parsed = JSON.parse(params.data); } catch (e) { return respond({ ok: false, error: "bad JSON" }); }
         const key = `${camp}:${week}`;
-        await scheduleStore.set(key, JSON.stringify({ sched: parsed.sched || {}, slotCnt: parsed.slotCnt || {}, updatedAt: nowISO() }));
+        // `closed` = classes staff closed this week ([{day, period, base}, ...]).
+        // A save that doesn't mention it (a fresh solver push, an older
+        // client) keeps whatever was already closed.
+        const prevRaw = await scheduleStore.get(key);
+        const prevClosed = prevRaw ? (JSON.parse(prevRaw).closed || []) : [];
+        const closed = Array.isArray(parsed.closed) ? parsed.closed : prevClosed;
+        await scheduleStore.set(key, JSON.stringify({ sched: parsed.sched || {}, slotCnt: parsed.slotCnt || {}, closed, updatedAt: nowISO() }));
         return respond({ ok: true });
+      }
+      // Permanently deletes a camp's roster, submissions and schedules. Must
+      // be called with confirm equal to the camp name, so it can't happen by accident.
+      case "deleteCamp": {
+        if (String(params.confirm || "") !== camp) return respond({ ok: false, error: "confirm must equal the camp name" }, 400);
+        let n = 0;
+        await rosterStore.delete(camp); n++;
+        for (const st of [preferencesStore, scheduleStore]) {
+          const { blobs } = await st.list({ prefix: `${camp}:` });
+          for (const b of blobs) { await st.delete(b.key); n++; }
+        }
+        return respond({ ok: true, deleted: n });
+      }
+      // Every camp that has a roster (for the dashboard's camp switcher).
+      case "listCamps": {
+        const { blobs } = await rosterStore.list();
+        return respond({ ok: true, camps: blobs.map((b) => b.key).sort() });
       }
       case "listWeeks": {
         const { blobs } = await scheduleStore.list({ prefix: `${camp}:` });

@@ -52,7 +52,7 @@
 
 <nav class="toc"><b>Jump to</b>
   <a href="#quick">Quick start</a><a href="#signin">Sign in</a><a href="#season">The season, step by step</a><a href="#tabs">Each tab</a>
-  <a href="#form">What families see</a><a href="#rules">The rules</a><a href="#help">"Needs help"</a><a href="#faq">Common questions</a><a href="#practice">Practice camp</a>
+  <a href="#form">What families see</a><a href="#rules">The rules</a><a href="#help">"Needs help"</a><a href="#faq">Common questions</a><a href="#closing">Closing a class</a><a href="#practice">Practice camps</a>
 </nav>
 
 <section id="quick">
@@ -104,7 +104,8 @@
     <tr><th style="width:150px">Tab</th><th>What it's for</th></tr>
     <tr><td><b>Roster &amp; Links</b></td><td>Upload the roster, see who has submitted, copy or download each family's personal link. <b>Open</b> shows exactly what that family sees.</td></tr>
     <tr><td><b>Campers</b></td><td>Pick a week and press Load. Lists every camper who <b>needs help</b> (most unfilled periods first). Click a name for their weekly schedule; <b>Download needs-help list</b> gives you a to-do list with what each camper asked for.</td></tr>
-    <tr><td><b>Capacity</b></td><td>Every activity in every period: how many are enrolled, the cap, how many seats remain, and the minimum needed to run. Click a column heading to sort. Rows shaded orange are under the minimum.</td></tr>
+    <tr><td><b>Capacity</b></td><td>Every activity in every period: how many are enrolled, the cap, how many seats remain, and the minimum needed to run. Click a column heading to sort. Rows shaded orange are under the minimum. <b>Close class…</b> shuts a small class for the week and moves its campers (see below).</td></tr>
+    <tr><td><b>Audit</b></td><td>Did campers get what they asked for? Shows the share of periods that got a 1st, 2nd or 3rd choice, per division, plus a list of campers who missed a 1st choice. Click a camper to see requested vs. received for each period. <b>Download full audit</b> gives a CSV.</td></tr>
     <tr><td><b>Friends</b></td><td>Every mutual friend / same-schedule pair for a week, with how many periods they share. Click a row for a period-by-period comparison.</td></tr>
     <tr><td><b>Reassign</b></td><td>Change one camper's schedule by hand. Choose the week and the camper, change any dropdown, press <b>Save changes</b>.</td></tr>
   </table>
@@ -174,14 +175,26 @@
   <details><summary>Swim Alternative capacity?</summary><p>There are no seat limits on Swim Alternative activities yet (the source data has no numbers for them), so the scheduler treats them as unlimited.</p></details>
 </section>
 
+<section id="closing">
+  <h2>Closing a small class</h2>
+  <ol>
+    <li><b>Capacity</b> tab → pick the week → tick <b>under minimum only</b> to see the small classes.</li>
+    <li>Press <b>Close class…</b>. A preview lists every enrolled camper and where they would go — always one of their own other choices, never something they didn't ask for.</li>
+    <li>Campers with no open backup are shown as <b>Needs help</b>; finish them in Reassign. Same-schedule pairs move together or are left for you.</li>
+    <li>Press <b>Close class and move campers</b>. The class shows <b>CLOSED</b>, has zero seats, and can't be picked in Reassign. <b>Reopen</b> undoes the closure (campers already moved stay put).</li>
+  </ol>
+  <p class="note warn">Closures are kept if the scheduler is re-run, but a re-run replaces any manual moves you made in Reassign.</p>
+</section>
+
 <section id="practice">
-  <h2>Practice camp (no real families)</h2>
-  <p>There's a practice camp filled with 36 <b>made-up</b> campers (names like "Ava Sample01"), some submitted and some pending, with a scheduled week 1. Play with anything — it's completely separate from your real data.</p>
+  <h2>Practice camps (no real families)</h2>
+  <p>Two practice camps hold last summer's 417 campers and their real selections, so you can recognize kids and judge whether the results make sense. Switch between camps with the drop-down in the blue header. Nothing here affects the real 2027 camp.</p>
   <ul>
-    <li><a href="dashboard.html?camp=demo">Open the practice dashboard</a> (same access code).</li>
-    <li><a href="form.html?camp=demo&c=C0027&k=e6e7541b060556ae28127b73">Open a practice family form</a> — try picking Archery twice, or a double period like Coding, and watch how the form reacts.</li>
+    <li><a href="dashboard.html?camp=aaron2026"><b>aaron2026</b></a> — real 2026 names.</li>
+    <li><a href="dashboard.html?camp=aaron2026-random"><b>aaron2026-random</b></a> — the same data with made-up names, for showing outside the team.</li>
   </ul>
-  <p class="note warn">The real camp name is separate (for example <code>aaron2027</code>) — make sure the blue header shows the real one when you're doing real work.</p>
+  <p>To see a family's form, open <b>Roster &amp; Links</b> and press <b>Open</b> beside any camper. Try picking Archery twice, or a double period like Coding, and watch how the form reacts.</p>
+  <p class="note warn">Always check the camp name in the header before doing real work — the real camp is <code>aaron2027</code>.</p>
 </section>
 
 </main>

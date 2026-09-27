@@ -70,6 +70,22 @@
   <div class="who" id="who"></div>
 </div></header>
 <div class="wrap" id="app"><div class="center">Loading…</div></div>
+<noscript><div class="wrap"><div class="center">This page needs JavaScript. Please turn it on, or contact camp staff.</div></div></noscript>
+<script>
+/* Plain ES5 on purpose: if the browser is too old to read the main script below,
+   or something goes wrong, families see what to do instead of "Loading…" forever. */
+(function () {
+  function stuck() {
+    var app = document.getElementById("app");
+    if (app && app.querySelector(".center")) {
+      app.innerHTML = '<div class="msg error"><b>This page didn\'t load.</b><br>Please refresh once. If it still doesn\'t load, try a different browser (Chrome, Safari or Edge, updated to a recent version) or another device, or contact camp staff.</div>';
+    }
+  }
+  window.addEventListener("error", function () { setTimeout(stuck, 0); });
+  window.addEventListener("unhandledrejection", function () { setTimeout(stuck, 0); });
+  setTimeout(stuck, 15000);
+})();
+</script>
 
 <script>
 (function () {
@@ -180,7 +196,7 @@
         friendRow("sameSchedule", "Same schedule as") +
         '<datalist id="camper-list">' + otherCampers.map((c) => '<option value="' + esc(c.name) + '">').join("") + "</datalist></div>";
       app.innerHTML = html;
-      document.getElementById("bar")?.remove();
+      (function () { var old = document.getElementById("bar"); if (old) old.remove(); })();
       const bar = document.createElement("div");
       bar.className = "bar"; bar.id = "bar";
       bar.innerHTML = '<div class="bar-inner"><div class="prog"><span id="prog-text"></span><div class="meter"><span id="prog-bar"></span></div></div><button id="submit-btn">' + (existing ? "Update selections" : "Submit selections") + "</button></div>";
@@ -297,7 +313,7 @@
     }
 
     function done(preferences) {
-      document.getElementById("bar")?.remove();
+      (function () { var old = document.getElementById("bar"); if (old) old.remove(); })();
       window.scrollTo(0, 0);
       const r = analyze();
       const rows = slots.map((s) => {
@@ -307,7 +323,7 @@
       app.innerHTML = '<div class="msg ok"><b>Thank you — your selections are saved.</b><br>You can open this same link again any time before the deadline to review or change them.</div>' +
         '<div class="card"><h3 style="margin-top:0">Your 1st choices</h3><table class="sum"><thead><tr><th>Period</th><th>1st choice</th></tr></thead><tbody>' + rows + "</tbody></table></div>" +
         '<button class="secondary" id="edit-btn" style="width:100%">Make changes</button>';
-      document.getElementById("edit-btn").addEventListener("click", () => { existing && (existing.submittedAt = existing.submittedAt); build(); window.scrollTo(0, 0); });
+      document.getElementById("edit-btn").addEventListener("click", () => { build(); window.scrollTo(0, 0); });
     }
 
     build();

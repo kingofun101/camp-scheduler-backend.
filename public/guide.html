@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camp Aaron Scheduler — Team Guide</title>
+<style>
+  :root { --bg:#f4f6f9; --card:#fff; --ink:#14213d; --muted:#667085; --brand:#1d4e89; --brand-dark:#12355f; --brand-soft:#e8f0fb; --border:#e4e8ee; --ok:#157347; --ok-bg:#e6f4ec; --warn:#a15c07; --warn-bg:#fff4e0; --danger:#c0362c; --danger-bg:#fdecea; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; -webkit-font-smoothing:antialiased; }
+  header { background: linear-gradient(135deg,var(--brand-dark),var(--brand)); color:#fff; }
+  header .in { max-width: 860px; margin:0 auto; padding: 26px 22px 28px; }
+  header h1 { margin:0 0 4px; font-size:1.7rem; }
+  header p { margin:0; opacity:.9; }
+  header a.btn { display:inline-block; margin-top:14px; background:#fff; color:var(--brand-dark); padding:8px 16px; border-radius:9px; font-weight:700; text-decoration:none; font-size:.9rem; margin-right:8px; }
+  main { max-width: 860px; margin:0 auto; padding: 22px 22px 70px; }
+  nav.toc { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:14px 18px; margin-bottom:20px; }
+  nav.toc b { display:block; margin-bottom:6px; }
+  nav.toc a { display:inline-block; margin:2px 14px 2px 0; color:var(--brand); text-decoration:none; font-size:.92rem; }
+  section { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px 24px; margin-bottom:16px; }
+  h2 { margin:0 0 10px; font-size:1.25rem; }
+  h3 { margin:18px 0 6px; font-size:1rem; }
+  p { margin:8px 0; }
+  ul, ol { margin:8px 0; padding-left:22px; }
+  li { margin:5px 0; }
+  code { background:#f1f3f7; padding:1px 6px; border-radius:5px; font-size:.86em; }
+  .step { display:flex; gap:14px; margin:12px 0; }
+  .step .n { flex:none; width:28px; height:28px; border-radius:50%; background:var(--brand); color:#fff; display:grid; place-items:center; font-weight:800; font-size:.85rem; margin-top:2px; }
+  .note { border-radius:10px; padding:10px 14px; margin:12px 0; font-size:.92rem; }
+  .note.tip { background:var(--brand-soft); color:var(--brand-dark); }
+  .note.warn { background:var(--warn-bg); color:var(--warn); }
+  .note.ok { background:var(--ok-bg); color:var(--ok); }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; margin:10px 0; }
+  th,td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+  th { font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); }
+  .pill { display:inline-block; padding:1px 9px; border-radius:999px; font-size:.78rem; font-weight:700; }
+  .pill.ok { background:var(--ok-bg); color:var(--ok); } .pill.warn { background:var(--warn-bg); color:var(--warn); } .pill.danger { background:var(--danger-bg); color:var(--danger); }
+  details { border-top:1px solid var(--border); padding:10px 0; }
+  details:first-of-type { border-top:none; }
+  summary { cursor:pointer; font-weight:700; }
+  @media print { header a.btn, nav.toc { display:none; } body { background:#fff; } section { break-inside:avoid; border:none; padding:8px 0; } header { background:#fff; color:#000; } header .in { padding:0 0 10px; } details { display:block; } details > * { display:block; } }
+</style>
+</head>
+<body>
+<header><div class="in">
+  <h1>Camp Aaron Scheduler — Team Guide</h1>
+  <p>How to run elective selection from start to finish.</p>
+  <a class="btn" href="dashboard.html?camp=aaron2027">Open the dashboard</a>
+  <a class="btn" href="#" onclick="window.print();return false">Print this guide</a>
+</div></header>
+<main>
+
+<nav class="toc"><b>Jump to</b>
+  <a href="#quick">Quick start</a><a href="#signin">Sign in</a><a href="#season">The season, step by step</a><a href="#tabs">Each tab</a>
+  <a href="#form">What families see</a><a href="#rules">The rules</a><a href="#help">"Needs help"</a><a href="#faq">Common questions</a><a href="#practice">Practice camp</a>
+</nav>
+
+<section id="quick">
+  <h2>Quick start</h2>
+  <p>The program replaces first-come-first-served sign-up. Families rank up to <b>3 choices per period</b> on a personal web form. After the deadline, a solver assigns every camper to their best available choices without ever going over an activity's capacity. Anyone it can't place is flagged so <b>you</b> can finish their schedule by hand.</p>
+  <div class="note tip"><b>Your job in three lines:</b> (1) get the roster in and links out, (2) chase anyone who hasn't submitted, (3) after scheduling, work through the campers who need help.</div>
+  <div class="note warn"><b>One thing the dashboard can't do:</b> run the scheduler itself. After the deadline, ask the program director to run it (the whole season takes about a minute). Everything before and after that step is in the dashboard.</div>
+</section>
+
+<section id="signin">
+  <h2>Signing in</h2>
+  <ol>
+    <li>Open the dashboard link the program director sent you.</li>
+    <li>Enter the <b>access code</b> (ask the director — it's the same for the whole team). Your browser remembers it, so you'll only type it once per computer.</li>
+    <li>The camp name shows in the blue header (for example <code>aaron2027</code>). <b>Sign out</b> is at the top right — use it on shared computers.</li>
+  </ol>
+  <p class="note ok">Never put the access code in an email subject or a public chat. Family links are different — each family only ever sees their own child's form.</p>
+</section>
+
+<section id="season">
+  <h2>The season, step by step</h2>
+
+  <h3>1. Before the form opens</h3>
+  <div class="step"><div class="n">1</div><div><b>Upload the roster.</b> Roster &amp; Links → <b>Upload / replace roster</b>. Use a CSV with the columns <code>camper_id,name,division,grade,gender</code> and, if campers attend only some weeks, <code>weeks</code> (like <code>1;2;5;8</code>).
+    <ul><li><b>Divisions:</b> Gilad = 5th grade, Arad = 6th grade, Tavor = 7th–8th grade.</li>
+    <li><b>gender</b> (M or F) matters — a few activities (Girls Gaga, Girls Basketball, Girls Soccer) are only offered to girls. Leave it blank only if you must.</li>
+    <li>Re-uploading is safe: campers already on the roster <b>keep their same link</b>, so links you already emailed keep working.</li></ul></div></div>
+  <div class="step"><div class="n">2</div><div><b>Try it yourself first.</b> Open the <a href="#practice">practice camp</a> and fill out a sample form so you know what parents will see.</div></div>
+  <div class="step"><div class="n">3</div><div><b>Send each family their link.</b> On Roster &amp; Links, <b>Download all links (CSV)</b> gives you name, division and link for every camper — use it for a mail merge. Or press <b>Copy link</b> beside one camper.</div></div>
+
+  <h3>2. While families are filling it in</h3>
+  <div class="step"><div class="n">4</div><div><b>Watch the progress cards</b> at the top of Roster &amp; Links (submitted, still waiting, completion %, per division).</div></div>
+  <div class="step"><div class="n">5</div><div><b>Chase the stragglers.</b> Click the <b>Pending</b> filter to see who hasn't submitted, or <b>Copy pending links</b> for a ready-made reminder list.</div></div>
+  <div class="note tip">Families can reopen their link and change their answers any time until you run the scheduler, so a mistake is never a problem.</div>
+
+  <h3>3. After the deadline</h3>
+  <div class="step"><div class="n">6</div><div><b>Ask the program director to run the scheduler.</b> It solves each camp week separately, using only the campers attending that week.</div></div>
+
+  <h3>4. Reviewing the results</h3>
+  <div class="step"><div class="n">7</div><div><b>Campers tab</b> — see who needs help and fix them (see <a href="#help">"Needs help"</a>).</div></div>
+  <div class="step"><div class="n">8</div><div><b>Capacity tab</b> — look for activities <span class="pill warn">under min</span> (too few campers to run) and anything nearly full.</div></div>
+  <div class="step"><div class="n">9</div><div><b>Friends tab</b> — check that friend and same-schedule pairs came out the way families expected.</div></div>
+  <div class="step"><div class="n">10</div><div><b>Print schedules.</b> Open any camper on the Campers tab and press <b>Print</b>.</div></div>
+</section>
+
+<section id="tabs">
+  <h2>Each tab</h2>
+  <table>
+    <tr><th style="width:150px">Tab</th><th>What it's for</th></tr>
+    <tr><td><b>Roster &amp; Links</b></td><td>Upload the roster, see who has submitted, copy or download each family's personal link. <b>Open</b> shows exactly what that family sees.</td></tr>
+    <tr><td><b>Campers</b></td><td>Pick a week and press Load. Lists every camper who <b>needs help</b> (most unfilled periods first). Click a name for their weekly schedule; <b>Download needs-help list</b> gives you a to-do list with what each camper asked for.</td></tr>
+    <tr><td><b>Capacity</b></td><td>Every activity in every period: how many are enrolled, the cap, how many seats remain, and the minimum needed to run. Click a column heading to sort. Rows shaded orange are under the minimum.</td></tr>
+    <tr><td><b>Friends</b></td><td>Every mutual friend / same-schedule pair for a week, with how many periods they share. Click a row for a period-by-period comparison.</td></tr>
+    <tr><td><b>Reassign</b></td><td>Change one camper's schedule by hand. Choose the week and the camper, change any dropdown, press <b>Save changes</b>.</td></tr>
+  </table>
+</section>
+
+<section id="form">
+  <h2>What families see</h2>
+  <p>Each family gets a personal link (it contains a private key, so they can only ever see and change <b>their own</b> child's form). On a phone it looks like this:</p>
+  <ul>
+    <li>A short <b>"How this works"</b> box that explains the rules below.</li>
+    <li>A <b>Swim Alternative</b> checkbox for Arad and Tavor campers who want to skip instructional swim.</li>
+    <li>One card per period, Monday to Friday. Each card has a required <b>1st choice</b> and optional <b>2nd</b> and <b>3rd</b> backups. The lists only show activities that camper is <b>eligible</b> for (grade and gender).</li>
+    <li>A <b>Friends</b> section: up to two friend requests plus an optional "same schedule as" request. Families pick a name from a list of the campers in their child's division, so names can't be misspelled.</li>
+    <li>A progress bar and <b>Submit</b> button pinned to the bottom. If something is missing or breaks a rule, the form says exactly what and highlights the period in red.</li>
+    <li>After submitting they see a thank-you page with their 1st choices, and can reopen the same link to make changes.</li>
+  </ul>
+  <div class="note tip">Families often complete the form together with their friends so the choices match — that's exactly what gives the best chance of being scheduled together.</div>
+</section>
+
+<section id="rules">
+  <h2>The rules (enforced on the form <i>and</i> by the scheduler)</h2>
+  <table>
+    <tr><th style="width:230px">Rule</th><th>What it means</th></tr>
+    <tr><td><b>One activity per period</b></td><td>A camper does exactly one thing in each period. Capacity is never exceeded — if a class is full, the next choice is used.</td></tr>
+    <tr><td><b>Once a week</b></td><td>A camper can't take the same activity twice in a week. <b>Exceptions:</b> sports activities (Basketball, Soccer, Kickball, Gaga…) and Lake Inflatables can be taken <b>twice</b>. Swim Alternative campers can take Gaga or 9 Square in the Air <b>three</b> times.</td></tr>
+    <tr><td><b>Double periods and all-week activities</b></td><td>Activities like Coding, Things That Go, Master Chef and Advanced Art fill <b>two periods</b>; Theater fills every day; Sports League, Perform Dance and Advanced Wheel fill specific days. Picking one covers all of those periods, and the form greys the covered periods out.</td></tr>
+    <tr><td><b>Can't take both</b></td><td><b>Advanced Wheel</b> and <b>Wheel Ceramics</b> can't both be taken, and neither can <b>Master Chef</b> and <b>Top Chef</b>.</td></tr>
+    <tr><td><b>Grade and gender</b></td><td>Campers only see and get activities they're eligible for.</td></tr>
+    <tr><td><b>Friend request</b></td><td>Both campers must name each other. The scheduler then tries to put them in the same activity when they both ranked it (the reward is biggest when they ranked it the <i>same</i> number). It's a nudge, not a promise.</td></tr>
+    <tr><td><b>Same schedule</b></td><td>Both campers must name each other. Then, in every period, <b>whatever one gets, the other gets the identical thing</b>. If their choices don't overlap in a period, both are left for staff to place. This is the strictest rule.</td></tr>
+    <tr><td><b>Never guess</b></td><td>If none of a camper's three choices is available in a period, the scheduler does <b>not</b> drop them into a random class — it flags them for you.</td></tr>
+  </table>
+</section>
+
+<section id="help">
+  <h2>"Needs help" — finishing a schedule by hand</h2>
+  <p>A camper needs help when a period is unfilled: every choice they gave was full, they'd already used it that week, or they're tied to a same-schedule partner whose choices didn't overlap.</p>
+  <h3>How to work through them</h3>
+  <ol>
+    <li><b>Campers tab</b> → pick the week → <b>Load</b>. The counts at the top show how many campers and periods need attention.</li>
+    <li>Click a camper. Red <b>Needs help</b> squares are their unfilled periods. Below the grid, each unfilled period lists <b>what they asked for and how many seats are open right now</b>.</li>
+    <li>Press <b>Fix in Reassign</b>. Each unfilled period is a dropdown; choose an activity (the number in brackets is seats open). <b>Save changes</b>.</li>
+    <li>The camper's grid now shows the new activity tagged <i>assigned by staff</i>. They drop off the needs-help list once every period is filled.</li>
+  </ol>
+  <h3>Good to know</h3>
+  <ul>
+    <li><b>Double periods and all-week activities move as one.</b> Choosing one fills every period it covers (you'll be asked to confirm if it replaces something). Removing one frees them all. Later periods of an activity show as locked — change it from the first period.</li>
+    <li><b>Swim Alternative periods</b> are editable like any other.</li>
+    <li><b>A full activity can't be chosen</b> — the page refuses and tells you.</li>
+    <li>The repeat-limit and can't-take-both rules give a <b>warning</b> you can override if you really mean to.</li>
+    <li><b>Same-schedule pairs:</b> the Campers tab flags them. To keep the pair identical, make the <b>same change for both</b> kids — Reassign won't stop you from breaking the match.</li>
+    <li>If a family emails to change something after scheduling, you can usually just do it in Reassign.</li>
+  </ul>
+</section>
+
+<section id="faq">
+  <h2>Common questions</h2>
+  <details><summary>A family lost their link.</summary><p>Roster &amp; Links → search their name → <b>Copy link</b>, and send it again. It's the same link as before.</p></details>
+  <details><summary>A family says their link "isn't valid."</summary><p>The link is cut off or edited (the long code at the end matters). Copy a fresh one from the dashboard and resend it.</p></details>
+  <details><summary>A child is in the wrong division, grade, or missing a week.</summary><p>Fix the row in your roster CSV and upload it again. Everyone keeps their link; their existing choices are kept too. If the change moves them to a different division, ask them to reopen their link and re-check their choices (each division has its own activities).</p></details>
+  <details><summary>A camper was added after the deadline.</summary><p>Upload the updated roster, send them their link, then ask the director to re-run the scheduler.</p></details>
+  <details><summary>Someone wants to see their child's schedule.</summary><p>Campers tab → their name → <b>Print</b>.</p></details>
+  <details><summary>Why is one activity "under min"?</summary><p>Fewer campers signed up than the minimum needed to run it. Either fill it by moving campers in through Reassign, or move the few who are in it elsewhere.</p></details>
+  <details><summary>Two friends aren't together but both wanted the same activity. Why?</summary><p>Usually the activity filled up, or one of them had already used it that week (activities are once a week). The Friends tab shows exactly which periods they share.</p></details>
+  <details><summary>The numbers changed after I edited someone.</summary><p>That's correct — Reassign updates the seat counts everywhere immediately.</p></details>
+  <details><summary>Can two of us use the dashboard at once?</summary><p>Yes for looking around. If two people edit the <i>same week</i> at the same moment, the last save wins, so coordinate who is fixing which campers.</p></details>
+  <details><summary>Swim Alternative capacity?</summary><p>There are no seat limits on Swim Alternative activities yet (the source data has no numbers for them), so the scheduler treats them as unlimited.</p></details>
+</section>
+
+<section id="practice">
+  <h2>Practice camp (no real families)</h2>
+  <p>There's a practice camp filled with 36 <b>made-up</b> campers (names like "Ava Sample01"), some submitted and some pending, with a scheduled week 1. Play with anything — it's completely separate from your real data.</p>
+  <ul>
+    <li><a href="dashboard.html?camp=demo">Open the practice dashboard</a> (same access code).</li>
+    <li><a href="form.html?camp=demo&c=C0027&k=e6e7541b060556ae28127b73">Open a practice family form</a> — try picking Archery twice, or a double period like Coding, and watch how the form reacts.</li>
+  </ul>
+  <p class="note warn">The real camp name is separate (for example <code>aaron2027</code>) — make sure the blue header shows the real one when you're doing real work.</p>
+</section>
+
+</main>
+</body>
+</html>

@@ -168,7 +168,7 @@ async function handler(event) {
         const prefs = {};
         for (const [slot, list] of Object.entries(input.preferences || {})) {
           if (typeof slot === "string" && slot.startsWith(me.division + ":") && Array.isArray(list)) {
-            prefs[slot] = list.filter((v) => typeof v === "string" && v.length < 100).slice(0, 3);
+            prefs[slot] = [...new Set(list.filter((v) => typeof v === "string" && v.length < 100))].slice(0, 3);
           }
         }
         const submission = {

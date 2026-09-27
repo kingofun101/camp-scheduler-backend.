@@ -6,43 +6,70 @@
 <title>Camp Aaron Elective Selections</title>
 <style>
   :root {
-    --bg: #f7f5f0; --card: #ffffff; --ink: #1f2937; --muted: #6b7280;
-    --accent: #2563eb; --accent-ink: #ffffff; --border: #e5e7eb;
-    --danger: #dc2626; --danger-bg: #fef2f2; --ok: #059669; --ok-bg: #ecfdf5;
+    --bg: #f4f6f9; --card: #ffffff; --ink: #14213d; --muted: #667085;
+    --brand: #1d4e89; --brand-dark: #12355f; --brand-soft: #e8f0fb; --border: #e4e8ee;
+    --danger: #c0362c; --danger-bg: #fdecea; --ok: #157347; --ok-bg: #e6f4ec; --warn: #a15c07; --warn-bg: #fff4e0;
+    --shadow: 0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.08);
   }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-         background: var(--bg); color: var(--ink); line-height: 1.4; }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 20px 16px 80px; }
-  h1 { font-size: 1.4rem; margin: 0 0 4px; }
-  .sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 20px; }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-          padding: 16px; margin-bottom: 14px; }
-  .slot-title { font-weight: 600; margin-bottom: 10px; font-size: 1rem; }
-  .rank-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-  .rank-row label { width: 68px; font-size: 0.85rem; color: var(--muted); flex-shrink: 0; }
-  select, input[type=text] { flex: 1; padding: 9px 10px; border-radius: 8px; border: 1px solid var(--border);
-          font-size: 0.95rem; background: #fff; color: var(--ink); width: 100%; }
-  .required-mark { color: var(--danger); }
-  .swim-toggle { display: flex; align-items: center; gap: 10px; }
-  .swim-toggle input { width: auto; flex: none; }
-  button.submit { background: var(--accent); color: var(--accent-ink); border: none; border-radius: 10px;
-          padding: 14px 20px; font-size: 1.05rem; font-weight: 600; width: 100%; cursor: pointer; }
-  button.submit:disabled { opacity: 0.6; cursor: not-allowed; }
-  .msg { border-radius: 10px; padding: 12px 14px; margin-bottom: 16px; font-size: 0.92rem; }
+  body { margin: 0; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.45; -webkit-font-smoothing: antialiased; }
+  .top { background: linear-gradient(135deg, var(--brand-dark), var(--brand)); color: #fff; }
+  .top-inner { max-width: 760px; margin: 0 auto; padding: 18px 18px 20px; }
+  .top h1 { margin: 0; font-size: 1.3rem; }
+  .top .who { margin-top: 4px; opacity: .9; font-size: .95rem; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 18px 18px 130px; }
+  .center { text-align: center; padding: 60px 20px; color: var(--muted); }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 12px; box-shadow: var(--shadow); }
+  details.howto { background: var(--brand-soft); border-radius: 14px; padding: 4px 16px; margin-bottom: 16px; }
+  details.howto summary { cursor: pointer; font-weight: 700; padding: 10px 0; color: var(--brand-dark); }
+  details.howto ul { margin: 0 0 12px; padding-left: 20px; font-size: .9rem; }
+  details.howto li { margin: 5px 0; }
+  .msg { border-radius: 12px; padding: 12px 14px; margin-bottom: 14px; font-size: .92rem; }
   .msg.error { background: var(--danger-bg); color: var(--danger); }
   .msg.ok { background: var(--ok-bg); color: var(--ok); }
-  .friend-help { font-size: 0.82rem; color: var(--muted); margin: 4px 0 10px; }
-  .section-title { font-size: 1.05rem; font-weight: 700; margin: 28px 0 10px; }
-  .incomplete-badge { display: inline-block; background: var(--danger-bg); color: var(--danger);
-          font-size: 0.75rem; padding: 2px 8px; border-radius: 999px; margin-left: 8px; }
-  .center { text-align: center; padding: 60px 20px; color: var(--muted); }
+  .msg.warn { background: var(--warn-bg); color: var(--warn); }
+  .day { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 22px 2px 8px; }
+  .slot-title { font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .tag { font-size: .68rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--brand-soft); color: var(--brand-dark); }
+  .tick { margin-left: auto; font-size: .78rem; font-weight: 700; color: var(--ok); visibility: hidden; }
+  .card.done .tick { visibility: visible; }
+  .card.has-error { border-color: var(--danger); }
+  .card.covered { background: #f7f9fc; }
+  .rank-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .rank-row label { width: 82px; font-size: .84rem; color: var(--muted); flex-shrink: 0; font-weight: 600; }
+  .req { color: var(--danger); }
+  select, input[type=text] { flex: 1; padding: 10px 11px; border-radius: 9px; border: 1px solid #cfd6e0; font-size: .95rem; background: #fff; color: var(--ink); width: 100%; font-family: inherit; }
+  select:focus, input:focus { outline: 2px solid var(--brand-soft); border-color: var(--brand); }
+  .banner { background: var(--brand-soft); color: var(--brand-dark); border-radius: 9px; padding: 8px 12px; font-size: .86rem; margin-bottom: 10px; }
+  .errs { color: var(--danger); font-size: .84rem; margin-top: 4px; }
+  .errs div { margin-top: 3px; }
+  .swim { display: flex; gap: 12px; align-items: flex-start; }
+  .swim input { width: 20px; height: 20px; margin-top: 2px; flex: none; }
+  .swim label { font-size: .95rem; }
+  .swim small { display: block; color: var(--muted); margin-top: 2px; }
+  .section-title { font-size: 1.05rem; font-weight: 800; margin: 26px 2px 10px; }
+  .help { font-size: .84rem; color: var(--muted); margin: 0 0 12px; }
+  .bar { position: fixed; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-top: 1px solid var(--border); padding: 12px 18px; z-index: 5; }
+  .bar-inner { max-width: 760px; margin: 0 auto; display: flex; align-items: center; gap: 14px; }
+  .prog { flex: 1; font-size: .84rem; color: var(--muted); }
+  .prog b { color: var(--ink); }
+  .meter { height: 7px; border-radius: 999px; background: #e9edf3; overflow: hidden; margin-top: 5px; }
+  .meter > span { display: block; height: 100%; background: linear-gradient(90deg, #2e8b57, #35a76b); width: 0; transition: width .3s; }
+  button { background: var(--brand); color: #fff; border: none; border-radius: 10px; padding: 12px 22px; font-size: 1rem; font-weight: 700; cursor: pointer; font-family: inherit; }
+  button:hover { background: var(--brand-dark); }
+  button:disabled { opacity: .55; cursor: wait; }
+  button.secondary { background: var(--brand-soft); color: var(--brand-dark); }
+  table.sum { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  table.sum td, table.sum th { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--border); }
+  table.sum th { color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; }
 </style>
 </head>
 <body>
-<div class="wrap" id="app">
-  <div class="center">Loading…</div>
-</div>
+<header class="top"><div class="top-inner">
+  <h1>Camp Aaron Elective Selections</h1>
+  <div class="who" id="who"></div>
+</div></header>
+<div class="wrap" id="app"><div class="center">Loading…</div></div>
 
 <script>
 (function () {
@@ -51,250 +78,240 @@
   const camperId = params.get("c");
   const camperKey = params.get("k") || "";
   const apiBase = params.get("api") || "https://camp-aaron-scheduler-backend.netlify.app/exec";
-
   const app = document.getElementById("app");
+  const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  const short = (d) => d.slice(0, 3);
 
   function api(action, opts) {
     opts = opts || {};
     if (opts.method === "POST") {
-      return fetch(apiBase, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.assign({ action, camp }, opts.body || {})),
-      }).then((r) => r.json());
+      return fetch(apiBase, { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.assign({ action, camp }, opts.body || {})) }).then((r) => r.json());
     }
-    const qs = new URLSearchParams(Object.assign({ action, camp }, opts.query || {}));
-    return fetch(apiBase + "?" + qs.toString()).then((r) => r.json());
+    return fetch(apiBase + "?" + new URLSearchParams(Object.assign({ action, camp }, opts.query || {})).toString()).then((r) => r.json());
   }
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fail = (msg) => { app.innerHTML = '<div class="msg error">' + msg + "</div>"; };
 
-  function render(html) { app.innerHTML = html; }
-
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  }
-
-  if (!camperId || !camperKey) {
-    render('<div class="msg error">This link is missing a camper id. Please use the personal link sent to your family, or contact camp staff.</div>');
-    return;
-  }
+  if (!camperId || !camperKey) { fail("This link is missing information. Please use the personal link sent to your family, or contact camp staff."); return; }
 
   Promise.all([
     fetch("slots.json").then((r) => r.json()),
     api("formInit", { query: { camper_id: camperId, key: camperKey } }),
   ]).then(([slotsData, init]) => {
-    if (!init.ok) {
-      render('<div class="msg error">This link isn\'t valid. Please use the personal link sent to your family, or contact camp staff.</div>');
-      return;
-    }
-    const me = init.camper;
-    const roster = init.roster || [];
-    const prefsResp = { ok: true, submission: init.submission };
-
-    const division = me.division;
-    const divData = slotsData.divisions[division];
-    if (!divData) {
-      render('<div class="msg error">Unknown division "' + escapeHtml(division) + '" for this camper. Please contact camp staff.</div>');
-      return;
-    }
-
-    const existing = (prefsResp.ok && prefsResp.submission) || null;
+    if (!init.ok) { fail("This link isn't valid. Please use the personal link sent to your family, or contact camp staff."); return; }
+    const me = init.camper, roster = init.roster || [];
+    const divData = slotsData.divisions[me.division];
+    if (!divData) { fail("We couldn't find this camper's division. Please contact camp staff."); return; }
+    const rules = slotsData.rules || {};
+    const repeatTwice = new Set(rules.repeat_twice || []), swim3 = new Set(rules.swim_alt_repeat3 || []);
+    const pairs = rules.exclusive_pairs || [];
+    const existing = init.submission || null;
     const otherCampers = roster.filter((c) => c.camper_id !== camperId);
-    const nameFor = (id) => {
-      const c = roster.find((r) => r.camper_id === id);
-      return c ? c.name : "";
-    };
+    const nameFor = (id) => (roster.find((r) => r.camper_id === id) || {}).name || "";
+    document.getElementById("who").textContent = me.name + " · " + me.division + " · Grade " + me.grade;
 
-    function eligible(opt, grade, gender) {
-      if (opt.grade_lo != null && grade < opt.grade_lo) return false;
-      if (opt.grade_hi != null && grade > opt.grade_hi) return false;
-      if (opt.gender !== "MF" && opt.gender !== gender) return false;
-      return true;
-    }
-
+    // ---- state (kept in JS so nothing is lost when the page updates) ----
     let swimAlt = existing ? !!existing.swim_alt : false;
+    const picks = {}; // slot_id -> ["", "", ""]
+    Object.entries((existing && existing.preferences) || {}).forEach(([sid, list]) => { picks[sid] = [list[0] || "", list[1] || "", list[2] || ""]; });
+    const friendIds = { friend1: (existing && existing.friend_requests && existing.friend_requests[0]) || "", friend2: (existing && existing.friend_requests && existing.friend_requests[1]) || "", sameSchedule: (existing && existing.same_schedule_request) || "" };
 
-    function slotsForCamper() {
-      let slots = divData.slots.slice();
+    const eligible = (o) => (o.grade_lo == null || me.grade >= o.grade_lo) && (o.grade_hi == null || me.grade <= o.grade_hi) && (o.gender === "MF" || o.gender === me.gender || !o.gender);
+
+    function slotList() {
+      const slots = divData.slots.map((s) => Object.assign({}, s));
       if (divData.swim_alt_eligible && swimAlt) {
-        const menu = divData.swim_alt_menu || {};
-        const periods = divData.swim_period || {};
-        Object.keys(periods).forEach((day) => {
-          const names = menu[day] || [];
-          if (!names.length) return;
-          slots.push({
-            slot_id: division + ":" + day + ":" + periods[day] + ":swimalt",
-            day: day,
-            period: periods[day],
-            options: names.map((n) => ({ base: n, grade_lo: null, grade_hi: null, gender: "MF" })),
-          });
-        });
-        const dayOrder = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-        slots.sort((a, b) => {
-          const d = dayOrder.indexOf(a.day) - dayOrder.indexOf(b.day);
-          if (d !== 0) return d;
-          return parseInt(a.period, 10) - parseInt(b.period, 10);
+        const menu = divData.swim_alt_menu || {}, sp = divData.swim_period || {};
+        Object.keys(sp).forEach((day) => {
+          if ((menu[day] || []).length) slots.push({ slot_id: me.division + ":" + day + ":" + sp[day] + ":swimalt", day, period: sp[day], swim: true,
+            options: menu[day].map((base) => ({ base, gender: "MF" })) });
         });
       }
-      return slots;
+      return slots.sort((a, b) => DAYS.indexOf(a.day) - DAYS.indexOf(b.day) || parseInt(a.period, 10) - parseInt(b.period, 10));
+    }
+    let slots = slotList();
+    const cell = (s) => s.day + ":" + s.period;
+    const optOf = (s, base) => s.options.find((o) => o.base === base);
+    const limitOf = (base) => (swimAlt && swim3.has(base) ? 3 : repeatTwice.has(base) ? 2 : 1);
+    const times = (n) => (n === 1 ? "once" : n === 2 ? "twice" : n + " times");
+
+    function describe(o) {
+      if (!o.occupies) return "";
+      const days = [...new Set(o.occupies.map((x) => x[0]))];
+      if (days.length === 1) return " — double period";
+      return days.length === 5 ? " — every day" : " — " + days.map(short).join(" + ");
     }
 
-    function slotCard(slot) {
-      const opts = slot.options
-        .filter((o) => eligible(o, me.grade, me.gender || "MF"))
-        .map((o) => o.base)
-        .sort();
-      const savedRanks = (existing && existing.preferences && existing.preferences[slot.slot_id]) || [];
-      const rankSelect = (rankIdx) => {
-        const current = savedRanks[rankIdx] || "";
-        const label = rankIdx === 0 ? "1st choice" : rankIdx === 1 ? "2nd choice" : "3rd choice";
-        const req = rankIdx === 0 ? ' <span class="required-mark">*</span>' : "";
-        let optionHtml = '<option value="">' + (rankIdx === 0 ? "Choose…" : "(optional)") + "</option>";
-        opts.forEach((base) => {
-          optionHtml += '<option value="' + escapeHtml(base) + '"' + (base === current ? " selected" : "") + ">" + escapeHtml(base) + "</option>";
-        });
-        return (
-          '<div class="rank-row"><label>' + label + req + "</label>" +
-          '<select class="rank-select" data-slot="' + slot.slot_id + '" data-rank="' + rankIdx + '">' + optionHtml + "</select></div>"
-        );
+    // ---- build ----
+    function cardHtml(s) {
+      const opts = s.options.filter(eligible).slice().sort((a, b) => a.base.localeCompare(b.base));
+      const rank = (i) => {
+        const label = ["1st choice", "2nd choice", "3rd choice"][i];
+        return '<div class="rank-row"><label>' + label + (i === 0 ? ' <span class="req req-star">*</span>' : "") + '</label><select data-slot="' + esc(s.slot_id) + '" data-rank="' + i + '">' +
+          '<option value="">' + (i === 0 ? "Choose…" : "(backup — optional)") + "</option>" +
+          opts.map((o) => '<option value="' + esc(o.base) + '">' + esc(o.base + describe(o)) + "</option>").join("") + "</select></div>";
       };
-      return (
-        '<div class="card" data-slot-card="' + slot.slot_id + '">' +
-        '<div class="slot-title">' + slot.day + " — Period " + slot.period + "</div>" +
-        rankSelect(0) + rankSelect(1) + rankSelect(2) +
-        "</div>"
-      );
+      return '<div class="card" data-card="' + esc(s.slot_id) + '"><div class="slot-title">Period ' + s.period + (s.swim ? ' <span class="tag">Swim Alternative</span>' : "") + '<span class="tick">✓ chosen</span></div>' +
+        '<div class="banner" hidden></div>' + rank(0) + rank(1) + rank(2) + '<div class="errs"></div></div>';
     }
 
-    function friendDatalistHtml() {
-      return otherCampers.map((c) => '<option value="' + escapeHtml(c.name) + '">').join("");
-    }
+    function build() {
+      slots = slotList();
+      const conflictPairs = pairs.filter(([a, b]) => slots.some((s) => s.options.some((o) => o.base === a || o.base === b)));
+      let html = '<details class="howto" open><summary>How this works</summary><ul>' +
+        "<li>For each period, pick a <b>1st choice</b> (required) and, if you like, up to two <b>backups</b>. Backups are only used if your first choice is full.</li>" +
+        "<li>Most activities can be a 1st choice <b>once a week</b>. A few (sports and Lake Inflatables) can be chosen <b>twice</b>.</li>" +
+        "<li>Some activities are <b>double periods</b> or run several days. Picking one fills all of those periods, so we'll grey out the periods it covers.</li>" +
+        (conflictPairs.length ? "<li>You can't take both: " + conflictPairs.map((p) => "<b>" + esc(p[0]) + "</b> and <b>" + esc(p[1]) + "</b>").join("; ") + ".</li>" : "") +
+        "<li>Friends: both of you need to name each other. Families often fill this in together so the choices match.</li>" +
+        "<li>You can come back to this same link and change your answers until the deadline.</li></ul></details>" +
+        (existing ? '<div class="msg ok" id="prior">You already submitted on ' + new Date(existing.submittedAt).toLocaleDateString() + ". Review below and press Update if you'd like to change anything.</div>" : "") +
+        '<div id="topmsg"></div>';
+      if (divData.swim_alt_eligible) {
+        html += '<div class="card"><div class="swim"><input type="checkbox" id="swim-toggle"' + (swimAlt ? " checked" : "") + '><label for="swim-toggle"><b>Opt out of Instructional Swim (Swim Alternative)</b><small>You\'ll choose an activity for that period instead. Leave unchecked to keep regular swim lessons.</small></label></div></div>';
+      }
+      let lastDay = "";
+      slots.forEach((s) => { if (s.day !== lastDay) { html += '<div class="day">' + s.day + "</div>"; lastDay = s.day; } html += cardHtml(s); });
+      html += '<div class="section-title">Friends</div><div class="card">' +
+        '<p class="help"><b>Friend request:</b> if you both name each other, we\'ll try to put you in the same activity when you both picked it. Not guaranteed.</p>' +
+        friendRow("friend1", "Friend 1") + friendRow("friend2", "Friend 2") +
+        '<p class="help" style="margin-top:16px"><b>Same schedule:</b> only if you <u>both</u> name each other here. We\'ll give you identical schedules wherever your choices overlap — and if they don\'t overlap in a period, you\'ll both need staff help there. It\'s a stricter request than a friend request.</p>' +
+        friendRow("sameSchedule", "Same schedule as") +
+        '<datalist id="camper-list">' + otherCampers.map((c) => '<option value="' + esc(c.name) + '">').join("") + "</datalist></div>";
+      app.innerHTML = html;
+      document.getElementById("bar")?.remove();
+      const bar = document.createElement("div");
+      bar.className = "bar"; bar.id = "bar";
+      bar.innerHTML = '<div class="bar-inner"><div class="prog"><span id="prog-text"></span><div class="meter"><span id="prog-bar"></span></div></div><button id="submit-btn">' + (existing ? "Update selections" : "Submit selections") + "</button></div>";
+      document.body.appendChild(bar);
 
-    function friendField(id, label, savedId) {
-      const savedName = savedId ? nameFor(savedId) : "";
-      return (
-        '<div class="rank-row"><label>' + label + "</label>" +
-        '<input type="text" list="camper-list" id="' + id + '" value="' + escapeHtml(savedName) + '" placeholder="Start typing a name…"></div>'
-      );
-    }
-
-    function renderForm() {
-      const slots = slotsForCamper();
-      const savedFriends = (existing && existing.friend_requests) || [];
-
-      render(
-        '<h1>Camp Aaron Elective Selections</h1>' +
-        '<div class="sub">' + escapeHtml(me.name) + " · " + escapeHtml(division) + " · Grade " + escapeHtml(me.grade) + "</div>" +
-        (existing ? '<div class="msg ok">You already submitted on ' + new Date(existing.submittedAt).toLocaleDateString() + ". You can review and resubmit below — your latest submission replaces the previous one.</div>" : "") +
-        (divData.swim_alt_eligible
-          ? '<div class="card"><div class="swim-toggle"><input type="checkbox" id="swim-alt-toggle"' + (swimAlt ? " checked" : "") + '><label for="swim-alt-toggle">Opt out of Instructional Swim (Swim Alternative)</label></div></div>'
-          : "") +
-        '<div id="slot-cards">' + slots.map(slotCard).join("") + "</div>" +
-        '<div class="section-title">Friend requests</div>' +
-        '<div class="card">' +
-        '<div class="friend-help">Friend requests: we\'ll try to place you together for an activity you both pick, when possible. Not guaranteed.</div>' +
-        friendField("friend1", "Friend 1", savedFriends[0]) +
-        friendField("friend2", "Friend 2", savedFriends[1]) +
-        '<div class="friend-help" style="margin-top:14px">Same schedule: only for a mutual request where you BOTH name each other here. If so, we lock your schedules to match wherever your choices overlap — this is a stronger, stricter request than a friend request above.</div>' +
-        friendField("sameSchedule", "Same schedule as", existing && existing.same_schedule_request) +
-        '<datalist id="camper-list">' + friendDatalistHtml() + "</datalist>" +
-        "</div>" +
-        '<div id="submit-msg"></div>' +
-        '<button class="submit" id="submit-btn">Submit selections</button>'
-      );
-
-      const toggle = document.getElementById("swim-alt-toggle");
-      if (toggle) {
-        toggle.addEventListener("change", () => {
-          swimAlt = toggle.checked;
-          renderForm();
+      slots.forEach((s) => {
+        const p = picks[s.slot_id] || ["", "", ""];
+        document.querySelectorAll('select[data-slot="' + s.slot_id + '"]').forEach((sel) => {
+          const i = +sel.dataset.rank;
+          if (p[i] && [...sel.options].some((o) => o.value === p[i])) sel.value = p[i]; else if (p[i]) p[i] = "";
+          sel.addEventListener("change", () => { (picks[s.slot_id] = picks[s.slot_id] || ["", "", ""])[i] = sel.value; refresh(); });
         });
+      });
+      const t = document.getElementById("swim-toggle");
+      if (t) t.addEventListener("change", () => { swimAlt = t.checked; captureFriends(); build(); });
+      ["friend1", "friend2", "sameSchedule"].forEach((id) => { const el = document.getElementById(id); el.value = nameFor(friendIds[id]); });
+      document.getElementById("submit-btn").addEventListener("click", submit);
+      refresh();
+    }
+    function friendRow(id, label) {
+      return '<div class="rank-row"><label style="width:110px">' + label + '</label><input type="text" list="camper-list" id="' + id + '" placeholder="Start typing a name…" autocomplete="off"></div>';
+    }
+    function captureFriends() {
+      ["friend1", "friend2", "sameSchedule"].forEach((id) => {
+        const el = document.getElementById(id); if (!el) return;
+        const m = otherCampers.find((c) => c.name.toLowerCase() === el.value.trim().toLowerCase());
+        friendIds[id] = m ? m.camper_id : "";
+      });
+    }
+
+    // ---- rules engine: recomputed after every change ----
+    function analyze() {
+      const res = { covered: {}, errors: {}, missing: [], required: 0, done: 0 };
+      const err = (s, m) => (res.errors[s.slot_id] = res.errors[s.slot_id] || []).push(m);
+      const first = (s) => (picks[s.slot_id] || [])[0] || "";
+      const occupiedBy = {};
+      // 1) double-period / multi-day picks cover other periods; two of them can't overlap
+      slots.forEach((s) => {
+        const o = first(s) && optOf(s, first(s));
+        if (!o || !o.occupies) return;
+        const keys = o.occupies.map((x) => x[0] + ":" + x[1]);
+        const clash = keys.find((k) => occupiedBy[k] && occupiedBy[k].slot !== s.slot_id);
+        if (clash) { err(s, "This overlaps with " + occupiedBy[clash].base + " (" + short(clash.split(":")[0]) + " P" + clash.split(":")[1] + "). You can't do both — pick something else."); return; }
+        keys.forEach((k) => { occupiedBy[k] = { base: o.base, slot: s.slot_id }; if (k !== cell(s)) res.covered[k] = { base: o.base, from: short(s.day) + " P" + s.period }; });
+      });
+      // 2) required periods
+      slots.forEach((s) => { if (!res.covered[cell(s)]) { res.required++; if (first(s)) res.done++; else res.missing.push(s); } });
+      // 3) weekly limit on 1st choices (a covered period's pick doesn't count — it's only a backup there)
+      const seen = {};
+      slots.forEach((s) => {
+        const b = first(s), o = b && optOf(s, b);
+        if (!b || res.covered[cell(s)] || (o && o.occupies)) return;
+        seen[b] = (seen[b] || 0) + 1;
+        if (seen[b] > limitOf(b)) err(s, b + " is already your 1st choice in " + limitOf(b) + " other period" + (limitOf(b) === 1 ? "" : "s") + ". Each activity can be a 1st choice " + times(limitOf(b)) + " a week — choose something different here.");
+      });
+      // 4) activities that can't be combined
+      pairs.forEach(([a, b]) => {
+        const sa = slots.filter((s) => first(s) === a && !res.covered[cell(s)]), sb = slots.filter((s) => first(s) === b && !res.covered[cell(s)]);
+        if (sa.length && sb.length) { const bad = (sa[0] && sb[0] && slots.indexOf(sb[0]) > slots.indexOf(sa[0]) ? sb : sa)[0]; err(bad, "You can't choose both " + a + " and " + b + " — pick one or the other."); }
+      });
+      return res;
+    }
+
+    function refresh() {
+      const r = analyze();
+      slots.forEach((s) => {
+        const card = document.querySelector('[data-card="' + s.slot_id + '"]');
+        if (!card) return;
+        const p = picks[s.slot_id] || ["", "", ""], cov = r.covered[cell(s)], errs = r.errors[s.slot_id] || [];
+        card.classList.toggle("covered", !!cov);
+        card.classList.toggle("has-error", errs.length > 0);
+        card.classList.toggle("done", !!p[0] || !!cov);
+        const banner = card.querySelector(".banner");
+        banner.hidden = !cov;
+        if (cov) banner.innerHTML = "<b>Covered by " + esc(cov.base) + "</b> (chosen at " + cov.from + "). You'll be in it for this period, so a 1st choice isn't needed — you can still add backups in case it's full.";
+        card.querySelector(".req-star").style.display = cov ? "none" : "";
+        card.querySelector(".errs").innerHTML = errs.map((m) => "<div>" + esc(m) + "</div>").join("");
+        card.querySelectorAll("select").forEach((sel) => {
+          [...sel.options].forEach((o) => { o.disabled = !!o.value && p.some((v, i) => v === o.value && i !== +sel.dataset.rank); });
+        });
+      });
+      document.getElementById("prog-text").innerHTML = "<b>" + r.done + " of " + r.required + "</b> periods chosen";
+      document.getElementById("prog-bar").style.width = (r.required ? (100 * r.done) / r.required : 0) + "%";
+      return r;
+    }
+
+    // ---- submit ----
+    function submit() {
+      captureFriends();
+      const top = document.getElementById("topmsg");
+      top.innerHTML = "";
+      const r = refresh();
+      const problems = [];
+      if (r.missing.length) problems.push("Please choose a 1st choice for: " + r.missing.map((s) => short(s.day) + " P" + s.period).join(", ") + ".");
+      const bad = Object.keys(r.errors);
+      if (bad.length) problems.push("Please fix the highlighted periods (" + bad.length + ").");
+      const unmatched = ["friend1", "friend2", "sameSchedule"].filter((id) => document.getElementById(id).value.trim() && !friendIds[id]);
+      if (unmatched.length) problems.push("A friend's name doesn't match anyone on the list — pick from the suggestions as you type.");
+      if (problems.length) {
+        top.innerHTML = '<div class="msg error"><b>Almost there.</b><br>' + problems.map(esc).join("<br>") + "</div>";
+        const target = (r.errors && document.querySelector(".card.has-error")) || (r.missing[0] && document.querySelector('[data-card="' + r.missing[0].slot_id + '"]')) || top;
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
       }
-
-      document.getElementById("submit-btn").addEventListener("click", onSubmit);
-    }
-
-    function resolveFriendField(id) {
-      const el = document.getElementById(id);
-      const typed = el.value.trim();
-      if (!typed) return { ok: true, id: null };
-      const match = otherCampers.find((c) => c.name.toLowerCase() === typed.toLowerCase());
-      if (!match) return { ok: false, el };
-      return { ok: true, id: match.camper_id };
-    }
-
-    function onSubmit() {
-      const msgEl = document.getElementById("submit-msg");
-      msgEl.innerHTML = "";
-
-      // Collect rankings per slot, clearing any prior inline "incomplete" flags.
-      document.querySelectorAll("[data-slot-card]").forEach((card) => card.classList.remove("incomplete"));
       const preferences = {};
-      let missingFirstChoice = [];
-      slotsForCamper().forEach((slot) => {
-        const selects = document.querySelectorAll('select[data-slot="' + slot.slot_id + '"]');
-        const picks = [];
-        selects.forEach((sel) => { if (sel.value) picks.push(sel.value); });
-        const deduped = [...new Set(picks)];
-        if (deduped.length) preferences[slot.slot_id] = deduped;
-        if (!deduped.length) missingFirstChoice.push(slot.day + " P" + slot.period);
-      });
-
-      if (missingFirstChoice.length) {
-        msgEl.innerHTML = '<div class="msg error">Please choose at least a 1st choice for every period. Missing: ' + missingFirstChoice.join(", ") + "</div>";
-        window.scrollTo(0, 0);
-        return;
-      }
-
-      const f1 = resolveFriendField("friend1");
-      const f2 = resolveFriendField("friend2");
-      const ss = resolveFriendField("sameSchedule");
-      const badField = [f1, f2, ss].find((f) => !f.ok);
-      if (badField) {
-        msgEl.innerHTML = '<div class="msg error">One of the names you entered doesn\'t match anyone on the roster. Please pick a name from the suggestions as you type.</div>';
-        badField.el.focus();
-        return;
-      }
-
-      const friend_requests = [f1.id, f2.id].filter(Boolean);
-      const submitBtn = document.getElementById("submit-btn");
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting…";
-
-      api("savePreferences", {
-        method: "POST",
-        body: {
-          camper_id: camperId,
-          key: camperKey,
-          data: JSON.stringify({
-            preferences: preferences,
-            friend_requests: friend_requests,
-            same_schedule_request: ss.id,
-            swim_alt: swimAlt,
-          }),
-        },
-      }).then((resp) => {
-        if (resp.ok) {
-          msgEl.innerHTML = '<div class="msg ok">Submitted! You can revisit this same link any time before the deadline to review or change your answers.</div>';
-          window.scrollTo(0, 0);
-          submitBtn.textContent = "Submit selections";
-          submitBtn.disabled = false;
-        } else {
-          msgEl.innerHTML = '<div class="msg error">Something went wrong submitting: ' + escapeHtml(resp.error || "unknown error") + "</div>";
-          submitBtn.textContent = "Submit selections";
-          submitBtn.disabled = false;
-        }
-      }).catch(() => {
-        msgEl.innerHTML = '<div class="msg error">Network error — please check your connection and try again.</div>';
-        submitBtn.textContent = "Submit selections";
-        submitBtn.disabled = false;
-      });
+      slots.forEach((s) => { const list = [...new Set((picks[s.slot_id] || []).filter(Boolean))]; if (list.length) preferences[s.slot_id] = list; });
+      const btn = document.getElementById("submit-btn");
+      btn.disabled = true; btn.textContent = "Saving…";
+      api("savePreferences", { method: "POST", body: { camper_id: camperId, key: camperKey, data: JSON.stringify({
+        preferences, friend_requests: [friendIds.friend1, friendIds.friend2].filter(Boolean),
+        same_schedule_request: friendIds.sameSchedule || null, swim_alt: swimAlt }) } })
+        .then((resp) => { if (resp.ok) done(preferences); else { top.innerHTML = '<div class="msg error">Something went wrong saving: ' + esc(resp.error || "unknown error") + ". Please try again.</div>"; btn.disabled = false; btn.textContent = "Try again"; } })
+        .catch(() => { top.innerHTML = '<div class="msg error">Network problem — please check your connection and try again.</div>'; btn.disabled = false; btn.textContent = "Try again"; });
     }
 
-    renderForm();
-  }).catch((err) => {
-    render('<div class="msg error">Something went wrong loading the form. Please try again shortly.</div>');
-    console.error(err);
-  });
+    function done(preferences) {
+      document.getElementById("bar")?.remove();
+      window.scrollTo(0, 0);
+      const r = analyze();
+      const rows = slots.map((s) => {
+        const cov = r.covered[cell(s)], p = (preferences[s.slot_id] || [])[0];
+        return "<tr><td>" + short(s.day) + " P" + s.period + "</td><td>" + (cov ? "<i>" + esc(cov.base) + " (continued)</i>" : esc(p || "—")) + "</td></tr>";
+      }).join("");
+      app.innerHTML = '<div class="msg ok"><b>Thank you — your selections are saved.</b><br>You can open this same link again any time before the deadline to review or change them.</div>' +
+        '<div class="card"><h3 style="margin-top:0">Your 1st choices</h3><table class="sum"><thead><tr><th>Period</th><th>1st choice</th></tr></thead><tbody>' + rows + "</tbody></table></div>" +
+        '<button class="secondary" id="edit-btn" style="width:100%">Make changes</button>';
+      document.getElementById("edit-btn").addEventListener("click", () => { existing && (existing.submittedAt = existing.submittedAt); build(); window.scrollTo(0, 0); });
+    }
+
+    build();
+  }).catch((err) => { fail("Something went wrong loading the form. Please refresh, or contact camp staff."); console.error(err); });
 })();
 </script>
 </body>

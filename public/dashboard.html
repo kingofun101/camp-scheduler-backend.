@@ -755,7 +755,7 @@
         const e = sched[day + ":" + p];
         if (e && !e.base) html += '<td class="flag"><b>Needs help</b></td>';
         else if (e) {
-          const tag = e.backfilled ? '<span class="rk moved">moved to open period</span>' : e.rank ? '<span class="rk">' + ordinal(e.rank) + " choice</span>" : "";
+          const tag = e.manual ? '<span class="rk moved">assigned by staff</span>' : e.backfilled ? '<span class="rk moved">moved to open period</span>' : e.rank ? '<span class="rk">' + ordinal(e.rank) + " choice</span>" : "";
           html += "<td>" + escapeHtml(e.base) + tag + "</td>";
         } else if ((fixed[day] || {})[p]) html += '<td class="fixed">' + escapeHtml(fixed[day][p]) + "</td>";
         else html += '<td class="blank">–</td>';
@@ -990,6 +990,46 @@
 
   document.getElementById("load-camper-btn").addEventListener("click", loadCamperForReassign);
 
+  // ---- Reassign: works on calendar cells (day + period), not ranked slots ----
+  // A double-period or multi-day activity occupies several cells and is moved
+  // in or out as ONE unit; Swim Alternative periods are ordinary editable
+  // cells for campers who opted out of Instructional Swim.
+  function divInfo(c) { return slotsData.divisions[c.division]; }
+  function cellSort(a, b) {
+    const [da, pa] = a.split(":"), [db, pb] = b.split(":");
+    return DAYS.indexOf(da) - DAYS.indexOf(db) || parseInt(pa, 10) - parseInt(pb, 10);
+  }
+  function allLinkedOptions(c) {
+    const out = [];
+    divInfo(c).slots.forEach((s) => s.options.forEach((o) => { if (o.occupies) out.push(o); }));
+    return out;
+  }
+  const occKeys = (o) => o.occupies.map(([d, p]) => d + ":" + p);
+  // The double-period / multi-day option a given activity at a given cell belongs to, if any.
+  function linkedCovering(c, base, key) {
+    return allLinkedOptions(c).find((o) => o.base === base && occKeys(o).includes(key));
+  }
+  function isSwimCell(c, day, period) {
+    const info = divInfo(c);
+    return !!(info.swim_alt_eligible && subOf(c.camper_id).swim_alt && (info.swim_period || {})[day] === period);
+  }
+  function eligibleFor(c, o) {
+    if (o.grade_lo != null && c.grade < o.grade_lo) return false;
+    if (o.grade_hi != null && c.grade > o.grade_hi) return false;
+    return !(o.gender && o.gender !== "MF" && o.gender !== c.gender);
+  }
+  function optionsForCell(c, day, period) {
+    if (isSwimCell(c, day, period)) return ((divInfo(c).swim_alt_menu || {})[day] || []).map((base) => ({ base }));
+    const slot = divInfo(c).slots.find((s) => s.day === day && s.period === period);
+    return slot ? slot.options.filter((o) => eligibleFor(c, o)) : [];
+  }
+  function poolCap(day, period, base) {
+    const pool = poolsData.find((x) => x.day === day && x.period === period && x.base === base);
+    return pool ? pool.cap_max : null; // null = unconstrained (Swim Alternative)
+  }
+
+  document.getElementById("load-camper-btn").addEventListener("click", loadCamperForReassign);
+
   function loadCamperForReassign() {
     const typed = document.getElementById("camper-search").value.trim();
     const me = roster.find((c) => c.name.toLowerCase() === typed.toLowerCase());
@@ -998,84 +1038,147 @@
     if (!me) { body.innerHTML = '<div class="msg error">No camper matches that name exactly. Pick one from the suggestions.</div>'; return; }
 
     api("loadSchedule", { query: { week } }).then((resp) => {
-      if (!resp.ok || !resp.schedule) { body.innerHTML = '<div class="msg error">No solved schedule found for week ' + escapeHtml(week) + '.</div>'; return; }
+      if (!resp.ok || !resp.schedule) { body.innerHTML = '<div class="msg error">No solved schedule found for week ' + escapeHtml(week) + ".</div>"; return; }
       const sched = JSON.parse(resp.schedule);
       const slotCnt = JSON.parse(resp.slotCounts || "{}");
-      const mySched = sched[me.camper_id] || {};
-      const divSlots = slotsData.divisions[me.division].slots;
+      const mine = sched[me.camper_id] || {};
+      const info = divInfo(me);
 
-      const rows = divSlots.map((slot) => {
-        const key = slot.day + ":" + slot.period;
-        const current = mySched[key];
-        const eligibleOpts = slot.options.filter((o) => {
-          if (o.grade_lo != null && me.grade < o.grade_lo) return false;
-          if (o.grade_hi != null && me.grade > o.grade_hi) return false;
-          if (o.gender !== "MF" && o.gender !== me.gender) return false;
-          return true;
-        });
-        const optionHtml = eligibleOpts.map((o) => {
-          const enrolled = slotCnt[slot.day + "|" + slot.period + "|" + o.base] || 0;
-          const pool = poolsData.find((p) => p.day === slot.day && p.period === slot.period && p.base === o.base);
-          const cap = pool ? pool.cap_max : "?";
-          const sel = current && current.base === o.base ? " selected" : "";
-          return '<option value="' + escapeHtml(o.base) + '"' + sel + ">" + escapeHtml(o.base) + " (" + enrolled + "/" + cap + ")</option>";
+      // Every calendar cell this camper attends.
+      const cells = new Set(Object.keys(mine));
+      info.slots.forEach((s) => cells.add(s.day + ":" + s.period));
+      if (subOf(me.camper_id).swim_alt) Object.entries(info.swim_period || {}).forEach(([d, p]) => cells.add(d + ":" + p));
+
+      const rows = [...cells].sort(cellSort).map((key) => {
+        const [day, period] = key.split(":");
+        const cur = mine[key];
+        const label = day + " P" + period + (isSwimCell(me, day, period) ? ' <span class="badge ok">Swim Alt</span>' : "");
+        // Locked: a later occurrence of a double-period / multi-day activity.
+        if (cur && cur.base) {
+          const link = linkedCovering(me, cur.base, key);
+          if (link && occKeys(link)[0] !== key) {
+            return '<div class="row"><div style="flex:0 0 150px">' + label + '</div><div class="muted">Part of <b>' + escapeHtml(cur.base) +
+              "</b> (" + occKeys(link).map((k) => short(k)).join(", ") + "). Change it from " + short(occKeys(link)[0]) + ".</div></div>";
+          }
+        }
+        const opts = optionsForCell(me, day, period);
+        const optHtml = opts.map((o) => {
+          const cells2 = o.occupies ? occKeys(o) : [key];
+          let left = null;
+          cells2.forEach((k) => {
+            const [d2, p2] = k.split(":"), cap = poolCap(d2, p2, o.base);
+            if (cap != null) { const r = cap - (slotCnt[d2 + "|" + p2 + "|" + o.base] || 0); left = left == null ? r : Math.min(left, r); }
+          });
+          const suffix = o.occupies ? " — " + (o.occupies.length === 2 ? "double period" : o.occupies.length + " periods") : "";
+          const seats = left == null ? "" : " (" + left + " open)";
+          return '<option value="' + escapeHtml(o.base) + '"' + (cur && cur.base === o.base ? " selected" : "") + ">" + escapeHtml(o.base) + suffix + seats + "</option>";
         }).join("");
-        const flaggedNote = current && !current.base ? ' <span class="badge warn">was flagged</span>' : "";
-        return (
-          '<div class="row" data-reassign-slot="' + slot.day + '|' + slot.period + '"><div style="flex:0 0 140px">' + slot.day + " P" + slot.period + flaggedNote + "</div>" +
-          '<div><select class="reassign-select" data-day="' + slot.day + '" data-period="' + slot.period + '">' +
-          '<option value="">-- unassigned / flagged --</option>' + optionHtml + "</select></div></div>"
-        );
+        const asked = !(cur && cur.base) ? prefsAt(me, day, period) : [];
+        const hint = asked.length ? '<div class="muted" style="margin-top:3px">Asked for: ' + asked.map(escapeHtml).join(", ") + "</div>" : "";
+        return '<div class="row" data-cell="' + key + '"><div style="flex:0 0 150px">' + label + (cur && !cur.base ? ' <span class="badge danger">Needs help</span>' : "") +
+          '</div><div><select class="reassign-select" data-key="' + key + '"><option value="">-- unassigned / needs help --</option>' + optHtml + "</select>" + hint + "</div></div>";
       }).join("");
 
       body.innerHTML =
-        '<h2 style="margin-top:16px">' + escapeHtml(me.name) + " · " + escapeHtml(me.division) + " · Grade " + escapeHtml(me.grade) + "</h2>" +
-        '<div class="muted" style="margin-bottom:10px">Choosing a new activity here only checks remaining capacity and grade/gender eligibility — it does NOT re-check the repeat-activity limit, friend links, or same-schedule pairing. Use judgment.</div>' +
+        '<h2 style="margin-top:16px">' + escapeHtml(me.name) + " · " + escapeHtml(me.division) + " · Grade " + escapeHtml(me.grade) + " · Week " + escapeHtml(week) + "</h2>" +
+        '<div class="muted" style="margin-bottom:10px">Double-period and multi-day activities move as one unit — picking or removing one changes every period it covers. Capacity and grade/gender are enforced; the weekly repeat limit and exclusions produce a warning you can override; friend and same-schedule links are <b>not</b> re-checked.</div>' +
         rows +
-        '<div class="row" style="margin-top:14px"><button id="save-reassign-btn">Save changes</button><span id="reassign-msg"></span></div>';
-
+        '<div class="row" style="margin-top:14px"><div style="flex:0 0 auto"><button id="save-reassign-btn">Save changes</button></div><div id="reassign-msg" style="align-self:center"></div></div>';
       document.getElementById("save-reassign-btn").addEventListener("click", () => saveReassign(me, week, sched, slotCnt));
     });
   }
 
-  function saveReassign(me, week, sched, slotCnt) {
-    const selects = document.querySelectorAll(".reassign-select");
-    const mySched = sched[me.camper_id] || {};
-    let capacityError = null;
-
-    selects.forEach((sel) => {
-      const day = sel.dataset.day, period = sel.dataset.period, key = day + ":" + period;
-      const newBase = sel.value || null;
-      const oldEntry = mySched[key];
-      const oldBase = oldEntry ? oldEntry.base : null;
-      if (newBase === oldBase) return;
-
-      if (newBase) {
-        const pool = poolsData.find((p) => p.day === day && p.period === period && p.base === newBase);
-        const countKey = day + "|" + period + "|" + newBase;
-        const enrolled = slotCnt[countKey] || 0;
-        if (pool && enrolled >= pool.cap_max) {
-          capacityError = newBase + " at " + day + " P" + period + " is already full (" + enrolled + "/" + pool.cap_max + ").";
-          return;
-        }
-        slotCnt[countKey] = enrolled + 1;
-      }
-      if (oldBase) {
-        const oldKey = day + "|" + period + "|" + oldBase;
-        slotCnt[oldKey] = Math.max(0, (slotCnt[oldKey] || 0) - 1);
-      }
-      mySched[key] = { day, period, base: newBase, rank: newBase ? (oldEntry && oldEntry.rank) || null : null };
+  // Applies the edits to copies of the camper's schedule and the week's seat
+  // counts, checking capacity for every cell an activity covers.
+  function applyReassign(me, mine, cnt, changes) {
+    const notes = [], errors = [];
+    const flag = (key) => { const [d, p] = key.split(":"); return { day: d, period: p, base: null, rank: null, manual: true }; };
+    const adjust = (base, key, delta) => {
+      const [d, p] = key.split(":"), k = d + "|" + p + "|" + base;
+      cnt[k] = Math.max(0, (cnt[k] || 0) + delta);
+    };
+    // Frees a cell — and, if it holds a double-period / multi-day activity, the whole activity.
+    const evict = (key) => {
+      const e = mine[key];
+      if (!e || !e.base) return;
+      const link = linkedCovering(me, e.base, key);
+      (link ? occKeys(link) : [key]).forEach((k) => {
+        if (mine[k] && mine[k].base === e.base) { adjust(e.base, k, -1); mine[k] = flag(k); }
+      });
+    };
+    changes.forEach(({ key, base, option }) => {
+      const before = mine[key] && mine[key].base;
+      if (before && linkedCovering(me, before, key)) notes.push("Removed " + before + " from all " + occKeys(linkedCovering(me, before, key)).length + " periods it covered.");
+      evict(key);
+      if (!base) { mine[key] = flag(key); return; }
+      const targets = option && option.occupies ? occKeys(option) : [key];
+      targets.forEach((k) => {
+        if (k !== key && mine[k] && mine[k].base) { notes.push("Replaced " + mine[k].base + " at " + short(k) + "."); evict(k); }
+      });
+      targets.forEach((k) => {
+        const [d, p] = k.split(":"), cap = poolCap(d, p, base);
+        if (cap != null && (cnt[d + "|" + p + "|" + base] || 0) >= cap) errors.push(base + " is already full at " + short(k) + " (" + cap + "/" + cap + ").");
+      });
+      if (errors.length) return;
+      targets.forEach((k) => {
+        const [d, p] = k.split(":");
+        adjust(base, k, +1);
+        mine[k] = { day: d, period: p, base, rank: null, manual: true };
+      });
     });
+    return { notes, errors };
+  }
 
+  function ruleWarnings(me, mine) {
+    const rules = slotsData.rules || {};
+    const linked = new Set(allLinkedOptions(me).map((o) => o.base));
+    const swimAlt = !!subOf(me.camper_id).swim_alt;
+    const counts = {};
+    Object.values(mine).forEach((e) => { if (e.base && !linked.has(e.base)) counts[e.base] = (counts[e.base] || 0) + 1; });
+    const out = [];
+    Object.entries(counts).forEach(([base, n]) => {
+      const limit = swimAlt && (rules.swim_alt_repeat3 || []).includes(base) ? 3 : (rules.repeat_twice || []).includes(base) ? 2 : 1;
+      if (n > limit) out.push(base + " would be taken " + n + " times this week (limit " + limit + ").");
+    });
+    const has = new Set(Object.values(mine).filter((e) => e.base).map((e) => e.base));
+    (rules.exclusive_pairs || []).forEach(([a, b]) => { if (has.has(a) && has.has(b)) out.push(a + " and " + b + " can't both be taken.") });
+    return out;
+  }
+
+  function saveReassign(me, week, sched, slotCnt) {
     const msgEl = document.getElementById("reassign-msg");
-    if (capacityError) { msgEl.innerHTML = ' <span style="color:var(--danger)">' + escapeHtml(capacityError) + "</span>"; return; }
+    const mine = JSON.parse(JSON.stringify(sched[me.camper_id] || {}));
+    const cnt = Object.assign({}, slotCnt);
+    const changes = [];
+    document.querySelectorAll(".reassign-select").forEach((sel) => {
+      const key = sel.dataset.key, base = sel.value || null;
+      const before = (mine[key] && mine[key].base) || null;
+      if (base === before) return;
+      const [day, period] = key.split(":");
+      changes.push({ key, base, option: optionsForCell(me, day, period).find((o) => o.base === base) });
+    });
+    if (!changes.length) { msgEl.innerHTML = '<span class="muted">No changes to save.</span>'; return; }
 
-    sched[me.camper_id] = mySched;
-    api("saveSchedule", { method: "POST", body: { week, data: JSON.stringify({ sched, slotCnt }) } }).then((resp) => {
-      if (resp.ok) weekCache = {};
-      msgEl.innerHTML = resp.ok ? ' <span style="color:var(--ok)">Saved.</span>' : ' <span style="color:var(--danger)">Save failed: ' + escapeHtml(resp.error) + "</span>";
+    const { notes, errors } = applyReassign(me, mine, cnt, changes);
+    if (errors.length) { msgEl.innerHTML = '<span style="color:var(--danger)">' + errors.map(escapeHtml).join(" ") + "</span>"; return; }
+    const warnings = ruleWarnings(me, mine);
+    if (notes.length || warnings.length) {
+      const text = (notes.length ? "This will also:\n - " + notes.join("\n - ") + "\n\n" : "") +
+        (warnings.length ? "Warnings:\n - " + warnings.join("\n - ") + "\n\n" : "") + "Save anyway?";
+      if (!confirm(text)) { msgEl.innerHTML = '<span class="muted">Cancelled — nothing saved.</span>'; return; }
+    }
+    const next = Object.assign({}, sched, { [me.camper_id]: mine });
+    api("saveSchedule", { method: "POST", body: { week, data: JSON.stringify({ sched: next, slotCnt: cnt }) } }).then((resp) => {
+      if (resp.ok) {
+        weekCache = {};
+        msgEl.innerHTML = '<span style="color:var(--ok)">Saved.</span>';
+        loadCamperForReassign(); // redraw from what was actually stored
+      } else if (!resp.unauthorized) {
+        msgEl.innerHTML = '<span style="color:var(--danger)">Save failed: ' + escapeHtml(resp.error) + "</span>";
+      }
     });
   }
+
   start();
 })();
 </script>

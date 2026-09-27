@@ -125,7 +125,29 @@
               "base": "Theater",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Monday",
+                  "3"
+                ],
+                [
+                  "Tuesday",
+                  "3"
+                ],
+                [
+                  "Wednesday",
+                  "3"
+                ],
+                [
+                  "Thursday",
+                  "3"
+                ],
+                [
+                  "Friday",
+                  "3"
+                ]
+              ]
             },
             {
               "base": "3D Printing",
@@ -204,7 +226,17 @@
               "base": "Coding",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Monday",
+                  "6"
+                ],
+                [
+                  "Monday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Court Time",
@@ -476,7 +508,17 @@
               "base": "Coding",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Tuesday",
+                  "2"
+                ],
+                [
+                  "Tuesday",
+                  "3"
+                ]
+              ]
             },
             {
               "base": "Court Time",
@@ -736,7 +778,17 @@
               "base": "Perform Dance",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Tuesday",
+                  "6"
+                ],
+                [
+                  "Thursday",
+                  "6"
+                ]
+              ]
             },
             {
               "base": "Robotics",
@@ -772,7 +824,17 @@
               "base": "Things That Go",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Tuesday",
+                  "6"
+                ],
+                [
+                  "Tuesday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Water Tag",
@@ -1099,7 +1161,17 @@
               "base": "Sports League",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Wednesday",
+                  "3"
+                ],
+                [
+                  "Friday",
+                  "3"
+                ]
+              ]
             },
             {
               "base": "Top Chef",
@@ -1172,7 +1244,17 @@
               "base": "Coding",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Wednesday",
+                  "6"
+                ],
+                [
+                  "Wednesday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Digi Photo",
@@ -1256,7 +1338,17 @@
               "base": "Things That Go",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Wednesday",
+                  "6"
+                ],
+                [
+                  "Wednesday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Water Tag",
@@ -1474,7 +1566,17 @@
               "base": "Things That Go",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Thursday",
+                  "2"
+                ],
+                [
+                  "Thursday",
+                  "3"
+                ]
+              ]
             },
             {
               "base": "Top Chef",
@@ -1650,7 +1752,17 @@
               "base": "Coding",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Thursday",
+                  "6"
+                ],
+                [
+                  "Thursday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Digi Photo",
@@ -2313,7 +2425,29 @@
               "base": "Theater",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Monday",
+                  "3"
+                ],
+                [
+                  "Tuesday",
+                  "3"
+                ],
+                [
+                  "Wednesday",
+                  "3"
+                ],
+                [
+                  "Thursday",
+                  "3"
+                ],
+                [
+                  "Friday",
+                  "3"
+                ]
+              ]
             },
             {
               "base": "3D Printing",
@@ -2398,7 +2532,17 @@
               "base": "Coding",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Monday",
+                  "6"
+                ],
+                [
+                  "Monday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Court Time",
@@ -2876,7 +3020,17 @@
               "base": "Collage & Mixed Media",
               "grade_lo": 7,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Tuesday",
+                  "6"
+                ],
+                [
+                  "Tuesday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Fishing",
@@ -2912,7 +3066,17 @@
               "base": "Master Chef",
               "grade_lo": 7,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Tuesday",
+                  "6"
+                ],
+                [
+                  "Tuesday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Painting",
@@ -2924,7 +3088,17 @@
               "base": "Perform Dance",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Tuesday",
+                  "6"
+                ],
+                [
+                  "Thursday",
+                  "6"
+                ]
+              ]
             },
             {
               "base": "Robotics",
@@ -2960,7 +3134,17 @@
               "base": "Things That Go",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Tuesday",
+                  "6"
+                ],
+                [
+                  "Tuesday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Water Tag",
@@ -2997,7 +3181,17 @@
               "base": "Advanced Wheel",
               "grade_lo": 7,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Tuesday",
+                  "7"
+                ],
+                [
+                  "Thursday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Arts & Crafts",
@@ -3281,7 +3475,17 @@
               "base": "Sports League",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Wednesday",
+                  "3"
+                ],
+                [
+                  "Friday",
+                  "3"
+                ]
+              ]
             },
             {
               "base": "Top Chef",
@@ -3312,7 +3516,17 @@
               "base": "Advanced Art",
               "grade_lo": 7,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Wednesday",
+                  "6"
+                ],
+                [
+                  "Wednesday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Archery",
@@ -3354,7 +3568,17 @@
               "base": "Coding",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Wednesday",
+                  "6"
+                ],
+                [
+                  "Wednesday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Digi Photo",
@@ -3438,7 +3662,17 @@
               "base": "Things That Go",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Wednesday",
+                  "6"
+                ],
+                [
+                  "Wednesday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Water Tag",
@@ -3838,7 +4072,17 @@
               "base": "Coding",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Thursday",
+                  "6"
+                ],
+                [
+                  "Thursday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Digi Photo",
@@ -3886,7 +4130,17 @@
               "base": "Master Chef",
               "grade_lo": 7,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Thursday",
+                  "6"
+                ],
+                [
+                  "Thursday",
+                  "7"
+                ]
+              ]
             },
             {
               "base": "Mosaic Art",
@@ -4717,7 +4971,29 @@
               "base": "Theater",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Monday",
+                  "3"
+                ],
+                [
+                  "Tuesday",
+                  "3"
+                ],
+                [
+                  "Wednesday",
+                  "3"
+                ],
+                [
+                  "Thursday",
+                  "3"
+                ],
+                [
+                  "Friday",
+                  "3"
+                ]
+              ]
             },
             {
               "base": "3D Printing",
@@ -5110,7 +5386,17 @@
               "base": "Things That Go",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Tuesday",
+                  "3"
+                ],
+                [
+                  "Tuesday",
+                  "4"
+                ]
+              ]
             },
             {
               "base": "Top Chef",
@@ -5256,7 +5542,17 @@
               "base": "Perform Dance",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Tuesday",
+                  "6"
+                ],
+                [
+                  "Thursday",
+                  "6"
+                ]
+              ]
             },
             {
               "base": "Robotics",
@@ -5456,13 +5752,33 @@
               "base": "Coding",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Wednesday",
+                  "3"
+                ],
+                [
+                  "Wednesday",
+                  "4"
+                ]
+              ]
             },
             {
               "base": "Collage & Mixed Media",
               "grade_lo": 6,
               "grade_hi": 6,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Wednesday",
+                  "3"
+                ],
+                [
+                  "Wednesday",
+                  "4"
+                ]
+              ]
             },
             {
               "base": "Gaga",
@@ -5510,7 +5826,17 @@
               "base": "Sports League",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Wednesday",
+                  "3"
+                ],
+                [
+                  "Friday",
+                  "3"
+                ]
+              ]
             },
             {
               "base": "Top Chef",
@@ -5832,7 +6158,17 @@
               "base": "Advanced Art",
               "grade_lo": 6,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Thursday",
+                  "3"
+                ],
+                [
+                  "Thursday",
+                  "4"
+                ]
+              ]
             },
             {
               "base": "Archery",
@@ -6298,7 +6634,17 @@
               "base": "Coding",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Friday",
+                  "3"
+                ],
+                [
+                  "Friday",
+                  "4"
+                ]
+              ]
             },
             {
               "base": "Court Time",
@@ -6382,7 +6728,17 @@
               "base": "Things That Go",
               "grade_lo": 5,
               "grade_hi": 8,
-              "gender": "MF"
+              "gender": "MF",
+              "occupies": [
+                [
+                  "Friday",
+                  "3"
+                ],
+                [
+                  "Friday",
+                  "4"
+                ]
+              ]
             },
             {
               "base": "Top Chef",
@@ -6580,5 +6936,52 @@
         ]
       }
     }
+  },
+  "rules": {
+    "repeat_twice": [
+      "9 Square in the Air",
+      "Arena Soccer",
+      "Arena Sports",
+      "Bankshot Basketball",
+      "Bankshot Bball",
+      "Basketball",
+      "Cheerleading",
+      "Court Time",
+      "European Handball",
+      "Flag Football",
+      "Gaga",
+      "Girls Basketball",
+      "Girls Gaga",
+      "Girls Soccer",
+      "Hockey",
+      "Kickball",
+      "Lacrosse",
+      "Lake Inflatables",
+      "Newcombe",
+      "Play Ball",
+      "Soccer",
+      "Tailgate Games",
+      "Team Adventure",
+      "Tennis Baseball",
+      "Ultimate Frisbee",
+      "Volleyball",
+      "Water Tag",
+      "Xfit",
+      "Zumba"
+    ],
+    "swim_alt_repeat3": [
+      "9 Square in the Air",
+      "Gaga"
+    ],
+    "exclusive_pairs": [
+      [
+        "Advanced Wheel",
+        "Wheel Ceramics"
+      ],
+      [
+        "Master Chef",
+        "Top Chef"
+      ]
+    ]
   }
 }
